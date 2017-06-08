@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Forstå programmering</title>
+<link rel="stylesheet" type="text/css" href="/programmering/css/standard.css" />
+<link rel="shortcut icon" href="/programmering/favicon.ico" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+<div id='content'>
+
+<h1>Hvordan er EasyGraphics programmert?</h1>
+
+<p><b>NB!</b> Denne siden er for spesielt interesserte, og tar for seg emner som ligger godt utenfor et grunnkurs i programmering. Beskrivelsen er i første rekke skrevet for faglærere som bruker boken i undervisning. Hensikten er å introdusere de viktigste ideene. Se også kommentarer i kildekoden.</p>
+
+
+<h2>Krav til løsningen</h2>
+
+<p>EasyGraphics blir brukt i de fire første kapitlene i boken, som tar for seg variabler, kontrollstrukturer og (statiske) metoder. Vi ønsket oss mulighet for å illustrere slike grunnleggende begrep med grafikkprogrammering, på en så enkel måte som mulig. Vi satt følgende krav til løsningen:</p>
+
+<ol>
+  <li>Det skal være mulig å tegne enkle figurer (linjer, rektangel, sirkler m.fl.), samt skalere og flytte (animere) slike figurer.</li>
+  <li>Det skal være mulig å lese inndata fra brukeren, helst via et tekstfelt integrert i tegnevinduet.</li>
+  <li>Grafikkprogram (program som bruker EasyGraphics) skal være så enkle som mulig. Det skal bl.a. ikke være nødvendig å opprette objekt, eller å forholde seg til hendelser. Kall på grafikkmetoder skal være på formen met(...), altså uten behov for punktnotasjon.</li>
+  <li>Grafikkprogram skal bygge på en rent sekvensiell tankegang. Hvis man f.eks. først ber om en animasjon og deretter gjør innlesing fra brukeren vha. <em>EasyGraphics-metoder</em>, skal innlesingen først skje når animasjonen er fullført.</li>
+  <li>Grafikkprogram skal fritt kunne bruke variabler, kontrollstrukturer og metoder.</li>
+  <li>Ett og samme brukerprogram skal kunne kjøres både som selvstendig applikasjon og som en applett i nettleseren.</li>
+</ol>
+
+<p>Vi unngår punktnotasjon ved å kreve at brukerprogrammet subklasser EasyGraphics. Dette medfører riktignok at vi må godta en extends-besvergelse som kompliserer litt, men vi mener dette er til å leve med.</p>
+
+<p>Løsningen legger opp til at all innlesing gjøres via et tekstfelt integrert i tegnevinduet, og utdata vises i selve tegnevinduet. I forbindelse med testing kan det være nyttig å skrive ut til konsollet. EasyGraphics tilbyr en metode println for dette formålet, slik at utskriften kommer på "forventet" tidspunkt (den venter på at eventuelle animasjoner blir fullført). Denne metoden bør altså brukes i stedet for System.out.println.</p>
+
+
+<h2>Oppbygging</h2>
+
+<p>Setningene i grafikkprogrammet blir utført på en egen tråd, vi kaller den for brukertråden. Tegne-operasjoner blir utført på event-tråden. Kall på tegne-metoder blir representert i en datastruktur (en kø) og deretter overført til event-tråden for utførelse.</p>
+
+<p>De viktigste datastrukturene i EasyGraphics:</p>
+
+<ul>
+  <li>Steg-kø: For hver metode som grafikkprogrammet kaller, blir det opprettet et steg-objekt (<a href="#klassene">EGStep</a>). Dette kan f.eks. innebære å tegne en figur, eller å flytte (animere) en figur. Brukertråden legger slike steg-objekt inn bakerst i køen, mens event-tråden tar ut steg-objekt først i køen for utførelse. Steg-køen er egentlig en kø av køer for å redusere synkronisering mellom trådene.</li>
+  <li>Figur-liste: Kall på tegneoperasjonene (drawXXX/fillXXX) skal føre til at et nytt figur-objekt (<a href="#klassene">EGFigure</a>) blir opprettet. Samlingen av alle figur-objekt blir representert i en liste, ordnet fra eldste til nyeste.</li>
+</ul>  
+  
+<p>Event-tråden blir kontrollert av et Timer-objekt som kontinuerlig kaller opp en hendelsesmetode (actionPerformed i tegneflaten <a href="#klassene">EGCanvas</a>). For hver hendelse skjer følgende:</p>
+  
+<ol>
+  <li>Neste steg-objekt blir hentet fra køen og utført (alle steg-objekt har en metode execute). Effekten kan f.eks. være at et figur-objekt blir flyttet, reskalert, eller gjort usynlig. Lengre forflytninger/reskaleringer blir brutt ned i flere "mini-steg". Motsatt, vil flere små endringer (på ulike figurer) bli utført i én operasjon.</li>
+  <li>Figur-listen blir gjennomløpt og oppdaterte figurer blir tegnet på nytt. Kun den delen av vinduet som er endret blir tegnet på nytt.</li>
+</ol>
+
+<p>I visse situasjoner må det legges inn venting, blant annet i forbindelse med brukerkommunikasjon:</p>
+
+<ul>
+  <li>Når brukerprogrammet kaller på EasyGraphics-metoden getText for å gjøre innlesing fra brukeren, settes brukertråden på vent til alle steg-objekt er ferdig utført. Dette håndteres av klassen EGLatch.</li>
+</ul>
+
+<p>I forbindelse med oppstart av programmet er det nødvendig å opprette et objekt av klassen deklarert i grafikkprogrammet (programmet som brukeren skriver). Dette gjøres ved bruk av klassen ClassLoader.</p>
+
+<p>EasyGraphics tilbyr en metode setSpeed for å styre farten på animasjoner. Denne er meget enkel, og sørger kun for å legge inn korte pauser mellom hvert steg. Farten på en forflytning vil variere med hvilken maskin man kjører på, og om man gjør lange eller (mange) korte forflytninger med moveXXX-metodene.</p>
+
+
+<a name="klassene"></a>
+<h2>Klassene i EasyGraphics</h2>
+
+<ul>
+  <li>EasyGraphics: Hovedklassen med tegnemetodene.</li>
+  <li>EGGui: Oppretter brukergrensesnittet.</li>
+  <li>EGCanvas: Tegneflaten.</li>
+  <li>EGFigure: Abstrakt superklasse for figur-objekt.</li>
+  <ul>
+    <li>EGArc: Representasjon av sirkelbuer og "kakestykker".</li>
+    <li>EGCircle: Representasjon av sirkler.</li>
+    <li>EGEllipse: Representasjon av ellipser (ovaler).</li>
+    <li>EGLine: Representasjon av linjestykker.</li>
+    <li>EGRectangle: Representasjon av rektangel.</li>
+    <li>EGText: Representasjon av (grafisk) tekst.</li>
+  </ul>
+  <li>EGStep: Abstrakt superklasse for "steg", der hvert steg tilsvarer en operasjon utført av brukerprogrammet, f.eks. et tegnesteg eller et animasjonssteg.</li>
+  <ul>
+    <li>EGErrorStep: Avslutter programkjøring med feilmelding.</li>
+    <li>EGGlobalStep: Setter bakgrunnsfarge og/eller fart.</li>
+    <li>EGFinishStep: Fullfører alle ventende animasjoner.</li>
+    <li>EGInputStep: Leser inndata fra brukeren.</li>
+    <li>EGMakeStep: Oppretter en figur.</li>
+    <li>EGMoveStep: Flytter en figur.</li>
+    <li>EGPauseStep: Legger inn en (kort) pause.</li>
+    <li>EGPrintStep: Skriver ut en melding til konsollet.</li>
+    <li>EGResizeStep: Endrer størrelse på en figur.</li>
+    <li>EGShowStep: Gjør en figur synlig/usynlig.</li>
+    <li>EGWindowStep: Gjør tegnevinduet synlig.</li>
+  </ul>
+  <li>EGCommon: Felles konstanter og hjelpemetoder.</li>
+  <li>EGRunner: Starter handlingene i brukerprogrammet (run) på event-tråden.</li>
+  <li>EGBuffer: Håndtering av stegkøene som deles av brukertråden og event-tråden.</li>
+  <li>EGLatch: Sørger for synkronisering mellom brukertråden og event-tråden.</li>
+</ul>
+
+
+</div>
+
+</body>
+</html>
