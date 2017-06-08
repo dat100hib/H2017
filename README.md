@@ -1,5 +1,9 @@
-# DAT100 - Introduksjon til Programmering
+# Høgskolen på Vestlandet - Bergen
 
-Denne oppbevaringsplassen på github brukes til å distribuere Java kode i forbindelse med faget og til å gi praktisk informasjon om installasjon og bruk av utviklingsverktøy ifm. faget. 
+![hvl](hvllogo.png) 
 
-Ytterligere informasjon finnes på github sidene for faget på [dat100.githib.io/H2017](https://dat100hib.github.io/H2017) 
+## DAT100 - Introduksjon til Programmering Høsten 2017
+
+Denne oppbevaringsplassen på nettstedet github brukes til å distribuere Java kode i forbindelse med faget og til å gi praktisk informasjon om installasjon og praktisk bruk av utviklingsverktøy. 
+
+Mer informasjon finnes på github-sidene på [dat100.githib.io/H2017](https://dat100hib.github.io/H2017) 
