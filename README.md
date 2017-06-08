@@ -1,5 +1,3 @@
-# Høgskolen på Vestlandet - Bergen
-
 ![hvl](hvllogo.png) 
 
 ## DAT100 - Introduksjon til Programmering Høsten 2017
