@@ -1,6 +1,6 @@
 # Velkommen
 
-I faget skal vi bruke programmeringsspråket Java samt det integrerte utviklingsverktøy Eclipse. Videre skal vi bruke revisjonskontrollsystemet git og nettstedet www.github.com til å distribuere Java eksempelkode fra forelesninger samt Java kode til bruk ifm. øvings- og prosjektoppgaver. 
+I faget skal vi bruke programmeringsspråket Java samt det integrerte utviklingsverktøy Eclipse. Videre skal vi bruke revisjonskontrollsystemet git og nettstedet www.github.com til å distribuere Java eksempelkode fra forelesninger samt Java kode til bruk ifm. programmerings- og prosjektoppgaver. 
 
 # Java
 
@@ -16,4 +16,4 @@ Git er allerede tilgjengelig i ... (detaljerte beskrivelser)
 
 ... which is shown in the screenshot below:
 
-![My helpful screenshot]({{ site.url }}/assets/img/hvllogo.png)
+![HVL Logo](https://dat100hib.github.io/H2017/assets/img/hvllogo.png)
