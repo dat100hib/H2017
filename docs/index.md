@@ -13,3 +13,6 @@ Installasjon av Eclipse ... les mere (detaljerte beskrivelser)
 # Git
 
 Git er allerede tilgjengelig i ... (detaljerte beskrivelser)
+
+... which is shown in the screenshot below:
+![My helpful screenshot]({{https://dat100hib.github.io/H2017}}/assets/img/hvllogo.jpg)
