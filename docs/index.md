@@ -16,4 +16,4 @@ Git er allerede tilgjengelig i ... (detaljerte beskrivelser)
 
 ... which is shown in the screenshot below:
 
-![HVL Logo](https://dat100hib.github.io/H2017/assets/img/hvllogo.png)
+![HVL Logo]({{site.url}}/assets/img/hvllogo.png)
