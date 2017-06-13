@@ -1,2 +1,5 @@
 theme: jekyll-theme-minimal
 url: https://dat100hib.github.io/H2017/
+title: [DAT100]
+description: [A short description of your site's purpose]
+show_downloads: true
