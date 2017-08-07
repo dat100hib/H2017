@@ -1,19 +1,43 @@
 # Velkommen
 
-I faget skal vi bruke programmeringsspråket Java samt det integrerte utviklingsverktøy Eclipse. Videre skal vi bruke revisjonskontrollsystemet git og nettstedet www.github.com til å distribuere Java eksempelkode fra forelesninger samt Java kode til bruk ifm. programmerings- og prosjektoppgaver. 
+I faget skal vi bruke programmeringsspråket Java samt det integrerte utviklingsverktøy Eclipse. Videre skal vi bruke revisjonskontrollsystemet git og nettstedet github til å distribuere Java eksempelkode fra forelesninger samt Java kode til bruk ifm. programmerings- og prosjektoppgaver. 
 
-# Java
+Detaljert beskrivelse for installasjon på egen PC finnes som del av første øving i faget: TODO 
 
-Installasjon av Java ... les mere (detaljerte beskrivelser)
+## Java Development Kit
 
-# Eclipse 
+Java Development Kit (JDK) inneholder alle verktøy som trengs for å oversette og kjøre Java programmer.
 
-Installasjon av Eclipse ... les mere (detaljerte beskrivelser)
+- Download: <http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html>  
+- Dokumentasjon: <https://docs.oracle.com/javase/8/> 
 
-# Git
+## Eclipse 
 
-Git er allerede tilgjengelig i ... (detaljerte beskrivelser)
+Eclipse er et integrert utviklingsmiljø (Integrated Development Environment) som gjør det enklere å skrive, kjøre og utføre feilfinning i Java programmer. 
 
-... which is shown in the screenshot below:
+- Download: <http://www.eclipse.org/downloads/packages/eclipse-ide-java-developers/oxygenr>
+- Dokumentasjon: <http://help.eclipse.org/oxygen/index.jsp>
+
+## Git
+
+Git er et distribuert revisjonkontrollsystem som gjør det mulig å oppbevare og dele på kode mellom utviklere. 
+
+- DAT100 oppbevaringsplassen: <https://github.com/dat100hib/H2017.git> 
+- GitHub nettstedet: <https://github.com/>
+- Dokumentasjon: <https://git-scm.com/documentation>
+
+## EasyGraphics
+
+EasyGraphics er et bibliotek som vi skal bruke ifm. en del programmeringsoppgaver. Som del av Øving 0 ble det vist hvordan easygraphics bibliotekte importeres og brukes i egne Eclipse-prosjekt.
+
+- Dokumentasjon: <http://home.hit.no/programmering/easygraphics/index.php>
+
+## Bok
+
+I faget skal vi bruke boken *Forstå programmering - med Java* (Universitetsforlaget, Istad og Kristoffersen).  
+
+- Nettside: <http://home.hit.no/programmering/> 
+
+Boken og nettsidene for boken gjør ikke bruk av Eclipse eller andre utviklingsverktøy. Følg derfor installasjonsveiledningen for øving 0.
 
 ![HVL Logo]({{site.url}}/assets/img/hvllogo.png)
