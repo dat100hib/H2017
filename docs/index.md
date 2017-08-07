@@ -22,7 +22,7 @@ Eclipse er et integrert utviklingsmiljø (Integrated Development Environment) so
 
 ## Git
 
-Git er et distribuert revisjonkontrollsystem som gjør det mulig å oppbevare og dele på kode mellom utviklere. 
+Git er et distribuert revisjonkontrollsystem som bla. gjør det mulig å oppbevare og dele på kode mellom utviklere. 
 
 - DAT100 oppbevaringsplassen: <https://github.com/dat100hib/H2017.git> 
 - GitHub nettstedet: <https://github.com/>
@@ -30,7 +30,7 @@ Git er et distribuert revisjonkontrollsystem som gjør det mulig å oppbevare og
 
 ## EasyGraphics
 
-EasyGraphics er et bibliotek som vi skal bruke ifm. en del programmeringsoppgaver. Som del av Øving 0 ble det vist hvordan easygraphics bibliotekte importeres og brukes i egne Eclipse-prosjekt.
+EasyGraphics er et bibliotek som vi skal bruke ifm. en del programmeringsoppgaver. Som del av Øving 0 ble det vist hvordan easygraphics biblioteket importeres og brukes i egne Eclipse-prosjekt.
 
 - Dokumentasjon: <http://home.hit.no/programmering/easygraphics/index.php>
 
