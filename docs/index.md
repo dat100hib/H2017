@@ -1,3 +1,5 @@
+![HVL Logo]({{site.url}}/assets/img/hvllogo.png)
+
 # Velkommen
 
 I faget skal vi bruke programmeringsspråket Java samt det integrerte utviklingsverktøy Eclipse. Videre skal vi bruke revisjonskontrollsystemet git og nettstedet github til å distribuere Java eksempelkode fra forelesninger samt Java kode til bruk ifm. programmerings- og prosjektoppgaver. 
@@ -40,4 +42,4 @@ I faget skal vi bruke boken *Forstå programmering - med Java* (Universitetsforl
 
 Boken og nettsidene for boken gjør ikke bruk av Eclipse eller andre utviklingsverktøy. Følg derfor installasjonsveiledningen for [Øving 0: Installasjon](https://github.com/dat100hib/H2017/blob/master/ovinger/oving0/Oving0Installlasjon_2017.pdf)
 
-![HVL Logo]({{site.url}}/assets/img/hvllogo.png)
+
