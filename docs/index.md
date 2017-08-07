@@ -8,14 +8,14 @@ Detaljert beskrivelse om installasjon på egen PC finnes som del av første øvi
 
 Java Development Kit (JDK) inneholder alle verktøy som trengs for å oversette og kjøre Java programmer.
 
-Download: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html  
+Download: <http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html>  
 Dokumentasjon: https://docs.oracle.com/javase/8/ 
 
 # Eclipse 
 
 Eclipse er et integrert utviklingsmiljø (Integrated Development Environment) som gjør det enklere å skrive, kjøre og utføre feilfinning i Java programmer. 
 
-Download: http://www.eclipse.org/downloads/packages/eclipse-ide-java-developers/oxygenr 
+Download: http://www.eclipse.org/downloads/packages/eclipse-ide-java-developers/oxygenr
 Dokumentasjon: http://help.eclipse.org/oxygen/index.jsp
 
 # Git
