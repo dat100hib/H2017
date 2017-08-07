@@ -23,7 +23,7 @@ Dokumentasjon: <http://help.eclipse.org/oxygen/index.jsp>
 Git er et distribuert revisjonkontrollsystem som gjør det mulig å oppbevare og dele på kode mellom utviklere. 
 
 DAT100 oppbevaringsplassen: <https://github.com/dat100hib/H2017.git> 
-GitHub nettstedet: <www.github.com>
+GitHub nettstedet: <https://github.com/>
 Dokumentasjon: <https://git-scm.com/documentation>
 
 # EasyGraphics
@@ -31,5 +31,13 @@ Dokumentasjon: <https://git-scm.com/documentation>
 EasyGraphics er et bibliotek som vi skal bruke ifm. en del programmeringsoppgaver. Som del av Øving 0 ble det vist hvordan easygraphics bibliotekte importeres og brukes i egne Eclipse-prosjekt.
 
 Dokumentasjon: <http://home.hit.no/programmering/easygraphics/index.php>
+
+# Bok
+
+I faget skal vi bruke boken *Forstå programmering - med Java* (Universitetsforlaget, Istad og Kristoffersen).  
+
+Nettside for boken: <http://home.hit.no/programmering/> 
+
+Boken og nettsidene for boken gjør ikke bruk av Eclipse eller andre utviklingsverktøy. Følg derfor installasjonsveiledningen for øving 0.
 
 ![HVL Logo]({{site.url}}/assets/img/hvllogo.png)
