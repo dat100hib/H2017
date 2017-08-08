@@ -2,5 +2,5 @@ theme: jekyll-theme-minimal
 url: https://dat100hib.github.io/H2017/
 title: [DAT100]
 description: [Grunnleggende Programmering - Høgskolen på Vestlandet]
-show_downloads: true
+show_downloads: false
 google_analytics: UA-101012627-1
