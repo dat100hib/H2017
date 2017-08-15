@@ -15,12 +15,15 @@ public class FinnOrdIFil {
 
 	public static void main(String[] args) {
 
+		/* juster verdien for variablen sti avhengig av plassering av filer */
+		String sti = "/Users/hib/git/H2017/forelesninger/F01/src/no/hvl/dat100/f01/";
+		
 		String filnavn = showInputDialog("Filnavn:");
 		String sokeord = showInputDialog("Søkeord:");
 
 		try {
 
-			BufferedReader fil = new BufferedReader(new FileReader(filnavn));
+			BufferedReader fil = new BufferedReader(new FileReader(sti + filnavn));
 
 			String linje = fil.readLine();
 			int linjenr = 1;
