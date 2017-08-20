@@ -16,7 +16,7 @@ public class FinnOrdIFil {
 	public static void main(String[] args) {
 
 		// Sett verdien for variablen mappe avhengig av plassering av filer
-		String mappe = "";
+		String mappe = System.getProperty("user.dir") +"/src/no/hvl/dat100/f01/";
 		
 		String filnavn = showInputDialog("Filnavn:");
 		String sokeord = showInputDialog("Søkeord:");
