@@ -21,12 +21,12 @@ public class Gjennomsnitt {
 		 int tall3 = parseInt(tallTxt);
 		 int sum = tall1+tall2+tall3;
 		 double snitt1 = sum/3;            //riktig?
-		 double snitt2 = (double)(sum/3);  //riktig
+		 double snitt2 = (double)(sum/3);  //riktig?
 		 double snitt3 = ((double)sum)/3;
 		 double snitt4 = sum/3.0;
 		 
 		 showMessageDialog(null, "Summen av de 3 innleste tall er "+ sum + "\n" +				
-				                 "Gjennomsnitt1 " + snitt2 + "\n" +
+				                 "Gjennomsnitt1 " + snitt1 + "\n" +
 				                 "Gjennomsnitt2 " + snitt2 + "\n" +
 				                 "Gjennomsnitt3 " + snitt3 + "\n" +
 		                         "Gjennomsnitt4 " + snitt4 + "\n" );	             
