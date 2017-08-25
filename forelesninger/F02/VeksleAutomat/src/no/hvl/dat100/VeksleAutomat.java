@@ -41,3 +41,4 @@ public class VeksleAutomat {
 	showMessageDialog(null,ut);
 		 
 	}
+}
