@@ -12,17 +12,18 @@ public class VeksleAutomat {
  * Vi ser på to måter å løse det på
  */
 	public static void main(String[] args) {
-		String tallTxt = showInputDialog("Skriv inn beløp:");
-		int beloep = parseInt(tallTxt);
-		tallTxt = showInputDialog("Skriv inn pris:");
+		// pris 86, beløp 200 gir veksel 114 = 5*20 + 1*10 + 4*1
+		String tallTxt = showInputDialog("Skriv inn pris:");
 		int pris = parseInt(tallTxt);
-		//1. metode
+		tallTxt = showInputDialog("Skriv inn beløp:");
+		int beloep = parseInt(tallTxt);
+		
 		int veksel = beloep - pris;
-		veksel = 1019;
+		
+		//1. metode
 		int ant20kr = veksel/20;
 		int ant10kr = (veksel%20)/10;
 		int ant1kr =  ((veksel%20))%10;
-		veksel = 1019;
 		String ut = veksel + " kr kan veksles i " +
 		            ant20kr + " 20-kroner og " +
 				    ant10kr + " 10-kroner og " +
