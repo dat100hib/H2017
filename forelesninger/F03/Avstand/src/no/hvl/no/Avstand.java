@@ -22,7 +22,7 @@ public class Avstand {
 		int y2 = parseInt(tallTxt);
 		//Utskrift
 		double avstand = sqrt((x2-x1)*(x2-x1) + (y2-y1)*(y2-y1));
-		String ut1 = "Avstanden mellom ("+x1+","+y1 +")" + " og ("+x1+","+y1 +")" + " er "  + format("%4.2f",avstand);
+		String ut1 = "Avstanden mellom ("+x1+","+y1 +")" + " og ("+x2+","+y2 +")" + " er "  + format("%4.2f",avstand);
 	showMessageDialog(null,ut1);
 
 	}
