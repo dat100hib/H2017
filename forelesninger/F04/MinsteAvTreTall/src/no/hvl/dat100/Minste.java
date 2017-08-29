@@ -20,10 +20,10 @@ public class Minste {
 			minste = tall2;
 		}
 		if(tall3 < minste){
-			minste = tall2;
+			minste = tall3;
 		}
 		
-		String melding = " Det minste tallet av " + tall1+"," + tall2+"," + tall3 + 
+		String melding = " Det minste av tallene  " + tall1+"," + tall2+"," + tall3 + 
 				          " er " + minste;
 		
 		showMessageDialog(null, melding);		
