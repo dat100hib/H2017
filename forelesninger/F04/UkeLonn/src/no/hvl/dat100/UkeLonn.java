@@ -11,7 +11,7 @@ public class UkeLonn {
 		// Overtidsbetaling er 500kr pr. time for alle timer over 37.5
 		// Hvis antall timer er over 52 timer, utbetales et ekstra tillegg på 4000kr
 		final double NORMALUKE = 37.5;   // overtid alt over 37.5 timer
-		final double TILLEGG = 4000.0; // fast tillegg utover 42 timer
+		final double TILLEGG = 4000.0; // fast tillegg utover 52 timer
 		double antallTimer;
 		double ukelonn;
 		String tallTxt = showInputDialog("Oppgi et antall timer");
@@ -23,7 +23,7 @@ public class UkeLonn {
 		} else {                           // antallTimer > 52.0
 			ukelonn = 12000.0 + (antallTimer - NORMALUKE) * 500.0 + TILLEGG;
 		}
-		String utTxt = "Ukelonnen er " + format("%6.2f",ukelonn) + "\n";
+		String utTxt = "Ukelonnen er " + format("%10.2f",ukelonn) + "\n";
 		showMessageDialog(null,utTxt);
 	}
 }
