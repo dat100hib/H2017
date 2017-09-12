@@ -4,7 +4,7 @@ import static javax.swing.JOptionPane.*;
 
 public class TelleStemmer {
 	/*
-	 * Søk etter streng i tabell av strengar. Dersom streng finst, returner
+	 * Søk etter streng i tabell av strengar. Dersom strengen finst, returner
 	 * indeks (posisjon) i tabellen. Dersom den ikkje finst, returner -1.
 	 */
 
