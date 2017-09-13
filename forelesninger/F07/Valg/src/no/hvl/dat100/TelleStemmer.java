@@ -25,13 +25,12 @@ public class TelleStemmer {
 		return makspos;
 	}
 	
-	// TODO
-
-	
+	// Ferdig, ikjke del av oppgava	
 	public static String lesStemme() {
 		return showInputDialog("Parti?");
 	}
 
+	
 	public static void main(String[] args) {
 		/*
 		 * Deklarer og opprett partitabell. Ta med berre dei som ligg an til å
@@ -54,10 +53,11 @@ public class TelleStemmer {
 		
 		// Gi to stemmer til siste partiet i tabellen
 		stemmer[ANTALL_PARTI - 1] += 2;
-		// stemmer[ANTALL_PARTI - 1] = stemmer[ANTALL_PARTI - 1] + 2;
+		// Alternativ: stemmer[ANTALL_PARTI - 1] = stemmer[ANTALL_PARTI - 1] + 2;
 
 		// Les inn 5 stemmer og oppdater stemmetabell
 		
+		//TODO
 
 		// Vis partiet med stemmetal som har fått flest stemmer i eit
 		// dialogvindu
