@@ -8,7 +8,25 @@ public class TelleStemmer {
 	 * indeks (posisjon) i tabellen. Dersom den ikkje finst, returner -1.
 	 */
 
-	// TODO
+	public static int finnIndeks(String s, String[] tab){
+		boolean funnet = false;
+		int i = 0;
+		
+		while (!funnet && i < tab.length){
+			// For å sjekke om to strengar er like, må vi bruke metoden equal (ikkje ==)
+			if (s.equals(tab[i])){
+				funnet = true;
+			} else {
+				i++;
+			}
+		}
+		
+		if (funnet) {
+			return i;
+		} else {
+			return -1;
+		}
+	}
 
 	
 	/*
@@ -26,8 +44,8 @@ public class TelleStemmer {
 	}
 	
 	// Ferdig, ikjke del av oppgava	
-	public static String lesStemme() {
-		return showInputDialog("Parti?");
+	public static String lesStemmer() {
+		return showInputDialog("Stemmer og Parti på forma xx parti?");
 	}
 
 	
@@ -55,9 +73,19 @@ public class TelleStemmer {
 		stemmer[ANTALL_PARTI - 1] += 2;
 		// Alternativ: stemmer[ANTALL_PARTI - 1] = stemmer[ANTALL_PARTI - 1] + 2;
 
-		// Les inn 5 stemmer og oppdater stemmetabell
+		/* Les inn stemmer for 5 parti som ein streng på forma "xx parti" der xx er siffer og der er nøyaktig ein blank før partinavn (forkortelse).
+		 * Del opp strengen og oppdater stemmetabell for rett parti. Dette er kanskje ikkje ein god måte å gjere det på, men vil illustrere ein
+		 * viktig teknikk som kjem til nytte i prosjeket.
+		 */
 		
-		//TODO
+		for (int i = 0; i < 5; i++){
+			String innput = lesStemmer();
+			int st = Integer.parseInt(innput.substring(0, 2));
+			String p = innput.substring(3);
+			
+			int indeks = finnIndeks(p, partier);
+			stemmer[indeks] += st;
+		}
 
 		// Vis partiet med stemmetal som har fått flest stemmer i eit
 		// dialogvindu
