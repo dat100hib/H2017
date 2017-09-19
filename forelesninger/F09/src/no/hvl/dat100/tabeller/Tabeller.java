@@ -17,7 +17,7 @@ public class Tabeller {
 		boolean[] btab = {true,false,true,false,false,true};
 				
 		// avlese en posisjon i tabell
-	    // tabellnavn[posisjon]
+	    // datatype variabel = tabellnavn[posisjon]
 		char c = ctab[1];
 		
 		// endre innholdet på en posisjon
