@@ -1,30 +1,40 @@
 package no.hvl.dat100.eksempler;
 
+import easygraphics.EasyGraphics;
 import java.util.Scanner;
 
-public class Flooding {
+public class Flooding extends EasyGraphics {
 
 	// nesten dekket hvis mindre en fra havoverflaten
-	static int NESTEN_DEKKET_INT = 2; 
+	int NESTEN_DEKKET_INT = 2; 
 
-	static char DEKKET_CHR = '~';
-	static char NESTEN_DEKKET_CHR = 'O';
-	static char SIKKERT_CHR = '+';
+	char DEKKET_CHR = '~';
+	char NESTEN_DEKKET_CHR = 'O';
+	char SIKKERT_CHR = '+';
 
-	public static void main(String args[]) {
+	// terreng hogde
+	int[][] terreng = { 	{ 0, 0, 0, 3, 3, 3, 6, 7, 8, 10 },
+						{ 0, 0, 0, 3, 3, 3, 6, 7, 8, 10 },
+						{ 0, 0, 0, 3, 3, 3, 6, 7, 8, 10 } };
+			
+	public static void main(String[] args) {
+		launch(args);
+	}
 
-		// terreng hogde
-		int[][] terreng = { 	{ 0, 0, 0, 3, 3, 3, 6, 7, 8, 10 },
-							{ 0, 0, 0, 3, 3, 3, 6, 7, 8, 10 },
-							{ 0, 0, 0, 3, 3, 3, 6, 7, 8, 10 } };
+	public void run() {
 
-		int hav = 0;
+		makeWindow("FLOODING", 400,400);
 
-		Scanner in = new Scanner(System.in);
+		visualiser(); 
+	}
+
+	public void visualiser() {
+
+		System.out.println("Angi havhøyde i tegnevinduet ...");
+		int hav = Integer.parseInt(getText("havhøyde"));
 		
 		while (hav >= 0) {
 			
-
 			// TODO - START
 			
 			// itererer igjennom terreng tabellen
@@ -33,9 +43,6 @@ public class Flooding {
 			// TODO - SLUTT
 			
 			System.out.print("Hav høyde : ");
-			hav = in.nextInt();
 		}
-		
-		in.close();
 	}
 }
