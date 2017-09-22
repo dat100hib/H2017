@@ -19,7 +19,6 @@ public class LottoSjekkArrays {
 		System.out.println(Arrays.equals(lottoTall,minKupong1));
 		System.out.println(Arrays.equals(lottoTall,minKupong2));
 		
-		// vise bruk av binarySearch?
 	}
 
 }
