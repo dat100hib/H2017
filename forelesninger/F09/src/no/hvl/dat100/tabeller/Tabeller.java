@@ -24,18 +24,19 @@ public class Tabeller {
 		// tabellnavn[posisjon] = verdi
 		btab[1] = false;
 		
-		// tabellvariabel er en referanse til en tabell
-		System.out.println(btab);
-
 		// gjennomløp med for-løkke 
 		for (int i = 0; i<btab.length;i++) {
-			System.out.println(btab[i]);
+			System.out.print(btab[i]);
 		}
+		
+		System.out.println();
 		
 		// gjennomløp utvidet for-løkke
 		for (boolean b : btab) {
-			System.out.println(b);
+			System.out.print(b);
 		}
+		
+		System.out.println();
 		
 		// gjennomløp med while-løkke - typisk ifm. søking i tabell
 		boolean funnet = false;
@@ -44,18 +45,32 @@ public class Tabeller {
 			if (btab[i]) {
 				funnet = true;
 			}
+			i++;
 		}
 		
-		skrivUt(btab);
-		oppdater(btab,true,1);
+		System.out.println("funnet: " + funnet);
+		
+		// tabellvariabel er en referanse til en tabell
+		System.out.println(btab);
+
+		// oppdatering av en tabell 
 		skrivUt(btab);
 		
-		System.out.println(btab);
+		oppdater(btab,true,1);
+		
+		skrivUt(btab);
+		
+		// kopiering av en tabell
 		boolean[] tab = kopier(btab);
-		System.out.println(tab);
+				
 		skrivUt(tab);
+		
+		System.out.println(btab);
+		System.out.println(tab);
+
 	}
 	
+	// tabeller som parametre
 	public static void skrivUt(boolean[] tab) {
 		System.out.print("[ ");
 		for (boolean b : tab) {

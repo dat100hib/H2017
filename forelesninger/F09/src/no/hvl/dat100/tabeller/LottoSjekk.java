@@ -14,7 +14,6 @@ public class LottoSjekk {
 		return (lottoTall == kupong); 
 	}
 	
-	// TODO: definere en søk metode?
 	public static boolean sjekkkupong_v2(int[] kupong) {
 		
 		for (int i = 0; i<ANTALL; i++) {
