@@ -14,9 +14,14 @@ public class TimePlan {
 	};
 	
 	static void skrivTimeplan() {
+		
+		System.out.println("       man tir ons tor fre");
+		System.out.println("--------------------------");
+		
 		for (int t = 0;t<timeplan.length;t++) {
 			
 			String[] time = timeplan[t];
+	
 			System.out.print(t + ".time ");
 			
 			for (int d = 0;d<time.length;d++) {
