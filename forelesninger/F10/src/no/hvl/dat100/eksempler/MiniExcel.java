@@ -2,8 +2,8 @@ package no.hvl.dat100.eksempler;
 
 public class MiniExcel {
 
-	private static int[][] data = { {1,2,0},{3,4,0},{5,6,0},{0,0,0} };
-	
+	private static int[][] data = { { 1, 2, 0 }, { 3, 4, 0 }, { 5, 6, 0 }, { 0, 0, 0 } };
+
 	public static void skrivUt() {
 
 		System.out.println("---------------");
@@ -59,15 +59,13 @@ public class MiniExcel {
 		// TODO - END
 
 	}
-	public static void main(String args[])
-	
-	{
-		
-		
+
+	public static void main(String args[]) {
+
 		skrivUt();
-		
+
 		beregnSum();
-		
+
 		skrivUt();
 	}
 }

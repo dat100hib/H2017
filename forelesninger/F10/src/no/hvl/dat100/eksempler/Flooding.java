@@ -54,8 +54,6 @@ public class Flooding extends EasyGraphics {
 
 				}
 			}
-			// itererer igjennom terreng tabellen
-			// skriv rett tegn ut avhenggig av avstand fra havoverflate
 			
 			// TODO - SLUTT
 			System.out.println("Angi havhøyde i tegnevinduet ...");
