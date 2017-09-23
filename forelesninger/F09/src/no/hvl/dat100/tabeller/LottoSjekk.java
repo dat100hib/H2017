@@ -7,7 +7,6 @@ public class LottoSjekk {
 	static int[] lottoTall = {34,2,7,16,21,29,1};
 	
 	static int[] minKupong1 = {12,1,34,16,2,25,26};
-	
 	static int[] minKupong2 = {2,7,34,16,21,1,29};
 	
 	public static boolean sjekkkupong_v1(int[] kupong) {
@@ -21,6 +20,7 @@ public class LottoSjekk {
 			
 			boolean funnet = false;
 			int j = 0;
+			
 			while (!funnet && j<ANTALL) {
 				funnet = (tall == lottoTall[j]);
 				j++;
