@@ -1,59 +1,66 @@
 package no.hvl.dat100.tabeller;
 
 public class Tabeller2 {
-	
-	// tabeller som parametre
-	public static void skrivUt(boolean[] tab) {
-		System.out.print("[ ");
-		for (boolean b : tab) {
-			System.out.print(b + " ");
-		}
-		System.out.println("]");
-	}
-	
-	// tabeller som parametre - referanse overførsel
-	public static void oppdater(boolean[] tab, boolean b,int i) {
-		tab[i] = b;
-	}
-	
-	// tabeller som returverdi
-	public static boolean[] kopier(boolean[] tab) {
+
+	// vanlig for-løkke - og tabeller som parameter og returverdi
+	public static int[] kopier(int[] tabell) {
 		
-		boolean[] kopi = new boolean[tab.length];
+		int[] kopi = new int[tabell.length];
 		
-		for (int i = 0;i<tab.length;i++) {
-			kopi[i] = tab[i];
+		for (int pos = 0;pos<tabell.length;pos++) {
+			kopi[pos] = tabell[pos];
 		}
 		
 		return kopi;
 	}
 	
-	public static void main(String[] args) {
-
-		boolean[] btab = {true,false,true,false,false,true};
-				
-		// tabellvariabel er en referanse til en tabell
-		System.out.println(btab);
-
-		// oppdatering av en tabell 
-		System.out.print("Tabell før oppdatering   : ");
-		skrivUt(btab);
+	// utvidet for-løkke tabeller - tabell som parameter
+	public static void skrivUt(int[] tabell) {
+		System.out.print("[ ");
 		
-		oppdater(btab,true,1);
+		for (int tall : tabell) {
+			System.out.print(tall + " ");
+		}
 		
-		System.out.print("Tabell etter oppdatering : ");
-		skrivUt(btab);
-		
-		// kopiering av en tabell
-		boolean[] tab = kopier(btab);
-				
-		System.out.print("Innhold kopiert tabell   : ");
-
-		skrivUt(tab);
-		
-		System.out.println("Reference opprindelig tabell: " + btab);
-		System.out.println("Reference kopi av tabell    : " + tab);
+		System.out.println("]");
 	}
 	
+	// tabeller som parametre - referanse overførsel
+	public static void oppdater(int[] tabell, int v,int pos) {
+		tabell[pos] = v;
+	}
+	
+	// while-løkke - typisk ifm. søkning
+	public static boolean finnesTall(int tall, int[] tabell) {
+		boolean funnet = false;
+		int pos = 0;
+		
+		while (!funnet && pos < tabell.length) {
+			if (tall == tabell[pos]) {
+				funnet = true;
+			}
+			pos++;
+		}
+		
+		return funnet;
+	}
+	
+	public static void main(String[] args) {
+ 
+		int[] itab = {7,17,20,4,8,12};
+				
+		// tabellvariabel er en referanse til en tabell
+		System.out.println(itab);
+		skrivUt(itab);
+		
+		// oppdatering av en tabell 
+		oppdater(itab,19,2);
+		skrivUt(itab);
+		
+		// kopiering av en tabell
+		int[] tab = kopier(itab);
+		skrivUt(tab);
+		System.out.println(tab);
+	}
 
 }
