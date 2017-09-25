@@ -15,11 +15,11 @@ public class LottoSjekkArrays {
 		Arrays.sort(minKupong1);
 		Arrays.sort(minKupong2);
 		
-		boolean vunnet1 = Arrays.equals(lottoTall,minKupong1);
-		boolean vunnet2 = Arrays.equals(lottoTall,minKupong2);
+		boolean syvrett1 = Arrays.equals(lottoTall,minKupong1);
+		boolean syvrett2 = Arrays.equals(lottoTall,minKupong2);
 		
-		System.out.println(vunnet1);
-		System.out.println(vunnet2);
+		System.out.println(syvrett1);
+		System.out.println(syvrett2);
 		
 	}
 
