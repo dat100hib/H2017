@@ -9,7 +9,7 @@ public class MiniExcel {
 		System.out.println("---------------");
 
 		// TODO - START
-		// iterer igjennom tabellen og skriv ut
+		// iterer igjennom tabellen og skriv ut - utvidet for-løkke
 
 		for (int[] rad : data) {
 			for (int v : rad) {

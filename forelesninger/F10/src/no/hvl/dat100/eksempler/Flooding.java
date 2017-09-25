@@ -33,26 +33,17 @@ public class Flooding extends EasyGraphics {
 		while (hav >= 0) {
 			
 			// TODO - START
-			for (int ri = 0; ri<terreng.length; ri++) {
-				
-				for (int ki = 0; ki <terreng[ri].length; ki++) {
-					
-					int h = terreng[ri][ki];
-					
-					if (hav >= h) {
-						setColor(0,0,255); // blå - vann
-					} else if ((h - hav) > NESTEN_DEKKET) {
-						setColor(222,184,135); // lysebrun - tørt
-					} else {
-						setColor(255,140,0); // lysebrun - søle
-					}
-
-					fillCircle(MARGIN + ki * 2 * RADIUS,MARGIN + ri * 2* RADIUS,RADIUS);
-
-				}
-			}
 			
+			        // setColor(0,0,255); // blå - vann
+			
+				    // setColor(222,184,135); // lysebrun - tørt
+					
+			        // setColor(255,140,0); // oransje - søle
+
+					// fillCircle(MARGIN +  * 2 * RADIUS,MARGIN +  * 2* RADIUS,RADIUS);
+
 			// TODO - SLUTT
+			
 			System.out.println("Angi havhøyde i tegnevinduet ...");
 			hav = Integer.parseInt(getText("havhøyde"));
 		}
