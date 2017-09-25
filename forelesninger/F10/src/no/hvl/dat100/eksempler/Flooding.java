@@ -40,14 +40,11 @@ public class Flooding extends EasyGraphics {
 					int h = terreng[ri][ki];
 					
 					if (hav >= h) {
-						// under vann
-						setColor(0,0,255);
+						setColor(0,0,255); // blå - vann
 					} else if ((h - hav) > NESTEN_DEKKET) {
-						// sikkert
-						setColor(222,184,135);
+						setColor(222,184,135); // lysebrun - tørt
 					} else {
-						// usikkert
-						setColor(255,140,0);
+						setColor(255,140,0); // lysebrun - søle
 					}
 
 					fillCircle(MARGIN + ki * 2 * RADIUS,MARGIN + ri * 2* RADIUS,RADIUS);
