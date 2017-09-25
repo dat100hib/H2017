@@ -9,10 +9,13 @@ public class Kino extends EasyGraphics {
 	final int ANT_RADER = 15;
 	final int ANT_SETER = 20;
 	
-	boolean[][] opptatt = new boolean[ANT_RADER][ANT_SETER]; // 15 rader med 20 seter;
+	// 2-dimensjoner
+	boolean[][] forestilling = new boolean[ANT_RADER][ANT_SETER]; // 15 rader med 20 seter;
 			
+	// 3-dimensjoner
 	boolean[][][] filmer = new boolean[ANT_FILMER][ANT_RADER][ANT_SETER]; // 3 filmer 
 			
+	// 4-dimensjoner
 	boolean[][][][] saler = new boolean[ANT_SALER][ANT_FILMER][ANT_RADER][ANT_SETER]; // 2 saler
 
 	public static void main(String[] args) {
@@ -60,9 +63,9 @@ public class Kino extends EasyGraphics {
 		System.out.println("Angi film i tekstvinduet...");
 		int filmnr = Integer.parseInt(getText("film"));
 
-		boolean[][] opptatt = saler[salnr][filmnr];
+		boolean[][] forestilling = saler[salnr][filmnr];
 		
-		visReservasjoner(opptatt);
+		visReservasjoner(forestilling);
 		
 		System.out.println("Angi rad i tekstvinduet...");
 		int radnr = Integer.parseInt(getText("rad"));
@@ -70,9 +73,9 @@ public class Kino extends EasyGraphics {
 		System.out.println("Angi sete i tekstvinduet...");
 		int setenr = Integer.parseInt(getText("sete"));
 	
-		opptatt[radnr][setenr] = true;
+		forestilling[radnr][setenr] = true;
 		
-		visReservasjoner(opptatt);
+		visReservasjoner(forestilling);
 	}
 
 }
