@@ -9,24 +9,32 @@ public class LottoSjekk {
 	static int[] minKupong1 = {12,1,34,16,2,25,26};
 	static int[] minKupong2 = {2,7,34,16,21,1,29};
 	
-	public static boolean sjekkkupong_v1(int[] kupong) {
-		return (lottoTall == kupong); 
+	public static boolean sjekkkupong_v1(int[] kupong, int[] lottotall) {
+		return (lottotall == kupong); 
 	}
 	
-	public static boolean sjekkkupong_v2(int[] kupong) {
+	public static boolean finnesTall(int tall, int[] tabell) {
+		boolean funnet = false;
+		int pos = 0;
+		
+		while (!funnet && pos < tabell.length) {
+			if (tall == tabell[pos]) {
+				funnet = true;
+			}
+			pos++;
+		}
+		
+		return funnet;
+	}
+	
+	public static boolean sjekkkupong_v2(int[] kupong, int[] lottotall) {
 		
 		for (int i = 0; i<ANTALL; i++) {
-			int tall = kupong[i];
+			int tall = lottotall[i];
 			
-			boolean funnet = false;
-			int j = 0;
+			boolean hartall = finnesTall(tall,kupong);
 			
-			while (!funnet && j<ANTALL) {
-				funnet = (tall == lottoTall[j]);
-				j++;
-			}
-			
-			if (!funnet) {
+			if (!hartall) {
 				return false;
 			}
 		}
@@ -36,10 +44,10 @@ public class LottoSjekk {
 	
 	public static void main(String[] args) {
 		
-		System.out.println(sjekkkupong_v1(minKupong1));
-		System.out.println(sjekkkupong_v1(minKupong2));
+		System.out.println(sjekkkupong_v1(minKupong1,lottoTall));
+		System.out.println(sjekkkupong_v1(minKupong2,lottoTall));
 		
-		System.out.println(sjekkkupong_v2(minKupong1));
-		System.out.println(sjekkkupong_v2(minKupong2));
+		System.out.println(sjekkkupong_v2(minKupong1,lottoTall));
+		System.out.println(sjekkkupong_v2(minKupong2,lottoTall));
 	}
 }
