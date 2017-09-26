@@ -2,6 +2,25 @@ package no.hvl.dat100.eksempler;
 
 public class Temperatur {
 
+	public void temperaturer() {
+		
+		double[][] observasjonerv1 = {
+				{1.4,1.7,1.9,2.0},
+				{5.4,7.8,9.8,7.9,3.0},
+				{-1.7,-1.7,-2.8},
+		};
+		
+		double[] dag1 = {1.4,1.7,1.9,2.0};
+		double[] dag2 = {5.4,7.8,9.8,7.9,3.0};
+		double[] dag3 = {-1.7,-1.7,-2.8};
+		
+		double[][] observasjonerv2 = new double[3][];
+		
+		observasjonerv2[0] = dag1;
+		observasjonerv2[1] = dag2;
+		observasjonerv2[2] = dag3;
+	}
+	
 	static final int ANT_OBS = 3;
 	static final int ANT_DAG = 7;
 
