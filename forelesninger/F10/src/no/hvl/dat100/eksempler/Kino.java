@@ -43,9 +43,9 @@ public class Kino extends EasyGraphics {
 			
 			for (int setenr = 0; setenr<ANT_SETER; setenr++) {
 				if (forestilling[rekkenr][setenr]) {
-					setColor(255,0,0); // green
+					setColor(255,0,0); // rød
 				} else {
-					setColor(0,255,0); // rød
+					setColor(0,255,0); // grøn
 				}	
 			
 			
