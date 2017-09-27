@@ -82,7 +82,8 @@ public class GameController {
 
 		// TODO - SLUTT
 
-		return allequal;
+		// return allequal;
+		return false; // REMOVE ME
 	}
 
 	private boolean checkVertical(int x, char player) {
@@ -95,7 +96,8 @@ public class GameController {
 
 		// TODO - SLUTT
 
-		return allequal;
+		// return allequal;
+		return false; // REMOVE ME
 	}
 
 	private boolean checkDiagonals(char player) {
@@ -115,8 +117,8 @@ public class GameController {
 
 		// TODO - SLUTT
 
-		return allequal_lr || allequal_rl;
-
+		// return allequal_lr || allequal_rl;
+		return false; // REMOVE ME
 	}
 
 }
