@@ -7,24 +7,25 @@ package no.hvl.dat100;
  *
  */
 public class Konto {
-	private  static int nummer = 0;
+	private  static int nummer = 0 ;
 	private String eier;
 	private String adresse;
 	private int kontonummer;
 	private int saldo;
 
 	//Konstruktører
-	public Konto(String eier,String adresse, int saldo) {
-		this.eier = eier;
-		this.adresse = adresse;
-		this.saldo = saldo;
-		bestemKontonummer();
-		
-	}
 	
 	public Konto(){
 		this("","",0);
 	}
+	
+	public Konto(String eier,String adresse, int saldo) {
+		this.eier = eier;
+		this.adresse = adresse;
+		this.saldo = saldo;
+		bestemKontonummer();		
+	}
+		
 
 	//Andre metoder
 	
@@ -100,7 +101,6 @@ public class Konto {
 
 	public void settInn(int innskudd) {
 		saldo = saldo + innskudd;
-	}
-		
+	}		
 
 }// class
