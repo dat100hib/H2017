@@ -45,4 +45,8 @@ public class Student {
 	public String toString() {
 		return "Student [studNr:" + studNr + ", fornavn:" + fornavn + ", etternavn:" + etternavn + "]";
 	}
+	
+
+	
+
 }
