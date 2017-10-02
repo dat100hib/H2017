@@ -4,6 +4,7 @@ public class KlientStudent {
 
 	public static void main(String[] args) {
 		// I stedet for innlesing
+		// Lag gjerne en klasse Grensesnitt
 		final String[] fagTab = { "MAT100", "INF101", "DAT100", "DAT102", "DAT103", "DAT104" };
 		final char[] karTab = { 'C', 'D', 'C', 'B', 'E', 'A' };
         //snittpoeng = 3 + 2 + 3  + 4 + 1 + 5 = 18, snittpoeng = 3.0, altså gi snittkarakter C

@@ -15,7 +15,7 @@ public class Student {
 	// Konstruktører
 
 	public Student() {
-		this(0, 0, null, null);
+		this(0, 0, null, "");
 	}
 
 	public Student(int nr, int antFag, Navn navn, String studium) {
