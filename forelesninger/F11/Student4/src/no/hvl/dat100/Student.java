@@ -16,8 +16,6 @@ public class Student {
 
 	public Student() {
 		this(0, 0, null, null);
-		fag = new String[STOR];
-		karakterer = new char[STOR];
 	}
 
 	public Student(int nr, int antFag, Navn navn, String studium) {
