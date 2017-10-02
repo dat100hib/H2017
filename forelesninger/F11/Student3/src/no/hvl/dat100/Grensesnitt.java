@@ -13,7 +13,7 @@ public class Grensesnitt {
 		int nr = parseInt(tallTxt);
 		String fornavn = showInputDialog("oppgi fornavn: ");
 		String etternavn = showInputDialog("oppgi etternavn: ");
-		Student student = new Student(nr, etternavn, etternavn);
+		Student student = new Student(nr, fornavn, etternavn);
 
 		return student;
 	}
