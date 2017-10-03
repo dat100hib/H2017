@@ -8,11 +8,6 @@ public class Studentsamling {
 	private int antall;
 	private Student[] samling; // alltid usortert
 
-	public static int getStdk() {
-		return STDK;
-	}
-
-
 	/*
 	 * Konstruktører
 	 */
@@ -25,7 +20,6 @@ public class Studentsamling {
 		this(STDK);
 	}
 
-	
 	/*
 	 * Legger student bak i tabellen
 	 */
@@ -59,7 +53,7 @@ public class Studentsamling {
 		int indeks = finn(nr);
 		if (indeks == -1) {
 			return null;
-		}else{
+		} else {
 			return samling[indeks];
 		}
 	}
@@ -107,7 +101,6 @@ public class Studentsamling {
 		}
 		samling = hjelpeTabell;
 	}
-	
 
 	public Student[] getSamling() {
 		return samling;
@@ -116,6 +109,5 @@ public class Studentsamling {
 	public int getAntall() {
 		return antall;
 	}
-	
 
 }// class

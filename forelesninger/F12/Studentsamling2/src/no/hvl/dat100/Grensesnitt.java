@@ -8,21 +8,19 @@ import java.util.Arrays;
 
 public class Grensesnitt {
 	
-	// static-metoder for lesing og skriving
-       
-	public  static Studentsamling lesFlereStudenter() {
+	   
+ // static-metoder for lesing og skriving
+	public static void lesFlereStudenter(Studentsamling reg) {
 		String ledetekst = "Programmmet leser inn studentopplsysninger";
 		System.out.println(ledetekst);
 		String tallTxt = showInputDialog("oppgi antall registreringer");
 		int ant = parseInt(tallTxt);
-		Studentsamling register = new Studentsamling(ant);
 		Student stud = null;
 
 		for (int i = 0; i < ant; i++) {
 			stud = lesStudent();
-			register.leggTil(stud);
-		}
-		return register;
+			reg.leggTil(stud);
+		}		
 	}
 
 	public static void visAlle(Studentsamling reg) {
@@ -43,17 +41,16 @@ public class Grensesnitt {
 			  nrTab[i] = reg.getSamling()[i].skrivNr();
 		}
 		
-		Arrays.sort(nrTab);
+		Arrays.sort(nrTab); // Kall til metode i klassen Arrays
 		
 		// Sortert utskrift etter studentnr
 		for (int i = 0; i < nrTab.length; i++) {
 			System.out.println(nrTab[i]);
-		}
-		
+		}	
 		
 	}
 
-	public  static Student lesStudent() {
+	public static Student lesStudent() {
 		String tallTxt = showInputDialog("Oppgi studentnr: ");
 		int nr = parseInt(tallTxt);
 		String fornavn = showInputDialog("oppgi fornavn: ");
@@ -62,10 +59,9 @@ public class Grensesnitt {
 
 		return student;
 	}
-	
-	
-	public  static void skrivStudent(Student student) {
-		System.out.println(student.toString());	
+		
+	public static void skrivStudent(Student student) {
+		System.out.println(student);	
 
 	}
 	

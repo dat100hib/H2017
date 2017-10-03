@@ -4,8 +4,13 @@ import static java.lang.Integer.parseInt;
 import static javax.swing.JOptionPane.showInputDialog;
 
 public class Meny {
+	private Studentsamling studreg;
 		
-	public static void start(){ 
+	public Meny(Studentsamling studreg){
+		this.studreg = studreg;
+	};
+	
+	public void start(){ 
 		System.out.println(" Meny");
 		System.out.println(" 1 - Registrer");
 		System.out.println(" 2 - Søk");
@@ -17,7 +22,6 @@ public class Meny {
 		int nr = -1;
         int kode = -1;
         Student stud = null;
-        Studentsamling studreg = null;
 		do {
 			String tallTxt = showInputDialog(" kode");
 		    kode = parseInt(tallTxt);
@@ -25,11 +29,11 @@ public class Meny {
 			switch (kode) {
 
 			case 1:
-				studreg = Grensesnitt.lesFlereStudenter();
+				Grensesnitt.lesFlereStudenter(studreg);
 				break;
 
 			case 2:
-				tallTxt = showInputDialog("oppgi studentnr");
+				tallTxt = showInputDialog("oppgi studentnr 3 sifre");
 				nr = parseInt(tallTxt);
 				stud = studreg.sok(nr);
 				if(stud == null){

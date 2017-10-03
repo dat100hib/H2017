@@ -7,7 +7,7 @@ public class Student {
 	private String fornavn;
 	private String etternavn;
 
-	// Konstruktører
+	// Konstruktøer
 
 	public Student() {
 		this(0, "", "");
