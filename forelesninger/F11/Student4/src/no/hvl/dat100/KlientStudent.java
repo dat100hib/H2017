@@ -3,6 +3,7 @@ package no.hvl.dat100;
 public class KlientStudent {
 
 	public static void main(String[] args) {
+		
 		// I stedet for innlesing
 		// Lag gjerne en klasse Grensesnitt
 		final String[] fagTab = { "MAT100", "INF101", "DAT100", "DAT102", "DAT103", "DAT104" };
@@ -49,6 +50,11 @@ public class KlientStudent {
 			System.out.print(olestud.getKarakterer()[i] + "\t") ;
 		}
 		
+	/*
+	Student ole2 = new Student();
+    System.out.println(ole2);
+    */
 	}
+	
 
 }

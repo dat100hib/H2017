@@ -13,11 +13,16 @@ public class Student {
 	private char[] karakterer;// parallelle tabeller
 
 	// Konstruktører
-
-	public Student() {
-		this(0, 0, null, "");
+   	
+	public Student(){
+		nr = 0;
+		antFag = 0;
+		navn = new Navn();
+		studium = "";
+		fag = new String[STOR];
+		karakterer = new char[STOR];		
 	}
-
+    	
 	public Student(int nr, int antFag, Navn navn, String studium) {
 		this.nr = nr;
 		this.antFag = antFag;

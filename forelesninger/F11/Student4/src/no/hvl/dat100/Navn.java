@@ -14,15 +14,17 @@ public class Navn {
 	private String etternavn;
 
 	// Konstruktører
+	
+	public Navn(){
+		fornavn = "";
+		etternavn = "";
+	}
+	
 	public Navn(String startFornavn, String startEtternavn) {
 		fornavn = korriger(startFornavn);
 		etternavn = korriger(startEtternavn);
 	}
 	
-	public Navn(){
-		this("","");
-	}
-
 	// Objektmetoder
 	public String getFornavn() {
 		return fornavn;
