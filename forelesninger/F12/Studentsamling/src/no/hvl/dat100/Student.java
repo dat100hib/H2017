@@ -7,7 +7,7 @@ public class Student {
 	private String fornavn;
 	private String etternavn;
 
-	// Metoder
+	// Konstruktøer
 
 	public Student() {
 		this(0, "", "");
@@ -19,7 +19,7 @@ public class Student {
 		this.etternavn = etternavn;
 	}
 
-	// Andre metoder
+	// Objektmetoder
 
 	public boolean erLik(Student denAndre) { // Beøver ikke get-metode her!
 		if (denAndre == null) {

@@ -6,25 +6,23 @@ public class Studentsamling {
 
 	private final static int STDK = 100;
 	private int antall;
-	private Student[] samling; // alltid usortert
-
-	public static int getStdk() {
-		return STDK;
-	}
-
+	private Student[] samling; // usortert
 
 	/*
 	 * Konstruktører
 	 */
+	
+	public Studentsamling() {
+		this(STDK);
+	}
 	public Studentsamling(int startKapasitet) {
 		samling = new Student[startKapasitet];
 		antall = 0;
 	}
 
-	public Studentsamling() {
-		this(STDK);
-	}
-
+	/*
+	 * Objektmetdoer
+	 */
 	
 	/*
 	 * Legger student bak i tabellen

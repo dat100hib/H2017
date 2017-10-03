@@ -6,9 +6,10 @@ import static javax.swing.JOptionPane.showInputDialog;
 public class Meny {
 	private Studentsamling studreg;
 	private Grensesnitt gr;
-	public Meny(){
+	
+	public Meny(Studentsamling studreg){
 		gr = new Grensesnitt();
-		studreg = null;
+		this.studreg = studreg;
 	};
 	
 	public void start(){ 
@@ -30,11 +31,11 @@ public class Meny {
 			switch (kode) {
 
 			case 1:
-				studreg = gr.lesFlereStudenter();
+				gr.lesFlereStudenter(studreg);
 				break;
 
 			case 2:
-				tallTxt = showInputDialog("oppgi studentnr");
+				tallTxt = showInputDialog("oppgi studentnr med samme antall sifre");
 				nr = parseInt(tallTxt);
 				stud = studreg.sok(nr);
 				if(stud == null){
@@ -70,8 +71,7 @@ public class Meny {
 				break;
 
 			default:
-				System.out.println("Feil kode");				
-
+				System.out.println("Feil kode");			
 			}
 		} while (kode != 9);
 	}

@@ -7,22 +7,22 @@ import static javax.swing.JOptionPane.showMessageDialog;
 import java.util.Arrays;
 
 public class Grensesnitt {
-	// Objektmetoder for lesing og skriving
-    public Grensesnitt(){};
+	
+	//Tomme konstruktør
+   public Grensesnitt(){};
     
-	public  Studentsamling lesFlereStudenter() {
+ // Objektmetoder for lesing og skriving
+	public void lesFlereStudenter(Studentsamling reg) {
 		String ledetekst = "Programmmet leser inn studentopplsysninger";
 		System.out.println(ledetekst);
 		String tallTxt = showInputDialog("oppgi antall registreringer");
 		int ant = parseInt(tallTxt);
-		Studentsamling register = new Studentsamling(ant);
 		Student stud = null;
 
 		for (int i = 0; i < ant; i++) {
 			stud = lesStudent();
-			register.leggTil(stud);
+			reg.leggTil(stud);
 		}
-		return register;
 	}
 
 	public  void visAlle(Studentsamling reg) {
@@ -43,13 +43,12 @@ public class Grensesnitt {
 			  nrTab[i] = reg.getSamling()[i].skrivNr();
 		}
 		
-		Arrays.sort(nrTab);
+		Arrays.sort(nrTab); // Kall til metode i klassen Arrays
 		
 		// Sortert utskrift etter studentnr
 		for (int i = 0; i < nrTab.length; i++) {
 			System.out.println(nrTab[i]);
 		}
-		
 		
 	}
 
@@ -65,7 +64,7 @@ public class Grensesnitt {
 	
 	
 	public  void skrivStudent(Student student) {
-		System.out.println(student.toString());	
+		System.out.println(student);	
 
 	}
 	

@@ -5,8 +5,8 @@ import java.util.Arrays;
 public class KlientStudentsamling {
 
 	public static void main(String[] args) {
-		
-		 Meny meny = new Meny();
+		 Studentsamling studreg = new Studentsamling();
+		 Meny meny = new Meny(studreg);
 		 meny.start();		
 	}
 		
