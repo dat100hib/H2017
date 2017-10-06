@@ -5,7 +5,6 @@ import javax.swing.JOptionPane;
 public class HastighetException {
 
 	public static void main(String[] args) {
-		System.out.println("Starter main().");
 
 		try {
 			String kmstr = JOptionPane.showInputDialog("Avstand i kilometer");
@@ -18,11 +17,9 @@ public class HastighetException {
 			System.out.println("Hastighet: " + hastighet);
 			
 		} catch (NumberFormatException e) {
-			JOptionPane.showMessageDialog(null, "Feil: Kilometer ikke et tall" + e.getMessage());
+			JOptionPane.showMessageDialog(null, "Feil: Kilometer ikke et tall");
 		} catch (ArithmeticException e) {
-			JOptionPane.showMessageDialog(null, "Feil: tid kan ikke være 0" + e.getMessage());
+			JOptionPane.showMessageDialog(null, "Feil: tid kan ikke være 0");
 		}
-
-		System.out.println("Returnerer fra main().");
 	}
 }
