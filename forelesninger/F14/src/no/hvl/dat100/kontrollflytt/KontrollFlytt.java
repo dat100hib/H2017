@@ -9,7 +9,7 @@ import java.lang.RuntimeException;
 
 public class KontrollFlytt {
 
-	static boolean somethingbadhappens = true;
+	static boolean shithappens = true;
 
 	public static void main(String[] args) {
 
@@ -33,7 +33,7 @@ public class KontrollFlytt {
 
 		RuntimeException unntak = new RuntimeException("Houston we have a problem!");
 		
-		if (somethingbadhappens) {
+		if (shithappens) {
 			throw (unntak);
 		}
 
