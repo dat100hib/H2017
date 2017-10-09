@@ -7,12 +7,12 @@ public class Hastighet {
 	public static void main(String[] args) {
 
 		String kmstr = JOptionPane.showInputDialog("Avstand i kilometer");
-		int km = Integer.parseInt(kmstr); // konverter streng til heltall
+		int km = Integer.parseInt(kmstr); 
 
 		String tmstr = JOptionPane.showInputDialog("Tid i timer");
-		int tm = Integer.parseInt(tmstr); // konverter streng til heltall
-
-		double hastighet = km/tm;
+		int tm = Integer.parseInt(tmstr); 
+		
+		double hastighet = (double)km/tm;
 		
 		System.out.println("Hastighet: " + hastighet);
 		

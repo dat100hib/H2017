@@ -8,12 +8,12 @@ public class HastighetException {
 
 		try {
 			String kmstr = JOptionPane.showInputDialog("Avstand i kilometer");
-			int km = Integer.parseInt(kmstr); // konverter streng til heltall
+			int km = Integer.parseInt(kmstr); 
 
 			String tmstr = JOptionPane.showInputDialog("Tid i timer");
-			int tm = Integer.parseInt(tmstr); // konverter streng til heltall
+			int tm = Integer.parseInt(tmstr); 
 
-			double hastighet = km/tm;
+			double hastighet = (double)km/tm;
 			System.out.println("Hastighet: " + hastighet);
 			
 		} catch (NumberFormatException e) {

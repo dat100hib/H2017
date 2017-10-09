@@ -6,28 +6,32 @@ public class HastighetCheck {
 
 	private static boolean ok = true;
 
+	private static boolean erTall(String str) {
+		return str.matches("\\d+");
+	}
+	
 	public static void main(String[] args) {
 
 		int km = 0, tm = 0;
 	
 		String kmstr = JOptionPane.showInputDialog("Avstand i kilometer");
 
-		if (kmstr.matches("\\d+")) {
-			km = Integer.parseInt(kmstr); // konverter streng til heltall
+		if (erTall(kmstr)) {
+			km = Integer.parseInt(kmstr); 
 		} else {
 			ok = false;
 			System.out.println("Feil: Kilometer ikke et tall");
 		}
 		
-		if (ok) { // en koding-strategi for å gå videre hvis ikke feil
+		if (ok) { 
 			String tmstr = JOptionPane.showInputDialog("Tid i timer");
 
-			if (tmstr.matches("\\d+")) {
-				tm = Integer.parseInt(tmstr); // konverter streng til heltall
+			if (erTall(tmstr)) {
+				tm = Integer.parseInt(tmstr); 
 
 				if (tm != 0) { 
-					double hastighet = tm / km;
-					System.out.println("Hastighet: " + hastighet); 
+					double hastighet = (double)km / tm;
+					System.out.println("Hastighet: " + hastighet + " km/t"); 
 				}
 				else {
 					System.out.println("Feil: tid kan ikke være 0");
