@@ -30,7 +30,7 @@ public class HastighetCheck {
 				tm = Integer.parseInt(tmstr); 
 
 				if (tm != 0) { 
-					double hastighet = (double)km / tm;
+					int hastighet = km / tm;
 					System.out.println("Hastighet: " + hastighet + " km/t"); 
 				}
 				else {

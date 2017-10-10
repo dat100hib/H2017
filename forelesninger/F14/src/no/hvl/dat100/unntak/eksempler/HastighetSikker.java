@@ -17,9 +17,9 @@ public class HastighetSikker {
 				String tmstr = JOptionPane.showInputDialog("Tid i timer");
 				int tm = Integer.parseInt(tmstr); 
 
-				double hastighet = km / tm;
+				int hastighet = km / tm;
 				System.out.println("Hastighet: " + hastighet);
-
+				ok = true;
 			} catch (NumberFormatException e) {
 				JOptionPane.showMessageDialog(null, "Feil: Kilometer ikke et tall");
 				ok = false;
