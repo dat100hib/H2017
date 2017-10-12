@@ -17,7 +17,7 @@ public class HastighetException {
 			System.out.println("Hastighet: " + hastighet);
 			
 		} catch (NumberFormatException e) {
-			JOptionPane.showMessageDialog(null, "Feil: Kilometer ikke et tall");
+			JOptionPane.showMessageDialog(null, "Feil: Input er ikke et tall");
 		} catch (ArithmeticException e) {
 			JOptionPane.showMessageDialog(null, "Feil: tid kan ikke være 0");
 		}
