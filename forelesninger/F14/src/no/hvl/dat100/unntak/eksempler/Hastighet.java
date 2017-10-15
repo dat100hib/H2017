@@ -12,7 +12,7 @@ public class Hastighet {
 		String tmstr = JOptionPane.showInputDialog("Tid i timer");
 		int tm = Integer.parseInt(tmstr); 
 		
-		double hastighet = (double)km/tm;
+		int hastighet = km/tm;
 		
 		System.out.println("Hastighet: " + hastighet);
 		

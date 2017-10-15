@@ -13,11 +13,11 @@ public class HastighetException {
 			String tmstr = JOptionPane.showInputDialog("Tid i timer");
 			int tm = Integer.parseInt(tmstr); 
 
-			double hastighet = (double)km/tm;
+			int hastighet = km/tm;
 			System.out.println("Hastighet: " + hastighet);
 			
 		} catch (NumberFormatException e) {
-			JOptionPane.showMessageDialog(null, "Feil: Kilometer ikke et tall");
+			JOptionPane.showMessageDialog(null, "Feil: Input er ikke et tall");
 		} catch (ArithmeticException e) {
 			JOptionPane.showMessageDialog(null, "Feil: tid kan ikke være 0");
 		}

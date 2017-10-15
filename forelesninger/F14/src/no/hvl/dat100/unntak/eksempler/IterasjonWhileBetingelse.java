@@ -11,7 +11,7 @@ public class IterasjonWhileBetingelse {
 		
 		int i = 0;
 		while (alletrue && i<tab.length) {
-			if (tab[i] = false) {
+			if (tab[i] == false) {
 				alletrue = true;
 			}
 			i++;

@@ -32,16 +32,21 @@ public class KontaktListeSimpel {
 		System.out.println(k1.toString());
 		System.out.println(k2.toString());
 		
+		System.out.println("------------------");
 		kontakter = new Kontakt[2];
 		
 		kontakter[0] = k1;
 		kontakter[1] = k2;
 
 		Kontakt k3 = finnPerson("Lars");
-		System.out.println(k3.toString());
+		
+		String str = k3.toString();
+		System.out.println(str);
 		
 		Kontakt k4 = finnPerson("Nemo");
-		System.out.println(k4.toString());
+		
+		str = k4.toString();
+		System.out.println(str);
 	}
 
 }
