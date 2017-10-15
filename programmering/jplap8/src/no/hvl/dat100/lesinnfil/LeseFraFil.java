@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 
 public class LeseFraFil {
 
-	static String MAPPE_STR = System.getProperty("user.dir") +"/src/no/hvl/dat100/lesinnfil/";
+	static String MAPPE_STR = System.getProperty("user.dir") + "/src/no/hvl/dat100/lesinnfil/";
 
 	static public void main(String[] args) throws FileNotFoundException {
 
@@ -17,24 +17,23 @@ public class LeseFraFil {
 
 		filnavn = JOptionPane.showInputDialog("Filnavn i mappen " + MAPPE_STR);
 
+		File file = new File(MAPPE_STR + filnavn);
+		Scanner reader = new Scanner(file);
 
-			File file = new File(MAPPE_STR + filnavn);
-			Scanner reader = new Scanner(file);
-			
-			int linenumber = 1;
+		int linenumber = 1;
 
-			// les innhold i filen linje for linje 
-			String line;
-			
-			while (reader.hasNextLine()) {
-				line = reader.nextLine();
-				System.out.println(linenumber + " " + line);
-				linenumber++;
-			}
+		// les innhold i filen linje for linje
+		String line;
 
-			reader.close();
+		while (reader.hasNextLine()) {
+			line = reader.nextLine();
+			System.out.println(linenumber + " " + line);
+			linenumber++;
+		}
 
-	
-			// JOptionPane.showMessageDialog(null, "Filen " + filnavn + " finnes ikke. \n" + fexn.getMessage());
+		reader.close();
+
+		// JOptionPane.showMessageDialog(null, "Filen " + filnavn + " finnes
+		// ikke. \n" + e.getMessage());
 	}
 }
