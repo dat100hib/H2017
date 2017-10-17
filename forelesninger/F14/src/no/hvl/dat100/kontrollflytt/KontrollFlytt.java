@@ -9,12 +9,14 @@ import java.lang.RuntimeException;
 
 public class KontrollFlytt {
 
-	static boolean somethingbadhappens = true;
+	static boolean shithappens = true;
 
 	public static void main(String[] args) {
 
 		System.out.println("main - start");
+		
 		metode1();
+		
 		System.out.println("main - slutt");
 	}
 
@@ -29,8 +31,10 @@ public class KontrollFlytt {
 	public static void metode2() {
 		System.out.println("metode 2 - start");
 
-		if (somethingbadhappens) {
-			throw (new RuntimeException("Houston we have a problem!"));
+		RuntimeException unntak = new RuntimeException("Houston we have a problem!");
+		
+		if (shithappens) {
+			throw (unntak);
 		}
 
 		System.out.println("metode 2 - slutt");

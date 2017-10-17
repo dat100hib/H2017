@@ -11,7 +11,7 @@ public class SkrivKontakterFilThrows {
 		// TODO Auto-generated constructor stub
 	}
 
-	static String sti = "/";
+	static String mappe = System.getProperty("user.dir") +"/src/no/hvl/dat100/kontakter/";
 	
 	private static Kontakt[] kontakter;
 	
@@ -27,7 +27,7 @@ public class SkrivKontakterFilThrows {
 		
 		String filstr = JOptionPane.showInputDialog("Angi sti og filnavn: ");
 			
-		PrintWriter writer = new PrintWriter(sti + filstr);
+		PrintWriter writer = new PrintWriter(mappe + filstr);
 			
 		writer.println(kontakter.length);
 		

@@ -7,11 +7,7 @@ import java.io.IOException;
 
 public class SkrivKontakterFilTryCatchFinally {
 
-	public SkrivKontakterFilTryCatchFinally() {
-		// TODO Auto-generated constructor stub
-	}
-
-	static String sti = "/";
+	static String mappe = System.getProperty("user.dir") +"/src/no/hvl/dat100/kontakter/";
 
 	private static Kontakt[] kontakter;
 
@@ -29,7 +25,7 @@ public class SkrivKontakterFilTryCatchFinally {
 		PrintWriter writer = null;
 
 		try {
-			writer = new PrintWriter(sti + filstr);
+			writer = new PrintWriter(mappe + filstr);
 
 			writer.println(kontakter.length);
 
@@ -38,7 +34,7 @@ public class SkrivKontakterFilTryCatchFinally {
 				writer.println(k.getNummer());
 			}
 		} catch (FileNotFoundException e) {
-			JOptionPane.showInputDialog("Filen kan ikke åpnes");
+			JOptionPane.showMessageDialog(null,"Filen kan ikke åpnes");
 		} finally {
 			if (writer != null) {
 				writer.close();

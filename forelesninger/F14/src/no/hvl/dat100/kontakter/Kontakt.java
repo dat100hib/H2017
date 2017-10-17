@@ -28,8 +28,9 @@ public class Kontakt {
 		this.nummer = nummer;
 	}
 	
-	public void skrivUt() {
-		System.out.println("Navn   : " + navn);
-		System.out.println("Nummer : " + nummer);
+	public String toString() {
+		return 
+				"Navn   : " + navn + "\n" + 
+				"Nummer : " + nummer;
 	}
 }
