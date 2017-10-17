@@ -8,6 +8,7 @@ public class Ansattsamling {
 		tab = new Ansatt[antall];
 		nesteLedige = 0;
 	}
+	
 
 	public boolean settInn(Ansatt a) {
 		if (nesteLedige < tab.length) {

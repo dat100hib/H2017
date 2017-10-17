@@ -1,6 +1,7 @@
 package no.hvl.dat100;
 
 /*
+ * 
  *  Testprogram for klassen AnsattSamling.
  */
 public class AnsattTest {

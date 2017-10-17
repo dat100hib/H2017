@@ -6,6 +6,7 @@ public class Ansatt {
 	private String etternavn;
 	private double loenn;
 	
+	
 	public Ansatt() {
 		nr = 0;
 		fornavn = "N";
