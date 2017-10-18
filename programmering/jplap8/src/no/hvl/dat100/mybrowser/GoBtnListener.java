@@ -28,6 +28,7 @@ public class GoBtnListener implements ActionListener {
 		// skal lagre tekst som vi leser fra URL
 		String text = "";
 
+		/* 
 		// konstruer URL objekt
 		URL url = new URL(urlstr);
 
@@ -52,6 +53,6 @@ public class GoBtnListener implements ActionListener {
 		// IOException (eb siden kunne ikke åpnes) ved å skive ut feilmelding
 		// bruk setText metoden på webpagetextarea objektet til å sette teksten
 		// bruk finally til altid å sette address-linjen til den tomme teksten
-
+*/
 	}
 }
