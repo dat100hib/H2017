@@ -1,0 +1,33 @@
+package no.hvl.dat100.modell;
+
+/**
+ * Representasjon av utleieeiendommer.
+ * @author Lars Kristensen
+ * @version 1.0
+ */
+
+public class UtleieEiendom extends Eiendom {
+	
+	private int leierfodselsnummer;  
+	private int leie;
+	/**
+	 * Konstruer utleieeiendom.
+	 * @param gns G�rdsnummer
+	 * @param bns Bruksnummer
+	 * @param leierfodselsnummer f�dselsnummer p� leier
+	 * @param leie leie per m�ned
+	 */
+	public UtleieEiendom(int gns, int bns, int leierfodselsnummer, int leie) {
+		super(gns,bns);
+		this.leierfodselsnummer = leierfodselsnummer;
+		this.leie = leie;
+	}
+	
+	/**
+	 * Hent leier.
+	 * @return leier for utleieeiendom
+	 */
+	public int getLeier() {
+		return leierfodselsnummer;
+	}
+}
