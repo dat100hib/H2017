@@ -1,6 +1,7 @@
 package no.hvl.dat100.kontroll;
 
 import no.hvl.dat100.modell.EiendomsRegister;
+import no.hvl.dat100.utsyn.tekst.*;
 
 public class Applikasjon {
 
@@ -16,10 +17,10 @@ public class Applikasjon {
 			Controller controller = new Controller(register);
 
 			// opprett grensesnitt (user interface) knyttet til kontroll
-			// TekstUtsyn utsyn = new TekstUtsyn(controller);
+			TekstUtsyn utsyn = new TekstUtsyn(controller);
 
 			// start grensesnitt og brukerinteraksjon
-			// utsyn.kjor();
+			utsyn.kjor();
 			
 		} else
 			System.out.println("FEIL: Angi kommunenavn ved start");
