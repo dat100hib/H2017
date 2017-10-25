@@ -26,11 +26,11 @@ public class TekstUtsyn {
 	
 	final static int BREDDE = 25;
 
-	private Scanner leser;
+	private Leser leser;
 	
 	public TekstUtsyn(Controller controller) {
 		this.controller = controller;
-		leser = new Scanner(System.in);
+		leser = new Leser();
 	}
 
 	public void kjor() {
@@ -49,9 +49,8 @@ public class TekstUtsyn {
 			System.out.println("(6) - Finn eiere for eiendom");
 			System.out.println("(7) - Finn leier for utleieeiendom");
 			System.out.println("Andre for avslutt");
-			System.out.println("Inntast valg:");
 			
-			int valg = leser.nextInt();
+			int valg = leser.lesInt("Inntast valg:");
 
 			switch (valg) {
 			case NYNERINGSEIENDOM:
@@ -87,13 +86,11 @@ public class TekstUtsyn {
 
 		System.out.println("nyNæringsEiendom");
 		
-		EID eid = new EID();
-		eid.readEID(leser);
+		int gns = leser.lesInt("Gårdsnummer : ");
+		int bns = leser.lesInt("Bruksnummer : ");
+		int orgnr = leser.lesInt("Organisations nummer: ");
 		
-		System.out.println("Organisations nummer: ");
-		int orgnr = leser.nextInt();
-		
-		StatusCode status = controller.nyNeringsEiendom(eid.gns, eid.bns, orgnr);
+		StatusCode status = controller.nyNeringsEiendom(gns, bns, orgnr);
 		
 		System.out.println(status.toString()); 
 	}
@@ -101,16 +98,13 @@ public class TekstUtsyn {
 	public void nyUtleieEiendom() {
 		System.out.println("nyUtleieEiendom");
 		
-		EID eid = new EID();
-		eid.readEID(leser);
+		int gns = leser.lesInt("Gårdsnummer : ");
+		int bns = leser.lesInt("Bruksnummer : ");
 		
-		System.out.println("Leier fodselsnummer: ");
-		int leier = leser.nextInt();
+		int leier = leser.lesInt("Leier fodselsnummer: ");
+		int pris = leser.lesInt("Leiepris: ");
 		
-		System.out.println("Leiepris: ");
-		int pris = leser.nextInt();
-		
-		StatusCode status = controller.nyUtleieEiendom(eid.gns, eid.bns, leier, pris);
+		StatusCode status = controller.nyUtleieEiendom(gns, bns, leier, pris);
 		
 		System.out.println(status.toString()); 
 	}
@@ -119,33 +113,22 @@ public class TekstUtsyn {
 
 		System.out.println("nyEier");
 		
-		System.out.println("navn: ");
-		String navn = leser.nextLine();
+		String navn = leser.lesStreng("navn: ");
+		int fodselsnummer = leser.lesInt("fodselsnummer: ");
+
+		String vei = leser.lesStreng("vei: ");
+		int nummer = leser.lesInt("nummer: ");
+		int postnummer = leser.lesInt("postnummer: ");
 		
-		System.out.println("fodselsnummer: ");
-		int fodselsnummer = leser.nextInt();
+		String by = leser.lesStreng("by: ");
+		String land = leser.lesStreng("land: ");
 		
-		System.out.println("vei: ");
-		String vei = leser.nextLine();
-		
-		System.out.println("nummer: ");
-		int nummer = leser.nextInt();
-		
-		System.out.println("postnummer: ");
-		int postnummer = leser.nextInt();
-		
-		System.out.println("by: ");
-		String by = leser.nextLine();
-		
-		System.out.println("land: ");
-		String land = leser.nextLine();
-		
-		EID eid = new EID();
-		eid.readEID(leser);
+		int gns = leser.lesInt("Gårdsnummer : ");
+		int bns = leser.lesInt("Bruksnummer : ");
 		
 		KontaktAdresse adresse = new KontaktAdresse(vei,nummer,postnummer,by,land);
 		
-		StatusCode status = controller.nyEier(navn, fodselsnummer, adresse, eid.gns, eid.bns);
+		StatusCode status = controller.nyEier(navn, fodselsnummer, adresse, gns, bns);
 		
 		System.out.println(status.toString()); 
 	}
@@ -154,13 +137,12 @@ public class TekstUtsyn {
 
 		System.out.println("nyEierEiendom");
 		
-		System.out.println("eier fodselsnummer: ");
-		int fodselsnummer = leser.nextInt();
+		int fodselsnummer = leser.lesInt("eier fodselsnummer: ");
 		
-		EID eid = new EID();
-		eid.readEID(leser);
+		int gns = leser.lesInt("Gårdsnummer : ");
+		int bns = leser.lesInt("Bruksnummer : ");
 		
-		StatusCode status = controller.nyEierEiendom(fodselsnummer, eid.gns, eid.bns);
+		StatusCode status = controller.nyEierEiendom(fodselsnummer, gns, bns);
 		
 		System.out.println(status.toString()); 
 	}
@@ -169,13 +151,13 @@ public class TekstUtsyn {
 
 		System.out.println("registrerNabo");
 		
-		EID eid1 = new EID();
-		eid1.readEID(leser);
+		int gns1 = leser.lesInt("Gårdsnummer : ");
+		int bns1 = leser.lesInt("Bruksnummer : ");
 		
-		EID eid2 = new EID();
-		eid2.readEID(leser);
+		int gns2 = leser.lesInt("Gårdsnummer : ");
+		int bns2 = leser.lesInt("Bruksnummer : ");
 		
-		StatusCode status = controller.registrerNabo(eid1.gns, eid1.bns, eid2.gns, eid2.bns);
+		StatusCode status = controller.registrerNabo(gns1, bns1, gns2, bns2);
 		
 		System.out.println(status.toString()); 
 		
@@ -189,10 +171,10 @@ public class TekstUtsyn {
 
 		System.out.println("finnEiere");
 		
-		EID eid = new EID();
-		eid.readEID(leser);
+		int gns = leser.lesInt("Gårdsnummer : ");
+		int bns = leser.lesInt("Bruksnummer : ");
 		
-		ArrayList<Eier> eiere = controller.finnEiere(eid.gns, eid.bns);
+		ArrayList<Eier> eiere = controller.finnEiere(gns, bns);
 		
 		if (eiere != null) {
 			for (int i = 0; i<eiere.size(); i++)
@@ -205,10 +187,10 @@ public class TekstUtsyn {
 		
 		System.out.println("finnEiere");
 		
-		EID eid = new EID();
-		eid.readEID(leser);
+		int gns = leser.lesInt("Gårdsnummer : ");
+		int bns = leser.lesInt("Bruksnummer : ");
 		
-		int fodselsnummer = controller.finnLeier(eid.gns, eid.bns);
+		int fodselsnummer = controller.finnLeier(gns, bns);
 		
 		if (fodselsnummer >= 0)
 			System.out.println("Leier fødselsnummer: " + fodselsnummer);

@@ -1,7 +1,9 @@
-package no.hvl.dat100.kontroll;
+package no.hvl.dat100.main;
 
 import no.hvl.dat100.modell.EiendomsRegister;
+import no.hvl.dat100.kontroll.Controller;
 import no.hvl.dat100.utsyn.tekst.*;
+import no.hvl.dat100.utsyn.gui.*;
 
 public class Applikasjon {
 
