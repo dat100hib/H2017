@@ -12,7 +12,7 @@ import no.hvl.dat100.modell.UtleieEiendom;
 
 // implementerer brukstilfeller for register
 // OVERVEI: endre navne til "Kontroll"
-public class Controller {
+public class Kontroll {
 
 	public enum StatusCode {
 		OK, FEIL, EIER_IKKEFUNNET, EIENDOM_FINNES, EIENDOM_IKKEFUNNET,
@@ -21,7 +21,7 @@ public class Controller {
 	private EiendomsRegister register;
 
 	// opprett kontroller sett register for kontroller
-	public Controller(EiendomsRegister register) {
+	public Kontroll(EiendomsRegister register) {
 		this.register = register;
 	}
 

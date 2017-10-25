@@ -1,7 +1,7 @@
 package no.hvl.dat100.main;
 
 import no.hvl.dat100.modell.EiendomsRegister;
-import no.hvl.dat100.kontroll.Controller;
+import no.hvl.dat100.kontroll.Kontroll;
 import no.hvl.dat100.utsyn.tekst.*;
 import no.hvl.dat100.utsyn.gui.*;
 
@@ -16,7 +16,7 @@ public class Applikasjon {
 			EiendomsRegister register = new EiendomsRegister(args[0]);
 
 			// opprett kontroll knytttet til register
-			Controller controller = new Controller(register);
+			Kontroll controller = new Kontroll(register);
 
 			// opprett grensesnitt (user interface) knyttet til kontroll
 			TekstUtsyn utsyn = new TekstUtsyn(controller);

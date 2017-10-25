@@ -2,7 +2,7 @@ package no.hvl.dat100.modell;
 
 
 /**
- * Klasse for representasjon av n�ringseiendommer.
+ * Klasse for representasjon av næringseiendommer.
  * @author Lars Kristensen
  * @version 1.0
  */
@@ -12,8 +12,8 @@ public class NeringsEiendom extends Eiendom {
 	private int orgnr;
 	
 	/**
-	 * Konstruer n�ringseiendomsobjekt.
-	 * @param gns G�rdsnummer
+	 * Konstruer næringseiendomsobjekt.
+	 * @param gns Gårdsnummer
 	 * @param bns Bruksnummer
 	 * @param orgnr Organisasjonsnummer
 	 */

@@ -3,14 +3,14 @@ package no.hvl.dat100.utsyn.tekst;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import no.hvl.dat100.kontroll.Controller;
-import no.hvl.dat100.kontroll.Controller.StatusCode;
+import no.hvl.dat100.kontroll.Kontroll;
+import no.hvl.dat100.kontroll.Kontroll.StatusCode;
 import no.hvl.dat100.modell.Eier;
 import no.hvl.dat100.modell.KontaktAdresse;
 
 public class TekstUtsyn {
 
-	private Controller controller;
+	private Kontroll controller;
 
 	final private static int NYNERINGSEIENDOM = 1;
 	final private static int NYUTLEIEEIENDOM = 2;
@@ -28,7 +28,7 @@ public class TekstUtsyn {
 
 	private Leser leser;
 	
-	public TekstUtsyn(Controller controller) {
+	public TekstUtsyn(Kontroll controller) {
 		this.controller = controller;
 		leser = new Leser();
 	}

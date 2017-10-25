@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 /**
  * Basisklasse for representasjon av eiendommer.
+ * 
  * @author Lars Kristensen
  * @version 1.0
  */
@@ -14,25 +15,29 @@ public abstract class Eiendom {
 	private int bns;
 
 	private ArrayList<Eier> eiere;
-	
+
 	private static int MAX_NABOER = 4;
 	private Eiendom[] naboer;
 
 	/**
 	 * Konstruer Eiendoms objekt.
-	 * @param gns G�rdsnummer
-	 * @param bns Bruksnummer
+	 * 
+	 * @param gns
+	 *            Gårdsnummer
+	 * @param bns
+	 *            Bruksnummer
 	 */
 	public Eiendom(int gns, int bns) {
 		this.gns = gns;
 		this.bns = bns;
-		naboer = new Eiendom[MAX_NABOER]; 
+		naboer = new Eiendom[MAX_NABOER];
 		eiere = new ArrayList<Eier>();
 	}
 
 	/**
-	 * Hent g�rdsnummer for eiendom.
-	 * @return G�rdsnummer
+	 * Hent gårdsnummer for eiendom.
+	 * 
+	 * @return Gårdsnummer
 	 */
 	public int getGns() {
 		return gns;
@@ -40,6 +45,7 @@ public abstract class Eiendom {
 
 	/**
 	 * Hent bruksnummer for eiendom.
+	 * 
 	 * @return Bruksnummer
 	 */
 	public int getBns() {
@@ -47,47 +53,56 @@ public abstract class Eiendom {
 	}
 
 	/**
-	 * Register en ny eier p� eiendommen (legges til).
-	 * @param nyeier Eier som skal registreres p� eiendom
+	 * Register en ny eier på eiendommen (legges til).
+	 * 
+	 * @param nyeier
+	 *            Eier som skal registreres på eiendom
 	 */
 	public void registrerEier(Eier nyeier) {
 		eiere.add(nyeier);
 	}
 
-	
 	/**
 	 * Registrer en eiendom som nabo.
-	 * @param naboeiendom eiendom som skal registreres som eiendom
+	 * 
+	 * @param naboeiendom
+	 *            eiendom som skal registreres som eiendom
 	 * @return blev nabo registret (max 4 naboer per eiendom)
 	 */
 	public boolean registrerNabo(Eiendom naboeiendom) {
-		boolean sattinn = false;
+		boolean finnes = false;
 
 		// sjekk om nabo eiendom finnes allerede
-		for (Eiendom eiendom : naboer)
-			sattinn = (eiendom == naboeiendom); //OVERVEI - sjekk p� gns/bns
+		for (Eiendom eiendom : naboer) {
+			if (eiendom != null) {
+				if ((eiendom.bns == naboeiendom.bns) && (eiendom.gns == naboeiendom.gns)) {
+					finnes = true;
+				}
+			}
+		}
 
-		// sett inn hvis plass - OVERVEI bruk tabell med eksplisitt antall
-		if (!sattinn) {
-			
+		// sett inn hvis plass -
+		if (!finnes) {
+
 			int i = 0;
-			while ((!sattinn) && i < MAX_NABOER) {
+			while ((!finnes) && i < MAX_NABOER) {
 				if (naboer[i] == null) {
 					naboer[i] = naboeiendom;
-					sattinn = true;
+					finnes = true;
 				}
 				i++;
 			}
 		}
 
-		return sattinn;
+		return finnes;
 	}
-	
+
 	/**
 	 * Hent eiere for eiendommen.
-	 * @return listen av eiere p� eiendommen
+	 * 
+	 * @return listen av eiere på eiendommen
 	 */
 	public ArrayList<Eier> getEiere() {
 		return eiere;
-	}	
+	}
 }

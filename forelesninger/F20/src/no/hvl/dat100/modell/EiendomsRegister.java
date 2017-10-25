@@ -23,7 +23,7 @@ public class EiendomsRegister {
 		eiendommer = new HashMap<String,Eiendom>();
 	}
 	
-	// gns og bns blir brukt som n�kkel (key) i HashMap
+	// gns og bns blir brukt som nøkkel (key) i HashMap
 	private String key(int gns,int bns) {
 		return gns + " " + bns;
 	}
@@ -41,7 +41,7 @@ public class EiendomsRegister {
 	
 	/**
 	 * Finn eier i eiendomsregister.
-	 * @param fodselsnummer f�dselsnummer p� eier
+	 * @param fodselsnummer fødselsnummer på eier
 	 * @return eier (null hvis eier ikke finnes)
 	 */
 	public Eier finnEier(int fodselsnummer) {
@@ -76,9 +76,9 @@ public class EiendomsRegister {
 	}
 	
 	/**
-	 * Registrer (legg til) eier p� en eiendom.
-	 * @param eier eier som skal registreres p� eiendom
-	 * @param gns g�rdsnummer for eiendom
+	 * Registrer (legg til) eier på en eiendom.
+	 * @param eier eier som skal registreres på eiendom
+	 * @param gns gårdsnummer for eiendom
 	 * @param bns bruksnummer for eiendom
 	 */
 	public void registrerEier(Eier eier, int gns, int bns) {
@@ -90,7 +90,7 @@ public class EiendomsRegister {
 	
 	/**
 	 * Hent eiendom i register.
-	 * @param gns G�rdsnummer
+	 * @param gns Gårdsnummer
 	 * @param bns Bruksnummer
 	 * @return eiendom i register (null ellers)
 	 */
