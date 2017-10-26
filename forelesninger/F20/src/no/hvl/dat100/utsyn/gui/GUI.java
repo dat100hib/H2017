@@ -67,6 +67,9 @@ public class GUI extends Application {
 		GridPane gridpane = new GridPane();
 		TextField gnsfield = new TextField();
 		TextField bnsfield = new TextField();
+		gnsfield.setPrefWidth(800);
+		bnsfield.setPrefWidth(80);
+		
 		TextField eierfield = new TextField();
 		TextField nabofield = new TextField();
 		
