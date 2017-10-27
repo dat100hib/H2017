@@ -30,4 +30,9 @@ public class UtleieEiendom extends Eiendom {
 	public int getLeier() {
 		return leierfodselsnummer;
 	}
+	
+	@Override
+	public String toString() {
+		return "UTLEIEEIENDOM" + "\n" + super.toString() + "\n" + leierfodselsnummer + "\n" + leie;
+	}
 }

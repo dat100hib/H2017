@@ -50,6 +50,27 @@ public class Lagring {
 		return skrevet;
 	}
 
+	private static void lesNaboer(Scanner reader) {
+		
+	}
+	private static Eiendom lesEiendom(Scanner reader) {
+		/*
+		10 20
+		1
+		Odd Vanden
+		1560
+		Fyllingsveien 84
+		5120 Fyllingen
+		Bahamas
+		1 10 10
+		*/
+		// mangler å skrive typen på eiendom inn i file
+		// implemetere toString metoder på de to klasser
+		// Eiendom e = new UtleieEiendom();
+		
+		return null;
+	}
+	
 	public static EiendomsRegister les(String filnavn) {
 
 		EiendomsRegister register = null;
@@ -59,10 +80,14 @@ public class Lagring {
 			File file = new File(MAPPE + filnavn);
 			Scanner reader = new Scanner(file);
 
-			String line;
-
-			line = reader.nextLine();
-			int antall = Integer.parseInt(line);
+			String kommune = reader.nextLine();
+			register = new EiendomsRegister(kommune);
+			
+			int antall = Integer.parseInt(reader.nextLine());
+			
+			for (int i = 1; i<=antall;i++) {
+				Eiendom e = lesEiendom(reader);
+			}
 /*
 			samling = new PersonSamling(antall);
 			Person person = null;

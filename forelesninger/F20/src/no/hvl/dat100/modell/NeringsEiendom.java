@@ -29,4 +29,9 @@ public class NeringsEiendom extends Eiendom {
 	public int getOrgnr() {
 		return orgnr;
 	}
+	
+	@Override
+	public String toString() {
+		return "NERINGSEIENDOM" + "\n" + super.toString() + "\n" + orgnr;
+	}
 }
