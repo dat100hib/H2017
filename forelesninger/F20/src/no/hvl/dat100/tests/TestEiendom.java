@@ -3,6 +3,14 @@ package no.hvl.dat100.tests;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Scanner;
+import java.nio.file.Path;
+import java.nio.file.FileSystems;
+import java.nio.file.Files;
 
 import org.junit.Test;
 
@@ -15,6 +23,8 @@ import no.hvl.dat100.modell.UtleieEiendom;
 
 public class TestEiendom {
 
+	private static String MAPPE = System.getProperty("user.dir") + "/src/no/hvl/dat100/lagring/";
+	
 	@Test
 	public void testEiendom() {
 
@@ -54,7 +64,7 @@ public class TestEiendom {
 	}
 
 	@Test
-	public void testLagring() {
+	public void testLagring() throws IOException {
 
 		// opprett test objekter
 		EiendomsRegister register = new EiendomsRegister("bergen");
@@ -77,22 +87,19 @@ public class TestEiendom {
 		ne.registrerNabo(ue);
 		ue.registrerNabo(ne);
 
-		Lagring.skriv(register, "testregister.dat");
+		Lagring.skriv(register, "testregister1.dat");
+		
 		register = Lagring.les("testregister.dat");
 		
-		// hent ut informasjon og sjekk
-		assertEquals(register.finnEiendom(10, 10), ne);
-		ArrayList<Eier> neeiere = register.finnEiendom(10, 10).getEiere();
-
-		assertEquals(neeiere.size(), 1);
-		assertEquals(neeiere.get(0), bente);
-
-		assertEquals(register.finnEiendom(10, 20), ue);
-		ArrayList<Eier> ueeiere = register.finnEiendom(10, 20).getEiere();
-
-		assertEquals(ueeiere.size(), 1);
-		assertEquals(ueeiere.get(0), odd);
+		Lagring.skriv(register, "testregister2.dat");
 		
+		Path path1 = FileSystems.getDefault().getPath(MAPPE, "testregister1.dat");
+		Path path2 = FileSystems.getDefault().getPath(MAPPE, "testregister2.dat");
+		
+		byte[] f1 = Files.readAllBytes(path1);
+		byte[] f2 = Files.readAllBytes(path2);
+		
+		assertTrue(Arrays.equals(f1, f2));
 		
 	}
 

@@ -53,6 +53,10 @@ public abstract class Eiendom {
 		return bns;
 	}
 
+	public void setEiere(ArrayList<Eier> eiere) {
+		this.eiere = eiere;
+	}
+	
 	/**
 	 * Register en ny eier på eiendommen (legges til).
 	 * 
