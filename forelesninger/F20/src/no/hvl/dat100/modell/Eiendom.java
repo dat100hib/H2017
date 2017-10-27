@@ -1,6 +1,7 @@
 package no.hvl.dat100.modell;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * Basisklasse for representasjon av eiendommer.
@@ -104,5 +105,44 @@ public abstract class Eiendom {
 	 */
 	public ArrayList<Eier> getEiere() {
 		return eiere;
+	}
+	
+	@Override
+	public String toString() {
+		return 
+				gns + " " + bns + "\n" + 
+				eieretoString() + 
+				naboertoString();
+	}
+	
+	private String eieretoString () {
+		
+		String text = eiere.size() + "\n";
+		
+		Iterator<Eier> it = eiere.iterator();
+		
+		while (it.hasNext()) {
+			Eier eier = it.next();
+			text = text + eier.toString();
+		}
+		
+		return text;
+	}
+	
+	private String naboertoString () {
+		int i = 0;
+		String text = "";
+		int antall = 0;
+		
+		while (i<naboer.length) {
+			Eiendom nabo = naboer[i];
+			if (nabo != null) {
+				text = text + nabo.gns + " " + nabo.bns;
+			    antall++;
+			}
+			i++;	
+		}
+		text = antall + " " + text;
+		return text;
 	}
 }

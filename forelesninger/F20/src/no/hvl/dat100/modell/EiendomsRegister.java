@@ -3,6 +3,7 @@ package no.hvl.dat100.modell;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Collection;
 
 /**
  * Hovedklasse for eiendomsregister.
@@ -21,6 +22,15 @@ public class EiendomsRegister {
 	public EiendomsRegister(String kommune) {
 		this.kommune = kommune;
 		eiendommer = new HashMap<String,Eiendom>();
+	}
+	
+	public String getKommune () {
+			
+			return this.kommune;
+	}
+	
+	public Collection<Eiendom> getEiendommer () {
+		return eiendommer.values();
 	}
 	
 	// gns og bns blir brukt som nøkkel (key) i HashMap

@@ -56,4 +56,9 @@ public class Eier {
 	public int getFodselsnummer() {
 		return fodselsnummer;
 	}
+	
+	@Override
+	public String toString () {
+		return navn + "\n" + fodselsnummer + "\n" + adresse.toString();
+	}
 }
