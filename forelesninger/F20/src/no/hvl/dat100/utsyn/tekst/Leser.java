@@ -4,13 +4,13 @@ import java.util.Scanner;
 
 public class Leser {
 
-	private Scanner leser;
+	private static Scanner leser = new Scanner (System.in);
 
 	public Leser() {
 		leser = new Scanner(System.in);
 	}
 
-	public int lesInt(String tekst) {
+	public static int lesInt(String tekst) {
 
 		System.out.println(tekst);
 
@@ -19,7 +19,7 @@ public class Leser {
 		return tall;
 	}
 
-	public String lesStreng(String tekst) {
+	public static String lesStreng(String tekst) {
 
 		System.out.println(tekst);
 

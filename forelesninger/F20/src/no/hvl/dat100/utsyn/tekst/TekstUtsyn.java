@@ -23,9 +23,7 @@ public class TekstUtsyn implements IUtsyn {
 	final private static int FINNLEIER = 7;
 	
 	final private static String SEPERATOR = "------------------------------------";
-	
-	private Leser leser;
-	
+		
 	public TekstUtsyn() {
 		
 	}
@@ -40,7 +38,6 @@ public class TekstUtsyn implements IUtsyn {
 	
 	public void start() {
 
-		leser = new Leser();
 		boolean avslutt = false;
 
 		do {
@@ -56,7 +53,7 @@ public class TekstUtsyn implements IUtsyn {
 			System.out.println("(7) - Finn leier for utleieeiendom");
 			System.out.println("Andre for avslutt");
 			
-			int valg = leser.lesInt("Inntast valg:");
+			int valg = Leser.lesInt("Inntast valg:");
 
 			switch (valg) {
 			case NYNERINGSEIENDOM:
@@ -92,9 +89,9 @@ public class TekstUtsyn implements IUtsyn {
 
 		System.out.println("nyNæringsEiendom");
 		
-		int gns = leser.lesInt("Gårdsnummer : ");
-		int bns = leser.lesInt("Bruksnummer : ");
-		int orgnr = leser.lesInt("Organisations nummer: ");
+		int gns = Leser.lesInt("Gårdsnummer : ");
+		int bns = Leser.lesInt("Bruksnummer : ");
+		int orgnr = Leser.lesInt("Organisations nummer: ");
 		
 		StatusCode status = controller.nyNeringsEiendom(gns, bns, orgnr);
 		
@@ -104,11 +101,11 @@ public class TekstUtsyn implements IUtsyn {
 	public void nyUtleieEiendom() {
 		System.out.println("nyUtleieEiendom");
 		
-		int gns = leser.lesInt("Gårdsnummer : ");
-		int bns = leser.lesInt("Bruksnummer : ");
+		int gns = Leser.lesInt("Gårdsnummer : ");
+		int bns = Leser.lesInt("Bruksnummer : ");
 		
-		int leier = leser.lesInt("Leier fodselsnummer: ");
-		int pris = leser.lesInt("Leiepris: ");
+		int leier = Leser.lesInt("Leier fodselsnummer: ");
+		int pris = Leser.lesInt("Leiepris: ");
 		
 		StatusCode status = controller.nyUtleieEiendom(gns, bns, leier, pris);
 		
@@ -119,18 +116,18 @@ public class TekstUtsyn implements IUtsyn {
 
 		System.out.println("nyEier");
 		
-		String navn = leser.lesStreng("navn: ");
-		int fodselsnummer = leser.lesInt("fodselsnummer: ");
+		String navn = Leser.lesStreng("navn: ");
+		int fodselsnummer = Leser.lesInt("fodselsnummer: ");
 
-		String vei = leser.lesStreng("vei: ");
-		int nummer = leser.lesInt("nummer: ");
-		int postnummer = leser.lesInt("postnummer: ");
+		String vei = Leser.lesStreng("vei: ");
+		int nummer = Leser.lesInt("nummer: ");
+		int postnummer = Leser.lesInt("postnummer: ");
 		
-		String by = leser.lesStreng("by: ");
-		String land = leser.lesStreng("land: ");
+		String by = Leser.lesStreng("by: ");
+		String land = Leser.lesStreng("land: ");
 		
-		int gns = leser.lesInt("Gårdsnummer : ");
-		int bns = leser.lesInt("Bruksnummer : ");
+		int gns = Leser.lesInt("Gårdsnummer : ");
+		int bns = Leser.lesInt("Bruksnummer : ");
 		
 		KontaktAdresse adresse = new KontaktAdresse(vei,nummer,postnummer,by,land);
 		
@@ -143,10 +140,10 @@ public class TekstUtsyn implements IUtsyn {
 
 		System.out.println("nyEierEiendom");
 		
-		int fodselsnummer = leser.lesInt("eier fodselsnummer: ");
+		int fodselsnummer = Leser.lesInt("eier fodselsnummer: ");
 		
-		int gns = leser.lesInt("Gårdsnummer : ");
-		int bns = leser.lesInt("Bruksnummer : ");
+		int gns = Leser.lesInt("Gårdsnummer : ");
+		int bns = Leser.lesInt("Bruksnummer : ");
 		
 		StatusCode status = controller.nyEierEiendom(fodselsnummer, gns, bns);
 		
@@ -157,11 +154,11 @@ public class TekstUtsyn implements IUtsyn {
 
 		System.out.println("registrerNabo");
 		
-		int gns1 = leser.lesInt("Gårdsnummer : ");
-		int bns1 = leser.lesInt("Bruksnummer : ");
+		int gns1 = Leser.lesInt("Gårdsnummer : ");
+		int bns1 = Leser.lesInt("Bruksnummer : ");
 		
-		int gns2 = leser.lesInt("Gårdsnummer : ");
-		int bns2 = leser.lesInt("Bruksnummer : ");
+		int gns2 = Leser.lesInt("Gårdsnummer : ");
+		int bns2 = Leser.lesInt("Bruksnummer : ");
 		
 		StatusCode status = controller.registrerNabo(gns1, bns1, gns2, bns2);
 		
@@ -177,8 +174,8 @@ public class TekstUtsyn implements IUtsyn {
 
 		System.out.println("finnEiere");
 		
-		int gns = leser.lesInt("Gårdsnummer : ");
-		int bns = leser.lesInt("Bruksnummer : ");
+		int gns = Leser.lesInt("Gårdsnummer : ");
+		int bns = Leser.lesInt("Bruksnummer : ");
 		
 		ArrayList<Eier> eiere = controller.finnEiere(gns, bns);
 		
@@ -193,8 +190,8 @@ public class TekstUtsyn implements IUtsyn {
 		
 		System.out.println("finnEiere");
 		
-		int gns = leser.lesInt("Gårdsnummer : ");
-		int bns = leser.lesInt("Bruksnummer : ");
+		int gns = Leser.lesInt("Gårdsnummer : ");
+		int bns = Leser.lesInt("Bruksnummer : ");
 		
 		int fodselsnummer = controller.finnLeier(gns, bns);
 		
