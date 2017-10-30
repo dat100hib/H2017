@@ -30,6 +30,11 @@ public class NeringsEiendom extends Eiendom {
 		return orgnr;
 	}
 	
+	/**
+	 * Streng representasjon av eiere for eiendom.
+	 * 
+	 * @return streng representasjon
+	 */
 	@Override
 	public String toString() {
 		return "NERINGSEIENDOM" + "\n" + super.toString() + "\n" + orgnr;

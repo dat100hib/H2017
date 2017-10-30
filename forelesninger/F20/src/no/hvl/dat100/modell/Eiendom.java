@@ -53,10 +53,16 @@ public abstract class Eiendom {
 		return bns;
 	}
 
+	/**
+	 * Register eiere på eiendommen.
+	 * 
+	 * @param eiere
+	 *            Eiere som skal registreres som eiere
+	 */
 	public void setEiere(ArrayList<Eier> eiere) {
 		this.eiere = eiere;
 	}
-	
+
 	/**
 	 * Register en ny eier på eiendommen (legges til).
 	 * 
@@ -72,35 +78,39 @@ public abstract class Eiendom {
 	 * 
 	 * @param naboeiendom
 	 *            eiendom som skal registreres som eiendom
-	 * @return blev nabo registret (max 4 naboer per eiendom)
+	 * @return finnes eller blev nabo registret (max 4 naboer per eiendom)
 	 */
 	public boolean registrerNabo(Eiendom naboeiendom) {
 		boolean finnes = false;
-
+		boolean sattinn = false;
+		
 		// sjekk om nabo eiendom finnes allerede
-		// TODO: bruke while her
-		for (Eiendom eiendom : naboer) {
+		int i = 0;
+		while (!finnes && i < MAX_NABOER) {
+
+			Eiendom eiendom = naboer[i];
 			if (eiendom != null) {
 				if ((eiendom.bns == naboeiendom.bns) && (eiendom.gns == naboeiendom.gns)) {
 					finnes = true;
 				}
 			}
+			i++;
 		}
 
-		// sett inn hvis plass -
+		// sett inn på en ledig plass
 		if (!finnes) {
-
-			int i = 0;
-			while ((!finnes) && i < MAX_NABOER) {
+	
+			i = 0;
+			while ((!sattinn) && i < MAX_NABOER) {
 				if (naboer[i] == null) {
 					naboer[i] = naboeiendom;
-					finnes = true;
+					sattinn = true;
 				}
 				i++;
 			}
 		}
 
-		return finnes;
+		return (finnes || sattinn);
 	}
 
 	/**
@@ -111,45 +121,58 @@ public abstract class Eiendom {
 	public ArrayList<Eier> getEiere() {
 		return eiere;
 	}
-	
+
+	/**
+	 * Streng representasjon av eiendom.
+	 * 
+	 * @return streng representasjon
+	 */
 	@Override
 	public String toString() {
-		return 
-				gns + " " + bns + "\n" + 
-				eieretoString() + 
-				naboertoString();
+		return gns + " " + bns + "\n" + eieretoString() + naboertoString();
 	}
-	
-	private String eieretoString () {
-		
+
+	/**
+	 * Streng representasjon av eiere for eiendom.
+	 * 
+	 * @return streng representasjon
+	 */
+	private String eieretoString() {
+
 		String text = eiere.size() + "\n";
-		
+
 		// iterator for eiere
 		Iterator<Eier> it = eiere.iterator();
-		
+
 		while (it.hasNext()) {
 			Eier eier = it.next();
 			text = text + eier.toString();
 		}
-		
+
 		return text;
 	}
-	
-	private String naboertoString () {
+
+	/**
+	 * Streng representasjon av naboer for eiendom.
+	 * 
+	 * @return streng representasjon
+	 */
+	private String naboertoString() {
 		int i = 0;
 		String text = "";
 		int antall = 0;
-		
-		// TODO - bruke utvider for-løkke
-		while (i<naboer.length) {
+
+		while (i < naboer.length) {
 			Eiendom nabo = naboer[i];
 			if (nabo != null) {
 				text = text + nabo.gns + " " + nabo.bns;
-			    antall++;
+				antall++;
 			}
-			i++;	
+			i++;
 		}
+		
 		text = antall + " " + text;
+		
 		return text;
 	}
 }

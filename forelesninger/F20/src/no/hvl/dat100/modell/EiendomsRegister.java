@@ -27,10 +27,20 @@ public class EiendomsRegister {
 		eiendommer = new HashMap<String, Eiendom>();
 	}
 
+	/**
+	 * Hent kommune for register.
+	 * 
+	 * @return kommune
+	 */
 	public String getKommune() {
 		return this.kommune;
 	}
 
+	/**
+	 * Hent eiendommer for register.
+	 * 
+	 * @return eiendommer
+	 */
 	public Collection<Eiendom> getEiendommer() {
 		return eiendommer.values();
 	}
@@ -75,18 +85,16 @@ public class EiendomsRegister {
 			Eiendom eiendom = eiendomit.next();
 			ArrayList<Eier> eiere = eiendom.getEiere();
 
-			int i = 0;
-			// TODO: bruke iterator
-			while (!funnet & i < eiere.size()) {
+			Iterator<Eier> eierit = eiere.iterator();
+			
+			while (!funnet & eierit.hasNext()) {
 
-				Eier eneier = eiere.get(i);
+				Eier eneier = eierit.next();
 
 				if (eneier.getFodselsnummer() == fodselsnummer) {
 					funnet = true;
 					eier = eneier;
 				}
-
-				i++;
 			}
 		}
 		return eier;

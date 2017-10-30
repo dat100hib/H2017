@@ -27,6 +27,7 @@ public class Eier {
 
 	/**
 	 * Hent kontaktadresse på eier.
+	 * 
 	 * @return kontraktadresse for eier
 	 */
 	public KontaktAdresse getAdresse() {
@@ -35,6 +36,7 @@ public class Eier {
 	
 	/**
 	 * Sett kontaktadresse for eier.
+	 * 
 	 * @param adresse ny kontaktadresse for eier (erstatter eksisterende)
 	 */
 	public void setAdresse(KontaktAdresse adresse) {
@@ -43,6 +45,7 @@ public class Eier {
 
 	/**
 	 * Hent navn.
+	 * 
 	 * @return - navn på eier
 	 */
 	public String getNavn() {
@@ -51,12 +54,18 @@ public class Eier {
 
 	/**
 	 * Hent fødselsnummer.
+	 * 
 	 * @return fødselsnummer for eier
 	 */
 	public int getFodselsnummer() {
 		return fodselsnummer;
 	}
 	
+	/**
+	 * Streng representasjon av eier.
+	 * 
+	 * @return Streng representasjon
+	 */
 	@Override
 	public String toString () {
 		return navn + "\n" + fodselsnummer + "\n" + adresse.toString();

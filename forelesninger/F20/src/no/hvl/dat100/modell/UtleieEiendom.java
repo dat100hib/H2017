@@ -31,6 +31,11 @@ public class UtleieEiendom extends Eiendom {
 		return leierfodselsnummer;
 	}
 	
+	/**
+	 * Streng representasjon av eiere for eiendom.
+	 * 
+	 * @return streng representasjon
+	 */
 	@Override
 	public String toString() {
 		return "UTLEIEEIENDOM" + "\n" + super.toString() + "\n" + leierfodselsnummer + "\n" + leie;
