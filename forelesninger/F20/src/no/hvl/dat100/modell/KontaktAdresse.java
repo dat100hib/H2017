@@ -37,12 +37,6 @@ public class KontaktAdresse {
 	 * Formaterer kontakt adresse som streng.
 	 * @return formatert adresse
 	 */
-	/* public String formaterAdresse() {
-		return
-		vei + " " + nummer + "\n" +
-		postnummer + " " + by + "\n" +
-		land + "\n";
-	}*/
 	
 	@Override
 	public String toString () {

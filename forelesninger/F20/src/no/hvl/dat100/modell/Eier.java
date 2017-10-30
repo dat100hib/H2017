@@ -14,9 +14,9 @@ public class Eier {
 	private KontaktAdresse adresse;
 
 	/**
-	 * Konstuerer eier objekt
-	 * @param navn - navn p� eier
-	 * @param fodselsnummer - f�dselsnummer p� eier
+	 * Konstruer eier objekt
+	 * @param navn - navn på eier
+	 * @param fodselsnummer - fødselsnummer på eier
 	 * @param adresse - kontaktadresse
 	 */
 	public Eier(String navn, int fodselsnummer, KontaktAdresse adresse) {
@@ -26,7 +26,7 @@ public class Eier {
 	}
 
 	/**
-	 * Hent kontaktadresse p� eier.
+	 * Hent kontaktadresse på eier.
 	 * @return kontraktadresse for eier
 	 */
 	public KontaktAdresse getAdresse() {
@@ -43,15 +43,15 @@ public class Eier {
 
 	/**
 	 * Hent navn.
-	 * @return - navn p� eier
+	 * @return - navn på eier
 	 */
 	public String getNavn() {
 		return navn;
 	}
 
 	/**
-	 * Hent f�dselsnummer.
-	 * @return f�dselsnummer for eier
+	 * Hent fødselsnummer.
+	 * @return fødselsnummer for eier
 	 */
 	public int getFodselsnummer() {
 		return fodselsnummer;

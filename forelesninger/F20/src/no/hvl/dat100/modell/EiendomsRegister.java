@@ -7,104 +7,120 @@ import java.util.Collection;
 
 /**
  * Hovedklasse for eiendomsregister.
+ * 
  * @author Lars Kristensen
  * @version 1.0
  */
 public class EiendomsRegister {
 
 	private String kommune;
-	private HashMap<String,Eiendom> eiendommer;
-	
+	private HashMap<String, Eiendom> eiendommer;
+
 	/**
 	 * Konstruer og initialiser eiendomsregister.
-	 * @param kommune kommune for register
+	 * 
+	 * @param kommune
+	 *            kommune for register
 	 */
 	public EiendomsRegister(String kommune) {
 		this.kommune = kommune;
-		eiendommer = new HashMap<String,Eiendom>();
+		eiendommer = new HashMap<String, Eiendom>();
 	}
-	
-	public String getKommune () {
-			
-			return this.kommune;
+
+	public String getKommune() {
+		return this.kommune;
 	}
-	
-	public Collection<Eiendom> getEiendommer () {
+
+	public Collection<Eiendom> getEiendommer() {
 		return eiendommer.values();
 	}
-	
+
 	// gns og bns blir brukt som nøkkel (key) i HashMap
-	private String key(int gns,int bns) {
+	private String key(int gns, int bns) {
 		return gns + " " + bns;
 	}
-	
+
 	/**
 	 * Registrer eiendom i register.
-	 * @param nyeiendom eiendom som skal registreres
+	 * 
+	 * @param nyeiendom
+	 *            eiendom som skal registreres
 	 */
 	public void registrerEiendom(Eiendom nyeiendom) {
 		int gns = nyeiendom.getGns();
 		int bns = nyeiendom.getBns();
-		
-		eiendommer.put(key(gns,bns),nyeiendom);
+
+		eiendommer.put(key(gns, bns), nyeiendom);
 	}
-	
+
 	/**
 	 * Finn eier i eiendomsregister.
-	 * @param fodselsnummer fødselsnummer på eier
+	 * 
+	 * @param fodselsnummer
+	 *            fødselsnummer på eier
 	 * @return eier (null hvis eier ikke finnes)
 	 */
 	public Eier finnEier(int fodselsnummer) {
-		
+
 		// TODO potensjale for effektivitetsforbedring her
 		Eier eier = null;
 		boolean funnet = false;
-		
+
 		// iterator for eiendommer
 		Iterator<Eiendom> eiendomit = eiendommer.values().iterator();
-		
+
 		while (!funnet && eiendomit.hasNext()) {
-			
+
 			// sjekk eiere i neste eiendom
 			Eiendom eiendom = eiendomit.next();
 			ArrayList<Eier> eiere = eiendom.getEiere();
-			
+
 			int i = 0;
-			while (!funnet & i<eiere.size()) {
-				
+			// TODO: bruke iterator
+			while (!funnet & i < eiere.size()) {
+
 				Eier eneier = eiere.get(i);
-				
+
 				if (eneier.getFodselsnummer() == fodselsnummer) {
 					funnet = true;
-					eier = eneier; 
+					eier = eneier;
 				}
-				
+
 				i++;
 			}
 		}
 		return eier;
 	}
-	
+
 	/**
 	 * Registrer (legg til) eier på en eiendom.
-	 * @param eier eier som skal registreres på eiendom
-	 * @param gns gårdsnummer for eiendom
-	 * @param bns bruksnummer for eiendom
+	 * 
+	 * @param eier
+	 *            eier som skal registreres på eiendom
+	 * @param gns
+	 *            gårdsnummer for eiendom
+	 * @param bns
+	 *            bruksnummer for eiendom
 	 */
 	public void registrerEier(Eier eier, int gns, int bns) {
+
+		String k = key(gns,bns);
 		
-		Eiendom eiendom = eiendommer.get(key(gns,bns));
-		
+		Eiendom eiendom = eiendommer.get(k);
+
 		eiendom.registrerEier(eier);
 	}
-	
+
 	/**
 	 * Hent eiendom i register.
-	 * @param gns Gårdsnummer
-	 * @param bns Bruksnummer
+	 * 
+	 * @param gns
+	 *            Gårdsnummer
+	 * @param bns
+	 *            Bruksnummer
 	 * @return eiendom i register (null ellers)
 	 */
-	public Eiendom finnEiendom(int gns,int bns) {
-		return eiendommer.get(key(gns,bns));
+	public Eiendom finnEiendom(int gns, int bns) {
+		return eiendommer.get(key(gns, bns));
 	}
 }

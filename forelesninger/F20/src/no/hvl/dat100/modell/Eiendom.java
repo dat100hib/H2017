@@ -78,6 +78,7 @@ public abstract class Eiendom {
 		boolean finnes = false;
 
 		// sjekk om nabo eiendom finnes allerede
+		// TODO: bruke while her
 		for (Eiendom eiendom : naboer) {
 			if (eiendom != null) {
 				if ((eiendom.bns == naboeiendom.bns) && (eiendom.gns == naboeiendom.gns)) {
@@ -123,6 +124,7 @@ public abstract class Eiendom {
 		
 		String text = eiere.size() + "\n";
 		
+		// iterator for eiere
 		Iterator<Eier> it = eiere.iterator();
 		
 		while (it.hasNext()) {
@@ -138,6 +140,7 @@ public abstract class Eiendom {
 		String text = "";
 		int antall = 0;
 		
+		// TODO - bruke utvider for-løkke
 		while (i<naboer.length) {
 			Eiendom nabo = naboer[i];
 			if (nabo != null) {
