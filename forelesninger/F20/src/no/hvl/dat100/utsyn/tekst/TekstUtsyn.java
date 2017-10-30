@@ -1,14 +1,14 @@
 package no.hvl.dat100.utsyn.tekst;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 import no.hvl.dat100.kontroll.Kontroll;
 import no.hvl.dat100.kontroll.Kontroll.StatusCode;
 import no.hvl.dat100.modell.Eier;
 import no.hvl.dat100.modell.KontaktAdresse;
+import no.hvl.dat100.main.IUtsyn;
 
-public class TekstUtsyn {
+public class TekstUtsyn implements IUtsyn {
 
 	private Kontroll controller;
 
@@ -24,17 +24,23 @@ public class TekstUtsyn {
 	
 	final private static String SEPERATOR = "------------------------------------";
 	
-	final static int BREDDE = 25;
-
 	private Leser leser;
+	
+	public TekstUtsyn() {
+		
+	}
 	
 	public TekstUtsyn(Kontroll controller) {
 		this.controller = controller;
-		leser = new Leser();
 	}
 
-	public void kjor() {
+	public void setKontroll(Kontroll kontroll) {
+		this.controller = kontroll;
+	}
+	
+	public void start() {
 
+		leser = new Leser();
 		boolean avslutt = false;
 
 		do {

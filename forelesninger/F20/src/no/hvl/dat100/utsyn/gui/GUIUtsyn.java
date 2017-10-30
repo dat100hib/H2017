@@ -24,8 +24,10 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 
 import no.hvl.dat100.modell.Eiendom;
+import no.hvl.dat100.kontroll.Kontroll;
+import no.hvl.dat100.main.IUtsyn;
 
-public class GUI extends Application {
+public class GUIUtsyn extends Application implements IUtsyn {
 
 	private static String CSSFILE = "Dark.css";
 	
@@ -177,6 +179,16 @@ public class GUI extends Application {
 	}
 
 	public static void main(String[] args) {
+		Application.launch(args);
+	}
+	
+	private Kontroll kontroll;
+	
+	public void setKontroll(Kontroll kontroll) {
+		this.kontroll = kontroll;
+	}
+	public void start() {
+		String[] args = null;
 		Application.launch(args);
 	}
 }
