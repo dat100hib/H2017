@@ -6,10 +6,6 @@ public class Leser {
 
 	private static Scanner leser = new Scanner (System.in);
 
-	public Leser() {
-		leser = new Scanner(System.in);
-	}
-
 	public static int lesInt(String tekst) {
 
 		System.out.println(tekst);

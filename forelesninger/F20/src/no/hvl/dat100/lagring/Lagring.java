@@ -14,8 +14,8 @@ public class Lagring {
 
 	private static String MAPPE = System.getProperty("user.dir") + "/src/no/hvl/dat100/lagring/";
 
-	private static String NE = "NERINGSEIENDOM";
-	private static String UE = "UTLEIEEIENDOM";
+	private static String NESTR = "NERINGSEIENDOM";
+	private static String UESTR = "UTLEIEEIENDOM";
 
 	public static boolean skriv(EiendomsRegister register, String filnavn) {
 
@@ -50,49 +50,84 @@ public class Lagring {
 		return skrevet;
 	}
 
-	private static void lesNaboer(EiendomsRegister register, int antall, Scanner reader) {
+	//TODO: rydd opp i bruk av nextLine vs. next
+	public static EiendomsRegister les(String filnavn) {
 
-		for (int k = 1; k <= antall; k++) {
+		EiendomsRegister register = null;
 
-			String type = reader.nextLine();
-			int gns = reader.nextInt();
-			int bns = reader.nextInt();
+		try {
 
-			reader.nextLine();
-			Eiendom eiendom = register.finnEiendom(gns, bns);
+			// første lesing - skipper informasjon om naboer
+			File file = new File(MAPPE + filnavn);
+			Scanner reader = new Scanner(file);
 
-			int antalleiere = reader.nextInt();
-			reader.nextLine();
+			String kommune = reader.nextLine();
+			register = new EiendomsRegister(kommune);
 
-			for (int i = 1; i <= antalleiere; i++) {
-				for (int j = 1; j <= 5; j++) {
-					String str = reader.nextLine(); // skip eiere
-					System.out.println(str);
-				}
+			int antall = Integer.parseInt(reader.nextLine());
+
+			for (int i = 1; i <= antall; i++) {
+				Eiendom e = lesEiendom(reader);
+				register.registrerEiendom(e);
 			}
 
-			int antallnaboer = reader.nextInt();
+			reader.close();
 
-			for (int i = 1; i <= antallnaboer; i++) {
-				int nabogns = reader.nextInt();
-				int nabobns = reader.nextInt();
-				Eiendom nabo = register.finnEiendom(nabogns, nabobns);
-				eiendom.registrerNabo(nabo);
-				reader.nextLine();
-			}
+			// andre lesing - registere naboer
+			file = new File(MAPPE + filnavn);
+			reader = new Scanner(file);
 
-			if (type.equals("UTLEIEEIENDOM")) {
-				reader.nextLine();
-				reader.nextLine();
-			} else if (type.equals("NERINGSEIENDOM")) {
-				reader.nextLine();
+			reader.nextLine(); // spring over kommune
+			reader.nextLine(); // spring over antall
 
-			} else {
-				System.out.println("Feil i eiendomstype");
-			}
+			lesNaboer(register, antall, reader);
+
+			reader.close();
+
+		} catch (FileNotFoundException e) {
+			System.out.println("Feil i filformat");
 		}
+		return register;
 	}
+	
+	private static Eiendom lesEiendom(Scanner reader) {
 
+		Eiendom eiendom = null;
+
+		String type = reader.nextLine();
+		int gns = reader.nextInt();
+		int bns = reader.nextInt();
+
+		int antalleiere = reader.nextInt();
+
+		ArrayList<Eier> eiere = new ArrayList<Eier>();
+
+		for (int i = 1; i <= antalleiere; i++) {
+			Eier eier = lesEier(reader);
+			eiere.add(eier);
+		}
+
+		// spring over informasjon om naboer i første lesing
+		reader.nextLine();
+
+		if (type.equals("UTLEIEEIENDOM")) {
+			int leierfodselsnummer = reader.nextInt();
+			int leie = reader.nextInt();
+			reader.nextLine();
+			eiendom = new UtleieEiendom(gns, bns, leierfodselsnummer, leie);
+			eiendom.setEiere(eiere);
+		} else if (type.equals("NERINGSEIENDOM")) {
+			int orgnr = reader.nextInt();
+			reader.nextLine();
+			eiendom = new NeringsEiendom(gns, bns, orgnr);
+			eiendom.setEiere(eiere);
+		} else {
+			System.out.println("Feil i eiendomstype");
+		}
+
+		return eiendom;
+	}
+	
 	private static Eier lesEier(Scanner reader) {
 
 		reader.nextLine();
@@ -114,89 +149,55 @@ public class Lagring {
 		Eier eier = new Eier(navn, fodselsnummer, ka);
 
 		return eier;
-		/*
-		 * Odd Vanden 1560 Fyllingsveien 84 5120 Fyllingen Bahamas
-		 */
 	}
+	
+	private static void lesNaboer(EiendomsRegister register, int antall, Scanner reader) {
 
-	private static Eiendom lesEiendom(Scanner reader) {
+		for (int k = 1; k <= antall; k++) {
 
-		Eiendom eiendom = null;
+			String type = reader.nextLine(); 
+			int gns = reader.nextInt();
+			int bns = reader.nextInt();
 
-		String type = reader.nextLine();
-		int gns = reader.nextInt();
-		int bns = reader.nextInt();
-
-		int antalleiere = reader.nextInt();
-
-		ArrayList<Eier> eiere = new ArrayList<Eier>();
-
-		for (int i = 1; i <= antalleiere; i++) {
-			Eier eier = lesEier(reader);
-			eiere.add(eier);
-		}
-
-		// spring over naboer i første pass
-		reader.nextLine();
-
-		if (type.equals("UTLEIEEIENDOM")) {
-			int leierfodselsnummer = reader.nextInt();
-			int leie = reader.nextInt();
 			reader.nextLine();
-			eiendom = new UtleieEiendom(gns, bns, leierfodselsnummer, leie);
-			eiendom.setEiere(eiere);
-		} else if (type.equals("NERINGSEIENDOM")) {
-			int orgnr = reader.nextInt();
+			Eiendom eiendom = register.finnEiendom(gns, bns);
+
+			int antalleiere = reader.nextInt();
 			reader.nextLine();
-			eiendom = new NeringsEiendom(gns, bns, orgnr);
-			eiendom.setEiere(eiere);
-		} else {
-			System.out.println("Feil i eiendomstype");
-		}
 
-		/*
-		 * UTLEIEEIENDOM 10 20 1 Odd Vanden 1560 Fyllingsveien 84 5120 Fyllingen
-		 * Bahamas 1 10 10 1096 10000 NERINGSEIENDOM 10 10 1 Bente Rask 1741
-		 * Nymarksveien 42 5020 Bergen Norge 1 10 20 202020
-		 */
-
-		return eiendom;
-	}
-
-	public static EiendomsRegister les(String filnavn) {
-
-		EiendomsRegister register = null;
-
-		try {
-
-			File file = new File(MAPPE + filnavn);
-			Scanner reader = new Scanner(file);
-
-			String kommune = reader.nextLine();
-			register = new EiendomsRegister(kommune);
-
-			int antall = Integer.parseInt(reader.nextLine());
-
-			for (int i = 1; i <= antall; i++) {
-				Eiendom e = lesEiendom(reader);
-				register.registrerEiendom(e);
+			// skip eiere
+			for (int i = 1; i <= antalleiere; i++) {
+				for (int j = 1; j <= 5; j++) {
+					String str = reader.nextLine(); 
+					System.out.println(str);
+				}
 			}
 
-			reader.close();
+			int antallnaboer = reader.nextInt();
 
-			file = new File(MAPPE + filnavn);
-			reader = new Scanner(file);
+			for (int i = 1; i <= antallnaboer; i++) {
+				int nabogns = reader.nextInt();
+				int nabobns = reader.nextInt();
+				Eiendom nabo = register.finnEiendom(nabogns, nabobns);
+				eiendom.registrerNabo(nabo);
+				reader.nextLine();
+			}
 
-			reader.nextLine(); // kommune
-			reader.nextLine(); // antall
+			if (type.equals(UESTR)) {
+				reader.nextLine();
+				reader.nextLine();
+			} else if (type.equals(NESTR)) {
+				reader.nextLine();
 
-			lesNaboer(register, antall, reader);
-
-			reader.close();
-
-		} catch (FileNotFoundException e) {
-			System.out.println("Feil i filformat");
+			} else {
+				System.out.println("Feil i eiendomstype");
+			}
 		}
-		return register;
 	}
+
+	
+
+	
+
+	
 }

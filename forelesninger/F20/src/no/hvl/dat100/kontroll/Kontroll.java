@@ -11,16 +11,16 @@ import no.hvl.dat100.modell.UtleieEiendom;
 
 
 // implementerer brukstilfeller for register
-// OVERVEI: endre navne til "Kontroll"
+
 public class Kontroll {
 
 	public enum StatusCode {
-		OK, FEIL, EIER_IKKEFUNNET, EIENDOM_FINNES, EIENDOM_IKKEFUNNET,
+		OK, FEIL, EIER_IKKEFUNNET, EIENDOM_FINNES, EIENDOM_IKKEFUNNET
 	}
 
 	private EiendomsRegister register;
 
-	// opprett kontroller sett register for kontroller
+	// opprett kontroller og sett register for kontroller
 	public Kontroll(EiendomsRegister register) {
 		this.register = register;
 	}
@@ -109,7 +109,7 @@ public class Kontroll {
 		return status;
 	}
 
-	// finn eiere p� en given eiendom
+	// finn eiere på en given eiendom
 	public ArrayList<Eier> finnEiere(int gns, int bns) {
 
 		Eiendom eiendom = register.finnEiendom(gns, bns);
@@ -133,9 +133,6 @@ public class Kontroll {
 			if (eiendom instanceof UtleieEiendom) {
 				leier = ((UtleieEiendom) eiendom).getLeier();
 			}
-
-			// OVERVEI: kunne alternativ ha implementert register ved bruk av to HashMap
-			// (for vanlig eiendommer og utleie)
 		}
 
 		return leier;

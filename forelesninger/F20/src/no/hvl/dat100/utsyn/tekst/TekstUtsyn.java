@@ -10,7 +10,7 @@ import no.hvl.dat100.main.IUtsyn;
 
 public class TekstUtsyn implements IUtsyn {
 
-	private Kontroll controller;
+	private Kontroll kontroll;
 
 	final private static int NYNERINGSEIENDOM = 1;
 	final private static int NYUTLEIEEIENDOM = 2;
@@ -29,11 +29,11 @@ public class TekstUtsyn implements IUtsyn {
 	}
 	
 	public TekstUtsyn(Kontroll controller) {
-		this.controller = controller;
+		this.kontroll = controller;
 	}
 
 	public void setKontroll(Kontroll kontroll) {
-		this.controller = kontroll;
+		this.kontroll = kontroll;
 	}
 	
 	public void start() {
@@ -93,7 +93,7 @@ public class TekstUtsyn implements IUtsyn {
 		int bns = Leser.lesInt("Bruksnummer : ");
 		int orgnr = Leser.lesInt("Organisations nummer: ");
 		
-		StatusCode status = controller.nyNeringsEiendom(gns, bns, orgnr);
+		StatusCode status = kontroll.nyNeringsEiendom(gns, bns, orgnr);
 		
 		System.out.println(status.toString()); 
 	}
@@ -107,7 +107,7 @@ public class TekstUtsyn implements IUtsyn {
 		int leier = Leser.lesInt("Leier fodselsnummer: ");
 		int pris = Leser.lesInt("Leiepris: ");
 		
-		StatusCode status = controller.nyUtleieEiendom(gns, bns, leier, pris);
+		StatusCode status = kontroll.nyUtleieEiendom(gns, bns, leier, pris);
 		
 		System.out.println(status.toString()); 
 	}
@@ -131,7 +131,7 @@ public class TekstUtsyn implements IUtsyn {
 		
 		KontaktAdresse adresse = new KontaktAdresse(vei,nummer,postnummer,by,land);
 		
-		StatusCode status = controller.nyEier(navn, fodselsnummer, adresse, gns, bns);
+		StatusCode status = kontroll.nyEier(navn, fodselsnummer, adresse, gns, bns);
 		
 		System.out.println(status.toString()); 
 	}
@@ -145,7 +145,7 @@ public class TekstUtsyn implements IUtsyn {
 		int gns = Leser.lesInt("Gårdsnummer : ");
 		int bns = Leser.lesInt("Bruksnummer : ");
 		
-		StatusCode status = controller.nyEierEiendom(fodselsnummer, gns, bns);
+		StatusCode status = kontroll.nyEierEiendom(fodselsnummer, gns, bns);
 		
 		System.out.println(status.toString()); 
 	}
@@ -160,7 +160,7 @@ public class TekstUtsyn implements IUtsyn {
 		int gns2 = Leser.lesInt("Gårdsnummer : ");
 		int bns2 = Leser.lesInt("Bruksnummer : ");
 		
-		StatusCode status = controller.registrerNabo(gns1, bns1, gns2, bns2);
+		StatusCode status = kontroll.registrerNabo(gns1, bns1, gns2, bns2);
 		
 		System.out.println(status.toString()); 
 		
@@ -177,7 +177,7 @@ public class TekstUtsyn implements IUtsyn {
 		int gns = Leser.lesInt("Gårdsnummer : ");
 		int bns = Leser.lesInt("Bruksnummer : ");
 		
-		ArrayList<Eier> eiere = controller.finnEiere(gns, bns);
+		ArrayList<Eier> eiere = kontroll.finnEiere(gns, bns);
 		
 		if (eiere != null) {
 			for (int i = 0; i<eiere.size(); i++)
@@ -193,7 +193,7 @@ public class TekstUtsyn implements IUtsyn {
 		int gns = Leser.lesInt("Gårdsnummer : ");
 		int bns = Leser.lesInt("Bruksnummer : ");
 		
-		int fodselsnummer = controller.finnLeier(gns, bns);
+		int fodselsnummer = kontroll.finnLeier(gns, bns);
 		
 		if (fodselsnummer >= 0)
 			System.out.println("Leier fødselsnummer: " + fodselsnummer);
