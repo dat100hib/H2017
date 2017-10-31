@@ -2,6 +2,7 @@ package no.hvl.dat100.kontroll;
 
 import java.util.ArrayList;
 
+import no.hvl.dat100.lagring.Lagring;
 import no.hvl.dat100.modell.Eiendom;
 import no.hvl.dat100.modell.EiendomsRegister;
 import no.hvl.dat100.modell.Eier;
@@ -149,5 +150,13 @@ public class Kontroll {
 	
 	public void nyttRegister(String kommune) {
 		register = new EiendomsRegister(kommune);
+	}
+	
+	public void importerRegister(String filnavn) {
+		register = Lagring.les(filnavn);
+	}
+	
+	public void eksporterRegister(String filnavn) {
+		Lagring.skriv(register, filnavn);
 	}
 }
