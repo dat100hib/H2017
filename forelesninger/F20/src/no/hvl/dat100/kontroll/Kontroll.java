@@ -1,6 +1,7 @@
 package no.hvl.dat100.kontroll;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 import no.hvl.dat100.lagring.Lagring;
 import no.hvl.dat100.modell.Eiendom;
@@ -158,5 +159,9 @@ public class Kontroll {
 	
 	public void eksporterRegister(String filnavn) {
 		Lagring.skriv(register, filnavn);
+	}
+	
+	public Collection<Eiendom> getEiendommer() {
+		return register.getEiendommer();
 	}
 }

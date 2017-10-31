@@ -1,25 +1,14 @@
 package no.hvl.dat100.utsyn.gui;
 
-import javafx.application.Application;
-import javafx.application.Platform;
+
 import javafx.stage.Stage;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
-import javafx.geometry.Insets;
-import javafx.scene.Scene;
+
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.Menu;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.ListView;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.control.Button;
+
 import javafx.scene.control.TextInputDialog;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
