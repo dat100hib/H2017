@@ -19,12 +19,21 @@ public class Kontroll {
 	}
 
 	private EiendomsRegister register;
+	
+	public Kontroll() {
 
+	}
+	
 	// opprett kontroller og sett register for kontroller
 	public Kontroll(EiendomsRegister register) {
 		this.register = register;
 	}
 
+	// opprett nytt register
+	public Kontroll(String kommune) {
+			this.register = new EiendomsRegister(kommune);
+	}
+		
 	// opprett ny eiendom om den ikke allerede finnes
 	public StatusCode nyNeringsEiendom(int gns, int bns,int orgnr) {
 
@@ -136,5 +145,9 @@ public class Kontroll {
 		}
 
 		return leier;
+	}
+	
+	public void nyttRegister(String kommune) {
+		register = new EiendomsRegister(kommune);
 	}
 }

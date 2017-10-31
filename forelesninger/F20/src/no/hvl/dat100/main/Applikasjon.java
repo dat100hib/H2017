@@ -19,6 +19,6 @@ public class Applikasjon {
 		utsyn.setKontroll(kontroll);
 
 		// start grensesnitt og brukerinteraksjon
-		utsyn.start();
+		utsyn.kjor();
 	}
 }

@@ -30,11 +30,27 @@ import no.hvl.dat100.main.IUtsyn;
 public class GUIUtsyn extends Application implements IUtsyn {
 
 	private static String CSSFILE = "Dark.css";
+	private Kontroll kontroll;
+	
+	public void setKontroll(Kontroll kontroll) {
+		this.kontroll = kontroll;
+	}
+	
+	public void kjor() {
+		String[] args = null;
+		Application.launch(args);
+	}
+	
+	public static void main(String[] args) {
+		Application.launch(args);
+	}
 	
 	@Override
 	public void start(Stage stage) throws Exception {
 		stage.setTitle("Eiendomsregister App");
 
+		this.kontroll = new Kontroll();
+		
 		VBox vbox = new VBox();
 		Scene scene = new Scene(vbox, 600, 400);
 		//scene.getStylesheets().add(getClass().getResource(CSSFILE).toExternalForm());
@@ -106,89 +122,13 @@ public class GUIUtsyn extends Application implements IUtsyn {
 
 		anchorpane.getChildren().addAll(hbox);
 
-		// MENU
-		MenuBar menuBar = new MenuBar();
+		Menus menus = new Menus(kontroll);
+		MenuBar menuBar = menus.getMenuBar();
 
-		// File Menu
-		Menu menuFile = new Menu("File");
-
-		MenuItem newItem = new MenuItem("New...");
-
-		EventHandler<ActionEvent> newhandler = new EventHandler<ActionEvent>() {
-			@Override
-			public void handle(ActionEvent e) {
-				System.out.println("TODO: New ...");
-			}
-		};
-		
-		newItem.setOnAction(newhandler);
-		
-		MenuItem importItem = new MenuItem("Import...");
-		EventHandler<ActionEvent> importhandler = new EventHandler<ActionEvent>() {
-			@Override
-			public void handle(ActionEvent e) {
-				System.out.println("TODO: Import ...");
-			}
-		};
-		newItem.setOnAction(importhandler);
-		
-		MenuItem exportItem = new MenuItem("Export...");
-		
-		EventHandler<ActionEvent> exporthandler = new EventHandler<ActionEvent>() {
-			@Override
-			public void handle(ActionEvent e) {
-				System.out.println("TODO: Importing file...");
-			}
-		};
-
-		exportItem.setOnAction(exporthandler);
-
-		menuFile.getItems().addAll(newItem, importItem, exportItem);
-
-		// --- Menu About
-		Menu menuHelp = new Menu("Help");
-		
-		MenuItem aboutItem = new MenuItem("About");
-		
-		EventHandler<ActionEvent> abouthandler = new EventHandler<ActionEvent>() {
-			@Override
-			public void handle(ActionEvent e) {
-				
-				Alert alert = new Alert(AlertType.INFORMATION);
-				alert.setTitle("About");
-				alert.setHeaderText("Version 1.0");
-				alert.setContentText("Eiendomsregister applikasjon");
-
-				alert.showAndWait();
-			}
-		};
-		
-		aboutItem.setOnAction(abouthandler);
-		
-		menuHelp.getItems().add(aboutItem);
-		
-		menuBar.getMenus().addAll(menuFile, menuHelp);
-
-		
-		
 		((VBox) scene.getRoot()).getChildren().addAll(menuBar, anchorpane);
 
 		stage.setScene(scene);
 		stage.show();
 
-	}
-
-	public static void main(String[] args) {
-		Application.launch(args);
-	}
-	
-	private Kontroll kontroll;
-	
-	public void setKontroll(Kontroll kontroll) {
-		this.kontroll = kontroll;
-	}
-	public void start() {
-		String[] args = null;
-		Application.launch(args);
 	}
 }

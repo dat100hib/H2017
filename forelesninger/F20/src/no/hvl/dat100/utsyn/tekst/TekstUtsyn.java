@@ -36,7 +36,7 @@ public class TekstUtsyn implements IUtsyn {
 		this.kontroll = kontroll;
 	}
 	
-	public void start() {
+	public void kjor() {
 
 		boolean avslutt = false;
 
