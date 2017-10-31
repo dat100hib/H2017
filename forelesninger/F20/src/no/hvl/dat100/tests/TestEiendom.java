@@ -4,10 +4,7 @@ import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.io.File;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.Scanner;
 import java.nio.file.Path;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
@@ -87,11 +84,11 @@ public class TestEiendom {
 		ne.registrerNabo(ue);
 		ue.registrerNabo(ne);
 
-		Lagring.skriv(register, "testregister1.dat");
+		Lagring.skriv(register, MAPPE + "testregister1.dat");
 		
-		register = Lagring.les("testregister.dat");
+		register = Lagring.les(MAPPE + "testregister.dat");
 		
-		Lagring.skriv(register, "testregister2.dat");
+		Lagring.skriv(register, MAPPE + "testregister2.dat");
 		
 		Path path1 = FileSystems.getDefault().getPath(MAPPE, "testregister1.dat");
 		Path path2 = FileSystems.getDefault().getPath(MAPPE, "testregister2.dat");

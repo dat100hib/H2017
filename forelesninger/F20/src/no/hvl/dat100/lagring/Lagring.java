@@ -12,8 +12,6 @@ import no.hvl.dat100.modell.*;
 
 public class Lagring {
 
-	private static String MAPPE = System.getProperty("user.dir") + "/src/no/hvl/dat100/lagring/";
-
 	private static String NESTR = "NERINGSEIENDOM";
 	private static String UESTR = "UTLEIEEIENDOM";
 
@@ -23,7 +21,7 @@ public class Lagring {
 		PrintWriter writer = null;
 
 		try {
-			writer = new PrintWriter(MAPPE + filnavn);
+			writer = new PrintWriter(filnavn);
 
 			String kommune = register.getKommune();
 
@@ -57,7 +55,7 @@ public class Lagring {
 		try {
 
 			// første lesing - skipper informasjon om naboer
-			File file = new File(MAPPE + filnavn);
+			File file = new File(filnavn);
 			Scanner reader = new Scanner(file);
 
 			String kommune = reader.next();
@@ -73,7 +71,7 @@ public class Lagring {
 			reader.close();
 
 			// andre lesing - registere naboer
-			file = new File(MAPPE + filnavn);
+			file = new File(filnavn);
 			reader = new Scanner(file);
 
 			reader.nextLine(); // spring over kommune
