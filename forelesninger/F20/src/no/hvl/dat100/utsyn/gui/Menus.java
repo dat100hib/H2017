@@ -3,6 +3,8 @@ package no.hvl.dat100.utsyn.gui;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.stage.Stage;
+import javafx.stage.FileChooser;
+import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.MenuItem;
@@ -25,45 +27,48 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 
 import java.util.Optional;
+import java.io.File;
 
 import no.hvl.dat100.kontroll.Kontroll;
 
 public class Menus {
 
 	private MenuBar menuBar;
-	
-	private Kontroll kontroll;
 
-	public Menus(Kontroll kontroll) {
+	private Kontroll kontroll;
+	private Stage stage;
+
+	public Menus(Kontroll kontroll, Stage stage) {
 
 		menuBar = new MenuBar();
 		this.kontroll = kontroll;
-		
+		this.stage = stage;
+
 		// File Menu
 		Menu menuFile = new Menu("File");
 
 		MenuItem newItem = new MenuItem("New...");
 
 		EventHandler<ActionEvent> newhandler = new EventHandler<ActionEvent>() {
-			
+
 			// private Kontroll hkontroll = kontroll;
-			
+
 			@Override
 			public void handle(ActionEvent e) {
-				
+
 				TextInputDialog dialog = new TextInputDialog("");
 				dialog.setTitle("Nytt register");
 				dialog.setHeaderText("Kommune");
 				dialog.setContentText("Navn:");
 
 				Optional<String> result = dialog.showAndWait();
-				
-				if (result.isPresent()){
+
+				if (result.isPresent()) {
 					String kommune = result.get();
 					System.out.println(kommune);
 					kontroll.nyttRegister(kommune);
 				}
-				
+
 			}
 		};
 
@@ -71,21 +76,42 @@ public class Menus {
 
 		MenuItem importItem = new MenuItem("Import...");
 		EventHandler<ActionEvent> importhandler = new EventHandler<ActionEvent>() {
+			
 			@Override
 			public void handle(ActionEvent e) {
-				System.out.println("TODO: Importing ...");
+
+				FileChooser fileChooser = new FileChooser();
+				fileChooser.setTitle("Importer register datafil");
+				fileChooser.getExtensionFilters().addAll(new ExtensionFilter("Text Files", "*.dat"));
+				
+				File selectedFile = fileChooser.showOpenDialog(stage);
+
+				if (selectedFile != null) {
+					System.out.println(selectedFile.getAbsolutePath());
+					kontroll.importerRegister(selectedFile.getAbsolutePath());
+				}
 			}
 		};
-		
+
 		importItem.setOnAction(importhandler);
 
 		MenuItem exportItem = new MenuItem("Export...");
 
 		EventHandler<ActionEvent> exporthandler = new EventHandler<ActionEvent>() {
-			
+
 			@Override
 			public void handle(ActionEvent e) {
-				System.out.println("TODO: Exporting ...");
+				
+				FileChooser fileChooser = new FileChooser();
+				fileChooser.setTitle("Eksporter register datafil");
+				fileChooser.getExtensionFilters().addAll(new ExtensionFilter("Data Files", "*.dat"));
+				
+				File selectedFile = fileChooser.showSaveDialog(stage);
+
+				if (selectedFile != null) {
+					System.out.println(selectedFile.getAbsolutePath());
+					kontroll.eksporterRegister(selectedFile.getAbsolutePath());
+				}
 			}
 		};
 
