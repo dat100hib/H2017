@@ -50,7 +50,6 @@ public class Lagring {
 		return skrevet;
 	}
 
-	//TODO: rydd opp i bruk av nextLine vs. next
 	public static EiendomsRegister les(String filnavn) {
 
 		EiendomsRegister register = null;
@@ -61,10 +60,10 @@ public class Lagring {
 			File file = new File(MAPPE + filnavn);
 			Scanner reader = new Scanner(file);
 
-			String kommune = reader.nextLine();
+			String kommune = reader.next();
 			register = new EiendomsRegister(kommune);
 
-			int antall = Integer.parseInt(reader.nextLine());
+			int antall = reader.nextInt();
 
 			for (int i = 1; i <= antall; i++) {
 				Eiendom e = lesEiendom(reader);
@@ -94,7 +93,7 @@ public class Lagring {
 
 		Eiendom eiendom = null;
 
-		String type = reader.nextLine();
+		String type = reader.next();
 		int gns = reader.nextInt();
 		int bns = reader.nextInt();
 
@@ -130,7 +129,7 @@ public class Lagring {
 	
 	private static Eier lesEier(Scanner reader) {
 
-		reader.nextLine();
+		reader.nextLine(); // springer over ny linje etter antall eiere
 		String navn = reader.nextLine();
 		int fodselsnummer = reader.nextInt();
 
@@ -140,9 +139,9 @@ public class Lagring {
 		int postnummer = reader.nextInt();
 		String by = reader.next();
 		
-		reader.nextLine();
-
-		String land = reader.nextLine();
+		String land = reader.next();
+		
+		reader.nextLine(); // flyt scanner til neste linje
 
 		KontaktAdresse ka = new KontaktAdresse(vei, nummer, postnummer, by, land);
 
@@ -155,17 +154,17 @@ public class Lagring {
 
 		for (int k = 1; k <= antall; k++) {
 
-			String type = reader.nextLine(); 
+			String type = reader.next(); 
 			int gns = reader.nextInt();
 			int bns = reader.nextInt();
 
-			reader.nextLine();
 			Eiendom eiendom = register.finnEiendom(gns, bns);
 
 			int antalleiere = reader.nextInt();
+			
 			reader.nextLine();
 
-			// skip eiere
+			// skip eiere - fyller fem linjer
 			for (int i = 1; i <= antalleiere; i++) {
 				for (int j = 1; j <= 5; j++) {
 					String str = reader.nextLine(); 
@@ -180,14 +179,13 @@ public class Lagring {
 				int nabobns = reader.nextInt();
 				Eiendom nabo = register.finnEiendom(nabogns, nabobns);
 				eiendom.registrerNabo(nabo);
-				reader.nextLine();
 			}
-
+			
 			if (type.equals(UESTR)) {
-				reader.nextLine();
-				reader.nextLine();
+				reader.next();
+				reader.next();
 			} else if (type.equals(NESTR)) {
-				reader.nextLine();
+				reader.next();
 
 			} else {
 				System.out.println("Feil i eiendomstype");
