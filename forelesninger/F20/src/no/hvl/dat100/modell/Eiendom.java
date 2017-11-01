@@ -73,6 +73,16 @@ public abstract class Eiendom {
 		eiere.add(nyeier);
 	}
 
+	private boolean erLik(Eiendom e1, Eiendom e2) {
+		boolean lik = false;
+		
+		if ((e1 != null) && (e2 != null)) {
+			lik = ((e1.gns == e2.gns) && (e1.bns == e2.bns));
+		}	
+		
+		return lik;
+	}
+	
 	/**
 	 * Registrer en eiendom som nabo.
 	 * 
@@ -89,11 +99,8 @@ public abstract class Eiendom {
 		while (!finnes && i < MAX_NABOER) {
 
 			Eiendom eiendom = naboer[i];
-			if (eiendom != null) {
-				if ((eiendom.bns == naboeiendom.bns) && (eiendom.gns == naboeiendom.gns)) {
-					finnes = true;
-				}
-			}
+			finnes = erLik(eiendom,naboeiendom);
+			
 			i++;
 		}
 
