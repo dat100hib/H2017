@@ -75,14 +75,45 @@ public abstract class Eiendom {
 
 	private boolean erLik(Eiendom e1, Eiendom e2) {
 		boolean lik = false;
-		
+
 		if ((e1 != null) && (e2 != null)) {
 			lik = ((e1.gns == e2.gns) && (e1.bns == e2.bns));
-		}	
-		
+		}
+
 		return lik;
 	}
-	
+
+	private boolean erNabo(Eiendom eiendom) {
+		boolean finnes = false;
+
+		// sjekk om nabo eiendom finnes allerede
+		int i = 0;
+		while (!finnes && i < MAX_NABOER) {
+
+			Eiendom naboeiendom = naboer[i];
+			finnes = erLik(eiendom, naboeiendom);
+
+			i++;
+		}
+
+		return finnes;
+	}
+
+	private boolean settInnNabo(Eiendom eiendom) {
+		
+		boolean sattinn = false;
+
+		int i = 0;
+		while ((!sattinn) && i < MAX_NABOER) {
+			if (naboer[i] == null) {
+				naboer[i] = eiendom;
+				sattinn = true;
+			}
+			i++;
+		}
+		return sattinn;
+	}
+
 	/**
 	 * Registrer en eiendom som nabo.
 	 * 
@@ -90,31 +121,14 @@ public abstract class Eiendom {
 	 *            eiendom som skal registreres som eiendom
 	 * @return finnes eller blev nabo registret (max 4 naboer per eiendom)
 	 */
-	public boolean registrerNabo(Eiendom naboeiendom) {
+	public boolean registrerNabo(Eiendom eiendom) {
 		boolean finnes = false;
 		boolean sattinn = false;
-		
-		// sjekk om nabo eiendom finnes allerede
-		int i = 0;
-		while (!finnes && i < MAX_NABOER) {
 
-			Eiendom eiendom = naboer[i];
-			finnes = erLik(eiendom,naboeiendom);
-			
-			i++;
-		}
+		finnes = erNabo(eiendom);
 
-		// sett inn på en ledig plass
 		if (!finnes) {
-	
-			i = 0;
-			while ((!sattinn) && i < MAX_NABOER) {
-				if (naboer[i] == null) {
-					naboer[i] = naboeiendom;
-					sattinn = true;
-				}
-				i++;
-			}
+			sattinn = settInnNabo(eiendom);
 		}
 
 		return (finnes || sattinn);
@@ -177,9 +191,9 @@ public abstract class Eiendom {
 			}
 			i++;
 		}
-		
+
 		text = antall + " " + text;
-		
+
 		return text;
 	}
 }
