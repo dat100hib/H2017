@@ -8,7 +8,7 @@ import no.hvl.dat100.modell.Eier;
 import no.hvl.dat100.modell.KontaktAdresse;
 import no.hvl.dat100.main.IUtsyn;
 
-public class TekstUtsyn implements IUtsyn {
+public class TekstUtsyn  {
 
 	private Kontroll kontroll;
 

@@ -23,7 +23,7 @@ public class Kontroll {
 	private EiendomsRegister register;
 	
 	public Kontroll() {
-
+		super();
 	}
 	
 	// opprett kontroller og sett register for kontroller
@@ -46,9 +46,10 @@ public class Kontroll {
 		if (eiendom == null) {
 			eiendom = new NeringsEiendom(gns, bns, orgnr);
 			register.registrerEiendom(eiendom);
-		} else
+		} else {
 			status = StatusCode.EIENDOM_FINNES;
-
+		}
+		
 		return status;
 	}
 

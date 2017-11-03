@@ -50,9 +50,9 @@ public class EditArea {
 		Button deletebutton = new Button("Delete");
 		
 		buttonhbox.getChildren().addAll(newbutton,editbutton,deletebutton);
-		
+		/*
 		rightvbox.getChildren().addAll(label,gridpane,buttonhbox);
-		hbox.getChildren().addAll(elist, rightvbox);
+		hbox.getChildren().addAll(elist, rightvbox);*/
 	}
 
 }
