@@ -48,38 +48,38 @@ public class Lagring {
 		return skrevet;
 	}
 
+	private static EiendomsRegister lesEiendommer(File file) throws FileNotFoundException {
+		
+		Scanner reader = new Scanner(file);
+
+		String kommune = reader.next();
+		EiendomsRegister register = new EiendomsRegister(kommune);
+
+		int antall = reader.nextInt();
+
+		for (int i = 1; i <= antall; i++) {
+			Eiendom e = lesEiendom(reader);
+			register.registrerEiendom(e);
+		}
+
+		reader.close();
+		
+		return register;
+	}
+	
 	public static EiendomsRegister les(String filnavn) {
 
 		EiendomsRegister register = null;
 
 		try {
-
-			// første lesing - skipper informasjon om naboer
+			
 			File file = new File(filnavn);
-			Scanner reader = new Scanner(file);
-
-			String kommune = reader.next();
-			register = new EiendomsRegister(kommune);
-
-			int antall = reader.nextInt();
-
-			for (int i = 1; i <= antall; i++) {
-				Eiendom e = lesEiendom(reader);
-				register.registrerEiendom(e);
-			}
-
-			reader.close();
-
+			
+			// første lesing - skipper informasjon om naboer
+			register = lesEiendommer(file);
+		
 			// andre lesing - registere naboer
-			file = new File(filnavn);
-			reader = new Scanner(file);
-
-			reader.nextLine(); // spring over kommune
-			reader.nextLine(); // spring over antall
-
-			lesNaboer(register, antall, reader);
-
-			reader.close();
+			lesNaboer(file,register);
 
 		} catch (FileNotFoundException e) {
 			System.out.println("Feil i filformat");
@@ -148,8 +148,14 @@ public class Lagring {
 		return eier;
 	}
 	
-	private static void lesNaboer(EiendomsRegister register, int antall, Scanner reader) {
+	private static void lesNaboer(File file, EiendomsRegister register) throws FileNotFoundException {
 
+		Scanner reader = new Scanner(file);
+
+		reader.nextLine(); // spring over kommune
+		int antall = reader.nextInt(); 
+		reader.nextLine();
+		
 		for (int k = 1; k <= antall; k++) {
 
 			String type = reader.next(); 
@@ -189,11 +195,7 @@ public class Lagring {
 				System.out.println("Feil i eiendomstype");
 			}
 		}
-	}
 
-	
-
-	
-
-	
+		reader.close();
+	}	
 }
