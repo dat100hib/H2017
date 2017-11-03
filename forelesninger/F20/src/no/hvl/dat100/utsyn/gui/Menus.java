@@ -10,6 +10,7 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.control.Menu;
 
 import javafx.scene.control.TextInputDialog;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
@@ -105,8 +106,22 @@ public class Menus {
 		};
 
 		exportItem.setOnAction(exporthandler);
+		
+		MenuItem exitItem = new MenuItem("Exit");
 
-		menuFile.getItems().addAll(newItem, importItem, exportItem);
+		EventHandler<ActionEvent> exithandler = new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent e) {
+				
+				Platform.exit();
+				
+			}
+		};
+
+		exitItem.setOnAction(exithandler);
+
+		menuFile.getItems().addAll(newItem, importItem, exportItem,exitItem);
 
 		// --- Menu About
 		Menu menuHelp = new Menu("Help");
