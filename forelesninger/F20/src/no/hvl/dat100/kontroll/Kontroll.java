@@ -165,4 +165,10 @@ public class Kontroll {
 	public Collection<Eiendom> getEiendommer() {
 		return register.getEiendommer();
 	}
+	
+	public Eiendom finnEiendom(int gns, int bns) {
+		Eiendom e = register.finnEiendom(gns,bns);
+		
+		return e;
+	}
 }
