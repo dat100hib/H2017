@@ -54,6 +54,7 @@ public class GUIUtsyn extends Application implements IUtsyn {
 		HBox hbox = new HBox();
 		
 		OverviewArea oarea = new OverviewArea(hbox,kontroll);
+		EditArea earea = new EditArea(hbox,kontroll);
 		
 		anchorpane.getChildren().addAll(hbox);
 
