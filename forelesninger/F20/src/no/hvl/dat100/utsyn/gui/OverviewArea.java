@@ -29,13 +29,12 @@ public class OverviewArea {
 		
 		VBox vbox = new VBox();
 		vbox.setPadding(new Insets(10, 0, 0, 10));
-		
-		Label label = new Label("Eiendommer");
-		
+				
 		elist.getItems().add("1 2");
 		elist.getItems().add("2 3");
 		elist.getItems().add("3 4");
     
+		elist.setPrefHeight(500);
 		Button updatebtn = new Button("Update");
 		
 		updatebtn.setOnAction(new EventHandler<ActionEvent>() {
@@ -77,7 +76,7 @@ public class OverviewArea {
 		    }
 		});
 		
-		vbox.getChildren().addAll(label,elist,updatebtn);
+		vbox.getChildren().addAll(elist,updatebtn);
 		hbox.getChildren().add(vbox);
 	}
 }

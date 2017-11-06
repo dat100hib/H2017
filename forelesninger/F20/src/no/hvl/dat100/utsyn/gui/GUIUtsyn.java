@@ -45,7 +45,7 @@ public class GUIUtsyn extends Application implements IUtsyn {
 		this.kontroll = new Kontroll();
 		
 		VBox vbox = new VBox(); // TODO: directly use HBOX?
-		Scene scene = new Scene(vbox, 600, 400);
+		Scene scene = new Scene(vbox, 600, 600);
 		
 		//scene.getStylesheets().add(getClass().getResource(CSSFILE).toExternalForm());
 		
