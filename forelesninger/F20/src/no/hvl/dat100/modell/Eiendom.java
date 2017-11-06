@@ -117,7 +117,7 @@ public abstract class Eiendom {
 	/**
 	 * Registrer en eiendom som nabo.
 	 * 
-	 * @param naboeiendom
+	 * @param eiendom
 	 *            eiendom som skal registreres som eiendom
 	 * @return finnes eller blev nabo registret (max 4 naboer per eiendom)
 	 */
