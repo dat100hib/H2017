@@ -23,25 +23,27 @@ import no.hvl.dat100.kontroll.Kontroll;
 
 public class Menus {
 
+	private static String MAPPE = System.getProperty("user.dir") + "/src/no/hvl/dat100/lagring/";
+	
 	private MenuBar menuBar;
 
 	private Kontroll kontroll;
 	private Stage stage;
-
-	public Menus(Kontroll kontroll, Stage stage) {
+    private OverviewArea oarea;
+    
+	public Menus(Kontroll kontroll, Stage stage, OverviewArea oarea) {
 
 		menuBar = new MenuBar();
 		this.kontroll = kontroll;
 		this.stage = stage;
-
+		this.oarea = oarea;
+		
 		// File Menu
 		Menu menuFile = new Menu("File");
 
 		MenuItem newItem = new MenuItem("New...");
 
 		EventHandler<ActionEvent> newhandler = new EventHandler<ActionEvent>() {
-
-			// private Kontroll hkontroll = kontroll;
 
 			@Override
 			public void handle(ActionEvent e) {
@@ -57,6 +59,7 @@ public class Menus {
 					String kommune = result.get();
 					System.out.println(kommune);
 					kontroll.nyttRegister(kommune);
+					oarea.update();
 				}
 
 			}
@@ -72,13 +75,16 @@ public class Menus {
 
 				FileChooser fileChooser = new FileChooser();
 				fileChooser.setTitle("Importer register datafil");
-				fileChooser.getExtensionFilters().addAll(new ExtensionFilter("Text Files", "*.dat"));
+				File filedir = new File(MAPPE);
+				fileChooser.setInitialDirectory(filedir);
+				fileChooser.getExtensionFilters().addAll(new ExtensionFilter("Data Files", "*.dat"));
 				
 				File selectedFile = fileChooser.showOpenDialog(stage);
 
 				if (selectedFile != null) {
 					System.out.println(selectedFile.getAbsolutePath());
 					kontroll.importerRegister(selectedFile.getAbsolutePath());
+					oarea.update();
 				}
 			}
 		};
@@ -94,6 +100,8 @@ public class Menus {
 				
 				FileChooser fileChooser = new FileChooser();
 				fileChooser.setTitle("Eksporter register datafil");
+				File filedir = new File(MAPPE);
+				fileChooser.setInitialDirectory(filedir);
 				fileChooser.getExtensionFilters().addAll(new ExtensionFilter("Data Files", "*.dat"));
 				
 				File selectedFile = fileChooser.showSaveDialog(stage);

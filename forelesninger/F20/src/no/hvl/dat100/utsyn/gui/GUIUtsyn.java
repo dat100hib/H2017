@@ -58,7 +58,7 @@ public class GUIUtsyn extends Application implements IUtsyn {
 		
 		anchorpane.getChildren().addAll(hbox);
 
-		Menus menus = new Menus(kontroll,stage);
+		Menus menus = new Menus(kontroll,stage,oarea);
 		MenuBar menuBar = menus.getMenuBar();
 
 		((VBox) scene.getRoot()).getChildren().addAll(menuBar, anchorpane);
