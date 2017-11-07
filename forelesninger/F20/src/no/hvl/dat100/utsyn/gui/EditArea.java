@@ -2,6 +2,7 @@ package no.hvl.dat100.utsyn.gui;
 
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.ArrayList;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -19,12 +20,27 @@ import javafx.scene.layout.VBox;
 
 import no.hvl.dat100.kontroll.Kontroll;
 import no.hvl.dat100.modell.Eiendom;
+import no.hvl.dat100.modell.UtleieEiendom;
+import no.hvl.dat100.modell.NeringsEiendom;
+
+import no.hvl.dat100.modell.Eier;
+import no.hvl.dat100.modell.KontaktAdresse;
 
 public class EditArea {
 
 	private Kontroll kontroll = null;
 	
-	public EditArea(HBox hbox, Kontroll kontroll) {
+	// edit fields
+	TextField gnsfield,bnsfield;
+	TextField navnfield,fodselsnrfield; 
+	TextField veinrfield, veinavnfield;
+	TextField byfield,postfield;
+	TextField landfield;
+	TextField leiefield, fodnrfield, orgnrfield;
+	
+	RadioButton utleiebtn, neringsbtn;
+	
+	public EditArea(HBox hbox, Kontroll kontroll,OverviewArea oarea) {
 	
 		this.kontroll = kontroll;
 		
@@ -39,13 +55,12 @@ public class EditArea {
 		Label gnslabel = new Label("gns");
 		Label bnslabel = new Label("bns");
 		
-		TextField gnsfield = new TextField();
-		TextField bnsfield = new TextField();
+		gnsfield = new TextField();
+		bnsfield = new TextField();
 		bnsfield.setPrefWidth(50);
 		gnsfield.setPrefWidth(50);
 		
 		HBox gnsbnshbox = new HBox();
-		//gnsbnshbox.setPadding(new Insets(10, 10, 10, 10));
 		gnsbnshbox.setSpacing(5);
 		
 		gnsbnshbox.getChildren().addAll(gnsfield,bnslabel,bnsfield);
@@ -55,24 +70,24 @@ public class EditArea {
 		
 		Separator separator1 = new Separator();
 		
-		TextField navnfield = new TextField();
+		navnfield = new TextField();
 		Label navnlabel = new Label("Navn");
 		
 		eiendomgp.add(navnlabel, 0, 1);
 		eiendomgp.add(navnfield, 1, 1);
 		
-		TextField fodselsnrfield = new TextField();
+		fodselsnrfield = new TextField();
 		Label fodselnrlabel = new Label("Fødnr");
 		eiendomgp.add(fodselnrlabel, 0, 2);
 		eiendomgp.add(fodselsnrfield, 1, 2);
 				
 		Separator separator2 = new Separator();
 		
-		TextField veinrfield = new TextField();
+		veinrfield = new TextField();
 		Label veinrlabel = new Label("Nr");
 		veinrfield.setPrefWidth(50);
 		
-		TextField veinavnfield = new TextField();
+		veinavnfield = new TextField();
 		Label veinavnlabel = new Label("Vei");
 		
 		HBox veihbox = new HBox(veinavnfield,veinrfield,veinrlabel);
@@ -81,10 +96,10 @@ public class EditArea {
 		eiendomgp.add(veinavnlabel, 0, 3);
 		eiendomgp.add(veihbox, 1, 3);
 		
-		TextField byfield = new TextField();
+		byfield = new TextField();
 		Label bylabel = new Label("By");
 		
-		TextField postfield = new TextField();
+		postfield = new TextField();
 		Label postlabel = new Label("Postnr");
 		postfield.setPrefWidth(50);
 		
@@ -94,7 +109,7 @@ public class EditArea {
 		eiendomgp.add(bylabel, 0, 4);
 		eiendomgp.add(byhbox, 1, 4);
 		
-		TextField landfield = new TextField();
+		landfield = new TextField();
 		Label landlabel = new Label("Land");
 	
 		eiendomgp.add(landlabel, 0, 5);
@@ -102,8 +117,8 @@ public class EditArea {
 		
 		Separator separator3 = new Separator();
 		
-		RadioButton utleiebtn = new RadioButton("Utleieeiendom");
-        RadioButton neringsbtn = new RadioButton("Næringseiendom");
+		utleiebtn = new RadioButton("Utleieeiendom");
+        neringsbtn = new RadioButton("Næringseiendom");
  
         ToggleGroup radioGroup = new ToggleGroup();
 
@@ -116,13 +131,13 @@ public class EditArea {
         
         GridPane typepane = new GridPane();
         
-		TextField leiefield = new TextField();
+		leiefield = new TextField();
 		Label leielabel = new Label("Leie");
 		
-		TextField fodnrfield = new TextField();
+		fodnrfield = new TextField();
 		Label fodnrlabel = new Label("Fødnr");
 		
-		TextField orgnrfield = new TextField();
+		orgnrfield = new TextField();
 		Label orgnrlabel = new Label("Orgnr");
 		
 		typepane.add(leielabel, 0, 0);
@@ -163,19 +178,33 @@ public class EditArea {
 		    }
 		});
 
-		Button okbutton = new Button("OK");
-		okbutton.setOnAction(new EventHandler<ActionEvent>() {
+		Button updatebutton = new Button("Update");
+		updatebutton.setOnAction(new EventHandler<ActionEvent>() {
 			
 		    @Override
 		    public void handle(ActionEvent actionEvent) {
 		    	
-		    	System.out.println("OK");
+		    	System.out.println("Update");
 		    	// les data
 		    	
 		    }
 		});
 		
-		buttonhbox.getChildren().addAll(newbutton,editbutton,okbutton);
+		Button refreshbtn = new Button("Refresh");
+		
+		refreshbtn.setOnAction(new EventHandler<ActionEvent>() {
+			
+		    @Override
+		    public void handle(ActionEvent actionEvent) {
+		    	
+		    	System.out.println("Refresh");
+		    	 
+		    	oarea.update();
+		    	
+		    }
+		});
+		
+		buttonhbox.getChildren().addAll(newbutton,editbutton,updatebutton,refreshbtn);
 		
 		
 		
@@ -187,5 +216,63 @@ public class EditArea {
 		hbox.getChildren().addAll(vbox);	
 		
 	}
+	
+	public void clearFields() {
+		// TODO
+	}
+	
+	public void setEditable(boolean editable) {
+		
+		//TODO: field in an array
+		veinavnfield.setEditable(editable);
+		
+	}
+	
+	public void setFields(Eiendom eiendom) {
+		
+		gnsfield.setText(Integer.toString(eiendom.getGns()));
+		bnsfield.setText(Integer.toString(eiendom.getBns()));
+		
+		ArrayList<Eier> eiere = eiendom.getEiere();
+		
+		// TODO: antar altid en og kun en eier
+		Eier eier = eiere.get(0); 
+		
+		navnfield.setText(eier.getNavn());
+		fodselsnrfield.setText(Integer.toString(eier.getFodselsnummer()));
+		
+		KontaktAdresse adresse = eier.getAdresse();
+		
+		veinrfield.setText(Integer.toString(adresse.getNummer()));
+		veinavnfield.setText(adresse.getVei());
+		
+		byfield.setText(adresse.getBy());
+		postfield.setText(Integer.toString(adresse.getPostnummer()));
+		landfield.setText(adresse.getLand());
+		
+		if (eiendom instanceof NeringsEiendom) {
+			NeringsEiendom ne = (NeringsEiendom) eiendom;
+			orgnrfield.setText(Integer.toString(ne.getOrgnr()));
+			
+			leiefield.clear();
+			fodnrfield.clear();
+			
+			utleiebtn.setSelected(false);
+			neringsbtn.setSelected(true);
+			
+		} else {
+			UtleieEiendom ut = (UtleieEiendom) eiendom;
+			
+			leiefield.setText(Integer.toString(ut.getLeie()));
+			fodnrfield.setText(Integer.toString(ut.getLeier()));
+			orgnrfield.clear();
+			
+			utleiebtn.setSelected(true);
+			neringsbtn.setSelected(false);
+		}
+		
+		setEditable(false);
+	}
+	
 
 }

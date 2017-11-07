@@ -163,7 +163,10 @@ public class Kontroll {
 	}
 	
 	public Collection<Eiendom> getEiendommer() {
-		return register.getEiendommer();
+		if (register != null) {
+			return register.getEiendommer();
+		}
+		return null;
 	}
 	
 	public Eiendom finnEiendom(int gns, int bns) {

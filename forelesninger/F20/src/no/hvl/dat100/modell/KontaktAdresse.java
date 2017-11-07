@@ -46,4 +46,26 @@ public class KontaktAdresse {
 				land + "\n";
 				
 	}
+
+	public String getVei() {
+		return vei;
+	}
+
+	public int getNummer() {
+		return nummer;
+	}
+
+	public int getPostnummer() {
+		return postnummer;
+	}
+
+	public String getBy() {
+		return by;
+	}
+
+	public String getLand() {
+		return land;
+	}
+	
+	
 }

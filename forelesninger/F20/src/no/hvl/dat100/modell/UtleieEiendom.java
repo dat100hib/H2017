@@ -31,6 +31,11 @@ public class UtleieEiendom extends Eiendom {
 		return leierfodselsnummer;
 	}
 	
+	
+	public int getLeie() {
+		return leie;
+	}
+
 	/**
 	 * Streng representasjon av eiere for eiendom.
 	 * 
