@@ -38,6 +38,10 @@ public class EditArea {
 	TextField landfield;
 	TextField leiefield, fodnrfield, orgnrfield;
 	
+	public static int FIELDS = 12;
+	
+	TextField[] fields;
+	
 	RadioButton utleiebtn, neringsbtn;
 	
 	public EditArea(HBox hbox, Kontroll kontroll,OverviewArea oarea) {
@@ -46,6 +50,8 @@ public class EditArea {
 		
 		VBox vbox = new VBox();
 		vbox.setPadding(new Insets(10, 0, 0, 10));
+		
+		fields = new TextField[FIELDS];
 		
 		GridPane eiendomgp = new GridPane();
 		eiendomgp.setPadding(new Insets(10, 10, 10, 10));
@@ -150,6 +156,19 @@ public class EditArea {
 		typepane.setHgap(10); 
 		typepane.setVgap(10);
 		
+		fields[0] = gnsfield;
+		fields[1] = bnsfield;
+		fields[2] = navnfield;
+		fields[3] = fodselsnrfield;
+		fields[4] = veinrfield;
+		fields[5] = veinavnfield;
+		fields[6] = byfield;
+		fields[7] = postfield;
+		fields[8] = landfield;
+		fields[9] = leiefield;
+		fields[10] = fodnrfield;
+		fields[11] = orgnrfield;
+		
 		HBox buttonhbox = new HBox();
 		buttonhbox.setSpacing(10);
 		buttonhbox.setPadding(new Insets(10, 10, 10, 10));
@@ -161,7 +180,8 @@ public class EditArea {
 		    public void handle(ActionEvent actionEvent) {
 		    	
 		    	System.out.println("New");
-
+		    	clearFields();
+		    	setEditable(true);
 		    	// clear all fields
 		    }
 		});
@@ -173,8 +193,8 @@ public class EditArea {
 		    public void handle(ActionEvent actionEvent) {
 		    	
 		    	System.out.println("Edit");
-		    	// alle elementer editerbare
 		    	
+		    	setEditable(true);		    	
 		    }
 		});
 
@@ -218,14 +238,22 @@ public class EditArea {
 	}
 	
 	public void clearFields() {
-		// TODO
+		
+		for (TextField field : fields) {
+			field.clear();
+		}
+		
+		utleiebtn.setSelected(false);
+		neringsbtn.setSelected(true);
+		
 	}
 	
 	public void setEditable(boolean editable) {
 		
-		//TODO: field in an array
-		veinavnfield.setEditable(editable);
-		
+		for (TextField field : fields) {
+			field.setEditable(editable);
+		}
+		//setEditable(false);
 	}
 	
 	public void setFields(Eiendom eiendom) {
