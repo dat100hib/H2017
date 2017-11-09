@@ -43,10 +43,12 @@ public class EditArea {
 	TextField[] fields;
 	
 	RadioButton utleiebtn, neringsbtn;
+	OverviewArea oarea;
 	
 	public EditArea(HBox hbox, Kontroll kontroll,OverviewArea oarea) {
 	
 		this.kontroll = kontroll;
+		this.oarea = oarea;
 		
 		VBox vbox = new VBox();
 		vbox.setPadding(new Insets(10, 0, 0, 10));
@@ -205,7 +207,8 @@ public class EditArea {
 		    public void handle(ActionEvent actionEvent) {
 		    	
 		    	System.out.println("Update");
-		    	// les data
+		    	readFields();
+		    	oarea.update();
 		    	
 		    }
 		});
@@ -226,13 +229,12 @@ public class EditArea {
 		
 		buttonhbox.getChildren().addAll(newbutton,editbutton,updatebutton,refreshbtn);
 		
-		
-		
 		vbox.getChildren().addAll(separator1,
 				                  eiendomgp,separator2,
 				                  typehbox,
 								  typepane,separator3,
 				                  buttonhbox);
+		
 		hbox.getChildren().addAll(vbox);	
 		
 	}
@@ -248,12 +250,41 @@ public class EditArea {
 		
 	}
 	
+	public void readFields() {
+	
+		int gns = Integer.parseInt(gnsfield.getText());
+		int bns = Integer.parseInt(bnsfield.getText());
+		
+		String navn = navnfield.getText();
+		int fodnr = Integer.parseInt(fodselsnrfield.getText()); 
+		
+		int veinr = Integer.parseInt(veinrfield.getText());
+		String vei = veinavnfield.getText();
+		String by = byfield.getText();
+		int postnr = Integer.parseInt(postfield.getText());
+		String land = landfield.getText();
+		
+		KontaktAdresse ka = new KontaktAdresse(vei,veinr,postnr,by,land);
+		
+		if (utleiebtn.isSelected()) {
+			int leie = Integer.parseInt(leiefield.getText());
+			int leierfodnr = Integer.parseInt(fodnrfield.getText());
+			kontroll.nyUtleieEiendom(gns, bns, leierfodnr, leie);
+			
+		} else {
+			int orgnr = Integer.parseInt(orgnrfield.getText());
+			kontroll.nyNeringsEiendom(gns, bns, orgnr);
+		}
+		
+		kontroll.nyEier(navn, fodnr, ka, gns, bns);
+	}
+	
 	public void setEditable(boolean editable) {
 		
 		for (TextField field : fields) {
 			field.setEditable(editable);
 		}
-		//setEditable(false);
+
 	}
 	
 	public void setFields(Eiendom eiendom) {

@@ -69,7 +69,7 @@ public class OverviewArea {
 	public void update() {
 
 		elist.getItems().clear();
-		// TODO: clear also editarea
+		earea.clearFields();
 
 		Collection<Eiendom> eiendommer = kontroll.getEiendommer();
 
