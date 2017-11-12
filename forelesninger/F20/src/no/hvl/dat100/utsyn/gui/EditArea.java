@@ -1,7 +1,5 @@
 package no.hvl.dat100.utsyn.gui;
 
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.ArrayList;
 
 import javafx.event.ActionEvent;
@@ -39,10 +37,10 @@ public class EditArea {
 	TextField leiefield, fodnrfield, orgnrfield;
 	
 	public static int FIELDS = 12;
-	
 	TextField[] fields;
 	
 	RadioButton utleiebtn, neringsbtn;
+	
 	OverviewArea oarea;
 	
 	public EditArea(HBox hbox, Kontroll kontroll,OverviewArea oarea) {
@@ -93,7 +91,7 @@ public class EditArea {
 		
 		veinrfield = new TextField();
 		Label veinrlabel = new Label("Nr");
-		veinrfield.setPrefWidth(50);
+		veinrfield.setPrefWidth(100);
 		
 		veinavnfield = new TextField();
 		Label veinavnlabel = new Label("Vei");
@@ -109,7 +107,7 @@ public class EditArea {
 		
 		postfield = new TextField();
 		Label postlabel = new Label("Postnr");
-		postfield.setPrefWidth(50);
+		postfield.setPrefWidth(100);
 		
 		HBox byhbox = new HBox(byfield,postfield,postlabel);
 	    byhbox.setSpacing(5);
@@ -176,17 +174,9 @@ public class EditArea {
 		buttonhbox.setPadding(new Insets(10, 10, 10, 10));
 		
 		Button newbutton = new Button("New");
-		newbutton.setOnAction(new EventHandler<ActionEvent>() {
-			
-		    @Override
-		    public void handle(ActionEvent actionEvent) {
-		    	
-		    	System.out.println("New");
-		    	clearFields();
-		    	setEditable(true);
-		    	// clear all fields
-		    }
-		});
+		EventHandler<ActionEvent> newhandler = new NewBtnHandler(this);
+		
+		newbutton.setOnAction(newhandler);
 		
 		Button editbutton = new Button("Edit");
 		editbutton.setOnAction(new EventHandler<ActionEvent>() {
