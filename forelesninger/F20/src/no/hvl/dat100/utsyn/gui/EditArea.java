@@ -173,11 +173,13 @@ public class EditArea {
 		buttonhbox.setSpacing(10);
 		buttonhbox.setPadding(new Insets(10, 10, 10, 10));
 		
+		// event handling using an explicit class
 		Button newbutton = new Button("New");
 		EventHandler<ActionEvent> newhandler = new NewBtnHandler(this);
 		
 		newbutton.setOnAction(newhandler);
 		
+		// Event handling using anonymous classes 
 		Button editbutton = new Button("Edit");
 		editbutton.setOnAction(new EventHandler<ActionEvent>() {
 			
@@ -190,33 +192,19 @@ public class EditArea {
 		    }
 		});
 
+		// Event handling using lambdas (anonymous functions) (Java 8)
 		Button updatebutton = new Button("Update");
-		updatebutton.setOnAction(new EventHandler<ActionEvent>() {
-			
-		    @Override
-		    public void handle(ActionEvent actionEvent) {
-		    	
-		    	System.out.println("Update");
-		    	readFields();
-		    	oarea.update();
-		    	
-		    }
+		updatebutton.setOnAction((event) -> {
+						
+			System.out.println("Update");
+	    	readFields();
+	    	oarea.update();
 		});
-		
+			
+		// Event handling using method references (Java 8)
 		Button refreshbtn = new Button("Refresh");
-		
-		refreshbtn.setOnAction(new EventHandler<ActionEvent>() {
-			
-		    @Override
-		    public void handle(ActionEvent actionEvent) {
-		    	
-		    	System.out.println("Refresh");
-		    	 
-		    	oarea.update();
-		    	
-		    }
-		});
-		
+		refreshbtn.setOnAction(this::handleRefresh);
+						
 		buttonhbox.getChildren().addAll(newbutton,editbutton,updatebutton,refreshbtn);
 		
 		vbox.getChildren().addAll(separator1,
@@ -323,5 +311,12 @@ public class EditArea {
 		setEditable(false);
 	}
 	
-
+	public void handleRefresh(ActionEvent actionEvent) {
+    	
+    	System.out.println("Refresh");
+    	 
+    	oarea.update();
+    	
+    }
+	
 }
