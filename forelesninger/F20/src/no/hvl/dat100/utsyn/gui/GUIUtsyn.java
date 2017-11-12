@@ -10,17 +10,10 @@ import javafx.scene.control.MenuBar;
 
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.GridPane;
-
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.control.Button;
 
 import no.hvl.dat100.kontroll.Kontroll;
-import no.hvl.dat100.main.IUtsyn;
 
-public class GUIUtsyn extends Application implements IUtsyn {
+public class GUIUtsyn extends Application {
 
 	private static String CSSFILE = "Dark.css";
 	private Kontroll kontroll;
@@ -28,12 +21,7 @@ public class GUIUtsyn extends Application implements IUtsyn {
 	public void setKontroll(Kontroll kontroll) {
 		this.kontroll = kontroll;
 	}
-	
-	public void kjor() {
-		String[] args = null;
-		Application.launch(args);
-	}
-	
+		
 	public static void main(String[] args) {
 		Application.launch(args);
 	}
@@ -44,28 +32,29 @@ public class GUIUtsyn extends Application implements IUtsyn {
 
 		this.kontroll = new Kontroll();
 		
-		VBox vbox = new VBox(); // TODO: directly use HBOX?
-		Scene scene = new Scene(vbox, 600, 600);
-		
-		//scene.getStylesheets().add(getClass().getResource(CSSFILE).toExternalForm());
-		
-		AnchorPane anchorpane = new AnchorPane();
-		
+		// hbox for holding the overview and the edit area
 		HBox hbox = new HBox();
 		
+		// setup the overview area
 		OverviewArea oarea = new OverviewArea(hbox,kontroll);
 		
 		EditArea earea = new EditArea(hbox,kontroll,oarea);
 		oarea.setEArea(earea);
 		
-		anchorpane.getChildren().addAll(hbox);
-
+		// setup the menus
 		Menus menus = new Menus(kontroll,stage,oarea);
 		MenuBar menuBar = menus.getMenuBar();
 
-		((VBox) scene.getRoot()).getChildren().addAll(menuBar, anchorpane);
-
+		// create the scene
+		VBox vbox = new VBox(menuBar, hbox); 
+		
+		Scene scene = new Scene(vbox, 700, 600);
 		stage.setScene(scene);
+		
+		// styling the look-and-feel of the UI
+		scene.getStylesheets().add(getClass().getResource(CSSFILE).toExternalForm());
+		
+		// show the scene
 		stage.show();
 
 	}
