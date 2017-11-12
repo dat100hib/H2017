@@ -3,9 +3,7 @@ package no.hvl.dat100.utsyn.gui;
 import javafx.application.Application;
 
 import javafx.stage.Stage;
-import javafx.geometry.Insets;
 import javafx.scene.Scene;
-
 import javafx.scene.control.MenuBar;
 
 import javafx.scene.layout.HBox;
