@@ -9,7 +9,7 @@ public class Follower {
 	}
 	
 	public void onMessage (String message) {
-		System.out.print(identity + ": ");
+		System.out.print(identity + " received : ");
 		System.out.println(message);
 	}
 }

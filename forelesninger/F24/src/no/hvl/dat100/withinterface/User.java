@@ -7,6 +7,6 @@ public class User implements IFollower {
 		me = identity;
 	}
 	public void onMessage(String message) {
-		System.out.println(me + "! " + "du har fått en melding");
+		System.out.println(me + "! " + "du har fått en melding: " + message);
 	}
 }
