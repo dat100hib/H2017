@@ -69,7 +69,6 @@ public class OverviewArea {
 	public void update() {
 
 		elist.getItems().clear();
-		earea.clearFields();
 
 		Collection<Eiendom> eiendommer = kontroll.getEiendommer();
 

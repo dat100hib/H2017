@@ -174,4 +174,10 @@ public class Kontroll {
 		
 		return e;
 	}
+	
+	public void slettEiendom(int gns, int bns) {
+		if (register != null) {
+			register.slettEiendom(gns, bns);
+		}
+	}
 }

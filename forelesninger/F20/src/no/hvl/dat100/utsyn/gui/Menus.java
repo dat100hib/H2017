@@ -30,13 +30,15 @@ public class Menus {
 	private Kontroll kontroll;
 	private Stage stage;
     private OverviewArea oarea;
+    private EditArea earea;
     
-	public Menus(Kontroll kontroll, Stage stage, OverviewArea oarea) {
+	public Menus(Kontroll kontroll, Stage stage, OverviewArea oarea, EditArea earea) {
 
 		menuBar = new MenuBar();
 		this.kontroll = kontroll;
 		this.stage = stage;
 		this.oarea = oarea;
+		this.earea = earea;
 		
 		// File Menu
 		Menu menuFile = new Menu("File");
@@ -85,6 +87,8 @@ public class Menus {
 					System.out.println(selectedFile.getAbsolutePath());
 					kontroll.importerRegister(selectedFile.getAbsolutePath());
 					oarea.update();
+					earea.clearFields();
+
 				}
 			}
 		};

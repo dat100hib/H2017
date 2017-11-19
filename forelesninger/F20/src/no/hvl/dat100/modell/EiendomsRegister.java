@@ -131,4 +131,11 @@ public class EiendomsRegister {
 	public Eiendom finnEiendom(int gns, int bns) {
 		return eiendommer.get(key(gns, bns));
 	}
+	
+	public void slettEiendom(int gns, int bns) {
+		String key = key(gns,bns);
+		
+		eiendommer.remove(key);
+		
+	}
 }

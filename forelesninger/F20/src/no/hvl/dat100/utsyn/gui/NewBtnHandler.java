@@ -5,7 +5,7 @@ import javafx.event.EventHandler;
 
 public class NewBtnHandler implements EventHandler<ActionEvent> {
 
-	EditArea earea;
+	private EditArea earea;
 	
 	public NewBtnHandler(EditArea earea) {
 		this.earea = earea;

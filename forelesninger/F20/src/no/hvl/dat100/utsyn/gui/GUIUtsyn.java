@@ -26,6 +26,7 @@ public class GUIUtsyn extends Application {
 	
 	@Override
 	public void start(Stage stage) throws Exception {
+		
 		stage.setTitle("Eiendomsregister App");
 
 		this.kontroll = new Kontroll();
@@ -40,7 +41,7 @@ public class GUIUtsyn extends Application {
 		oarea.setEArea(earea);
 		
 		// setup the menus
-		Menus menus = new Menus(kontroll,stage,oarea);
+		Menus menus = new Menus(kontroll,stage,oarea,earea);
 		MenuBar menuBar = menus.getMenuBar();
 
 		// create the scene

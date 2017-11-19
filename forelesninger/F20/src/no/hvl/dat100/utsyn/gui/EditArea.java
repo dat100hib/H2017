@@ -198,6 +198,7 @@ public class EditArea {
 						
 			System.out.println("Update");
 	    	readFields();
+	    	setEditable(false);
 	    	oarea.update();
 		});
 			
@@ -232,6 +233,8 @@ public class EditArea {
 	
 		int gns = Integer.parseInt(gnsfield.getText());
 		int bns = Integer.parseInt(bnsfield.getText());
+	
+		kontroll.slettEiendom(gns, bns); // slett i tilfelle finnnes allerede
 		
 		String navn = navnfield.getText();
 		int fodnr = Integer.parseInt(fodselsnrfield.getText()); 
