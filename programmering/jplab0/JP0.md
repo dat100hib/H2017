@@ -24,19 +24,22 @@ I denne oppgaven skal du opprette et programmeringsprosjekt i Eclipse, skrive og
 
     Skriv inn:
 
-    ```java
+```java
 System.out.println("Nå virker det!");
 ```
 
-    slik at hele filen ser slik ut:
+slik at hele filen ser slik ut:
 
-    ```java
+```java
+package no.hvl.dat100;
+
 public class Velkommen {
     public static void main(String[] args){
     	System.out.println("Nå virker det!");
     }
 }
 ```
+
 4.	Velg *Run | Run* for å utføre programmet. Dersom du får spørsmål om det skal utføres som Java Application eller Java Applet, så velger du Java Application
 5.	Du vil nå få utskriften i konsoll-vinduet (nederst i Eclipse vinduet).
 6.	Modifiser programmet slik det skriver ut en linje med 10 stjerner ********** før og etter selve teksten.
