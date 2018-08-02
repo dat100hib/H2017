@@ -1,7 +1,7 @@
 # DAT100: Java Programmering 0
 ## Eclipse IDE, JDK og Git
 
-Formålet med denne øvingen er å sikre at du har en fungerende installasjon av JDK og Eclipse på egen PC.
+Formålet med denne programmeringslab er å sikre at du har en fungerende installasjon av JDK og Eclipse på egen PC.
 
 Du må **gjøre tre ting** for å få denne første programmeringsoppgaven godkjent
 
