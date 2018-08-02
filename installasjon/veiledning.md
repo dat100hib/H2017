@@ -1,4 +1,4 @@
-# Installasjon av verktøy for Java programmering
+# DAT100: Installasjon av verktøy for Java programmering
 
 Undervisning i DAT100 baserer seg på bruk av egen PC med Java programvareutviklingsmiljø installert. **Det er derfor viktig at alle får dette til.**
 
@@ -108,7 +108,7 @@ Om man endrer i PATH da må man starte en ny kommando prompt for å få effekt a
 
 #### Konflikt med andre JVM installasjoner
 
-På noen Windows-plattformer kan det forekomme at en versjon av java’s virtuelle maskin er installert som forhindrer Eclipse i å starte. Da må man endre i oppstarts-filen `eclipse.ini` som finnes i eclipse-mappen ved å tilføye:
+På noen Windows-plattformer kan det forekomme at en versjon av java’s virtuelle maskin (JVM) er installert som forhindrer Eclipse i å starte. Da må man endre i oppstarts-filen `eclipse.ini` som finnes i eclipse-mappen ved å tilføye:
 
 ```-vm C:/Program Files/Java/jdk10.0.2/bin/javaw.exe```
 
