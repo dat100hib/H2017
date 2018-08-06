@@ -3,7 +3,7 @@
 
 Formålet med denne programmeringslab er å sikre at du har en fungerende installasjon av JDK og Eclipse på egen PC.
 
-Du må **gjøre tre ting** for å få denne første programmeringsoppgaven godkjent
+Du må **gjøre tre ting** for å få denne første programmeringsoppgaven godkjent.
 
 - [x] Demonstrere den kjørende applikasjonen i oppgave 1 og oppgave 4 til labassistent eller faglærer. Dette kan gjøres på programmeringslaben ifm. forelesning, eller ved å gjøre en individuell avtale.
 
