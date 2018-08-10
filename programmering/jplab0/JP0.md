@@ -79,8 +79,8 @@ Etter hvert i faget oppdaterer vi eksempelprosjektene og du får også bruk for 
 1.	Velg et av eksempelprosjektene i Eclipse, høyre-klikk og velg *Team | Pull*.   Dette oppdaterer oppbevaringsplassen for eksempler på din PC.
 2.	Velg *File | Import… | Git | Projects from Git | Existing local repository* og trykk *Next*.
 3.	I dialogboksen *Select a Git Repository* velg *H2017* og trykk *Next*.
-4.	I dialogboksen *Select a wizard to use for importing projects* velg *Import existing Eclipse Projects* og trykk *Next*
-5.	I dialogboksen *Import Projects* kan du nå velge de Eclipse-prosjekter du ønsker å importere inn in Eclipse
+4.	I dialogboksen *Select a wizard to use for importing projects* velg *Import existing Eclipse Projects*, vælg mappen *forelesninger* og trykk *Next*
+5.	I dialogboksen *Import Projects* kan du nå velge de Eclipse-prosjekter du ønsker å importere inn i Eclipse
 
 ### Oppgave 3: Github classroom og JUnit enhetstesting
 
