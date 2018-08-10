@@ -92,7 +92,7 @@ Formålet med denne og neste oppgave er å bli kjent med JUnit og github classro
 
 Første steg er å akseptere programmeringsoppgaven for å få tilgang til den Java-kode du skal ta utgangspunkt i. Dette gjøre ved å åpne en nettleser og gå til følgende adresse (URL):
 
-https://classroom.github.com/a/eT4XhwjD
+https://classroom.github.com/a/EzWKItGf
 
 Ved å gå til denne adressen kommer du inn i github classroom og kan akseptere oppgaven:
 
