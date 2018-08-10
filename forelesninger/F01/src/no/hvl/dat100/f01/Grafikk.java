@@ -4,13 +4,15 @@ import easygraphics.*;
 
 public class Grafikk extends EasyGraphics {
 
-	  public static void main(String[] args) {
-	    launch(args);
-	  }
+	static final long serialVersionUID = 1000L;
 
-	  public void run() {
-	    makeWindow("Grafikk", 350, 150);
-	    drawCircle(150, 70, 60);
-	  }
-
+	public static void main(String[] args) {
+		launch(args);
 	}
+
+	public void run() {
+		makeWindow("Grafikk", 350, 150);
+		drawCircle(150, 70, 60);
+	}
+
+}
