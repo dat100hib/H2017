@@ -11,7 +11,7 @@ Du må **gjøre tre ting** for å få denne første programmeringsoppgaven godkj
 
 - [x]	Levere inn Eclipse-prosjektet i oppgave 3 på oppbevaringsplassen på github classroom.
 
-**Deadline** for innlevering/godkjenning av øvingen er **1. september**.
+**Deadline** for innlevering/godkjenning av øvingen er **31. august kl. 16.00**.
 Ta kontakt med faglærer eller lab-assistent dersom du har problemer med oppgavene.
 
 ### Oppgave 1: Første JAVA Eclipse-prosjekt
