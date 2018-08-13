@@ -20,7 +20,8 @@ I denne oppgaven skal du opprette et programmeringsprosjekt i Eclipse, skrive og
 
 1.	Start Eclipse
 2.	Velg *File | New | Java Project* og skriv inn Velkommen som prosjektnavn. Trykk *Finish*
-3.	Velg *File | New | Class* og skriv inn `no.hvl.dat100` som pakkenavn og `Velkommen` som klassenavn. Kryss av for å generere `public static void main` automatisk. Trykk *Finish*
+3. 	I *Create module-info.java* spiller det ingen rolle om du velger *Don't create* eller *Create* siden vi ikke i dette programme skal bruke modulsystemet i Java
+4.	Velg *File | New | Class* og skriv inn `no.hvl.dat100` som pakkenavn og `Velkommen` som klassenavn. Kryss av for å generere `public static void main` automatisk. Trykk *Finish*
 
     Skriv inn:
 
