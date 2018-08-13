@@ -1,10 +1,10 @@
 ![HVL Logo]({{site.url}}/assets/img/hvllogo.png)
 
-# Velkommen
-
 I faget skal vi bruke programmeringsspråket Java samt det integrerte utviklingsverktøy Eclipse. Videre skal vi bruke revisjonskontrollsystemet git og nettstedet github til å distribuere Java eksempelkode fra forelesninger samt Java kode til bruk ifm. programmerings- og prosjektoppgaver.
 
-Der finnes en detaljert [veiledning](
+## Veiledning
+
+Se den detaljerte [veiledningen](
 https://github.com/dat100hib/H2017/blob/master/installasjon/veiledning.md) som beskriver de ulike steg for installasjon av programvareutviklingsmiljø.
 
 ## Java Development Kit
