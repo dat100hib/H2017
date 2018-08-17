@@ -1,7 +1,7 @@
 package no.hvl.dat100;
+import static java.lang.Integer.parseInt;
 import static javax.swing.JOptionPane.showInputDialog;
 import static javax.swing.JOptionPane.showMessageDialog;
-import static java.lang.Integer.*;
 
 public class Dialog {
 
@@ -12,7 +12,7 @@ public class Dialog {
 		 int tall = parseInt(tallTxt);
 		 //Utskrift
 		 String utTxt = "Tallet er " + tall;			               		
-		showMessageDialog(null,utTxt);
+		 showMessageDialog(null,utTxt);
 	}
 
 }
