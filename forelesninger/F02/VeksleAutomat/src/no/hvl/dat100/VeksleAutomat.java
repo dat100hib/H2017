@@ -39,7 +39,7 @@ public class VeksleAutomat {
 	            antall20kr + " 20-kroner og " +
 			    antall10kr + " 10-kroner og " +
 	            antall1kr + " 1-kroner";
-	showMessageDialog(null,ut);
+	showMessageDialog(null,ut2);
 		 
 	}
 }
