@@ -17,6 +17,7 @@ public class SirkelKvadrater extends EasyGraphics {
     int y = 150;
     int h = 450;
  
+    
     // Det store kvadratet
     drawRectangle(x, y, h, h); // bredde = høyde
  
