@@ -12,12 +12,11 @@ public class SirkelKvadrater extends EasyGraphics {
   public void run() {
     makeWindow("TegnKvadrat");
  
-    // Bør leses inn, sjekk læreboka! 
+    // Bør leses inn,  
     int x = 150;
     int y = 150;
     int h = 450;
  
-    
     // Det store kvadratet
     drawRectangle(x, y, h, h); // bredde = høyde
  
