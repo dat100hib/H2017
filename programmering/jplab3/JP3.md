@@ -8,6 +8,7 @@ Oppgave 6 og 7 på denne programmeringslab er relevant for programmeringsprosjek
 
 ### Oppgave 1: Lese Java kode - Gruppearbeid
 
+##### a)
 Programmet nedenfor inneheld fire deler. Først studerer kvar student programmet nøye for å finne ut kva som blir skrive ut. Deretter diskuterer gruppen kva som blir skrive ut. Til slutt utfører de programmet og ser om de har rett svar.
 
 ```java
@@ -46,15 +47,19 @@ public class Oppgave1 {
 }
 ```
 
+##### b)
+
+Kva berekning gjer løkka i Del 4? Prøv gjerne med andre tal enn i eksemplet. Fyll inn i print-setningen slik at utskrifta gir meining.
+
 ### Oppgave 2: Tabeller («arrays») og strenger
 
 ##### a)
 
-Lag en klasse med en main-metode som leser antall ord og oppretter en strengtabell (String-array) med den gitte størrelsen. Les deretter ordene fra brukeren og plasser dem i tabellen. Skriv ut  tabellen for å se at ordene er kommet inn.
+Lag en klasse med en main-metode som leser antall ord og oppretter en strengtabell (String-array) med den gitte størrelsen. Les deretter ordene fra brukeren og plasser dem i tabellen. Skriv ut tabellen for å se at ordene er kommet inn.
 
 ##### b)
 
-Utvid main-metoden så den leser inn et mønster (streng) fra tastatur (terminal). Tell hvor mange ord i tabellen fra pkt. b) som inneholder mønsteret og skriv ut svaret.
+Utvid main-metoden så den leser inn et mønster (streng) fra tastatur (terminal). Tell hvor mange ord i tabellen fra pkt. a) som inneholder mønsteret og skriv ut svaret.
 
 Hint: studer dokumentasjon for String-klassen tilgjengelig via:
 http://docs.oracle.com/javase/8/docs/api/index.html
@@ -140,15 +145,13 @@ Du skal bruke løkke.
 
 Gjør oppgave 18, side 78 i Java boken.
 
-Oppgaven er relevant som oppvarming til programmeringsprosjektet.  Husk at i EasyGraphics koordinatsystem går *x* bortover og *y* nedover (se side 71 i Java boken).
+Oppgaven er relevant som oppvarming til programmeringsprosjektet.  Husk at EasyGraphics koordinatsystemet går *x* bortover og *y* nedover (se side 71 i Java boken).
 
 ### Oppgave 7: GPS punkter
 
 Et GPS punkt (Global Positioning System) inneholder bla. en breddegrad (engelsk: latitude) og en lengdegrad (engelsk: longitude) som angir en posisjon på jordkloden.
 
-Nedenfor skal du implementere noen metoder som gjør beregninger på GPS posisjoner.
-
-Legg inn metoderne i en klasse `GPSUtils.java`. Skriv også en main-metode i klassen som kaller metoderne i deloppgave a) - d) og sjekk om resultat fra metoderne er korrekt.
+Nedenfor skal du implementere noen metoder som gjør beregninger på GPS posisjoner. Legg inn metoderne i en klasse `GPSUtils.java`. Skriv også en main-metode i klassen som kaller metoderne i deloppgave a) - d) og sjekk om resultat fra metoderne er korrekt.
 
 ##### a)
 
