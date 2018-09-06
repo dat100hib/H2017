@@ -53,6 +53,9 @@ Kva berekning gjer løkka i Del 4? Prøv gjerne med andre tal enn i eksemplet. F
 
 ### Oppgave 2: Tabeller («arrays») og strenger
 
+Før du løser oppgavene nedenfor anbefales det å se igjennom dokumentasjon for String-klassen tilgjengelig via:
+http://docs.oracle.com/javase/8/docs/api/index.html
+
 ##### a)
 
 Lag en klasse med en main-metode som leser antall ord og oppretter en strengtabell (String-array) med den gitte størrelsen. Les deretter ordene fra brukeren og plasser dem i tabellen. Skriv ut tabellen for å se at ordene er kommet inn.
@@ -61,8 +64,7 @@ Lag en klasse med en main-metode som leser antall ord og oppretter en strengtabe
 
 Utvid main-metoden så den leser inn et mønster (streng) fra tastatur (terminal). Tell hvor mange ord i tabellen fra pkt. a) som inneholder mønsteret og skriv ut svaret.
 
-Hint: studer dokumentasjon for String-klassen tilgjengelig via:
-http://docs.oracle.com/javase/8/docs/api/index.html
+
 
 Se om der finnes en metode for å teste om en streng inneholder en gitt sekvens av tegn (char).
 
@@ -122,6 +124,9 @@ Maksimum for denne uken var 26.5 grader
 
 ### Oppgave 5: Strenger
 
+Først du løser oppgavene nedenfor anbefales det å se igjennom API-dokumentasjon for String-klassen tilgjengelig via:
+http://docs.oracle.com/javase/8/docs/api/index.html
+
 Metodane nedanfor skal vere klassemetodar (static). Plasser dei ein eigen klasse og lag eit main-program som testar metodane.
 
 ##### a)
@@ -134,12 +139,11 @@ Lag ein metode for å avgjere om ein array (tabell) av heiltal er sortert stigan
 
 ##### c)
 
-Lag ein metode som gitt ein tabell av tekststrengar, returnerer den strengen i tabellen som kjem først i (Unikode) alfabetet. Hint: sjå API dokumentasjon for String-klassen for metodar til samanlikning av strenger.
+Lag ein metode som gitt ein tabell av tekststrengar, returnerer den strengen i tabellen som kjem først i (Unikode) alfabetet. 
 
-##### d)
+##### d) - ekstra oppgåve 
 
-Ekstra oppgåve: Implementer sjølv en metode svarande til metoden frå String-klassen brukt i c).
-Du skal bruke løkke.
+Implementer sjølv en metode svarande til metoden frå String-klassen brukt i c). Du skal bruke løkke.
 
 ### Oppgave 6: Søylediagram
 
@@ -156,9 +160,10 @@ Nedenfor skal du implementere noen metoder som gjør beregninger på GPS posisjo
 ##### a)
 
 Avstanden *d* i meter mellom to punkter (lattitude1,longtitude1) og (lattitude2,longitude2) angitt ved bredde og lengdegrad kan beregnes ved bruk av Haversine-formlen
-[ https://en.wikipedia.org/wiki/Haversine_formula ]
 
 ![](assets/markdown-img-paste-2018090514365285.png)
+
+
 
 Implementer en metode
 
@@ -167,7 +172,9 @@ static double distance(double latitude1, double longitude1,
                        double latitude2, double longitude2)
 ```
 
-som bruker Math-klassen: https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html til å beregne avstand mellom to GPS punkter der *R = 6371000* m er jordens gjennomsnittsradius.
+som beregner avstand mellom to GPS punkter der *R = 6371000* m er jordens gjennomsnittsradius. 
+
+**Hint** Math-klassen: https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html inneholder de metoder som trengs inkl. *atan2* funksjonen.
 
 ##### b)
 
