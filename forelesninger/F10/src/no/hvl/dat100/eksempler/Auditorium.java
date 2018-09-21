@@ -104,7 +104,25 @@ public class Auditorium {
 
 			System.out.println();
 		}
+		
+		int r = 0;
+		boolean funnet = false;
+		while (r < aud.length && !funnet) {
+			
+			int p = 0;
+			while (p<aud[r].length && !funnet) {
+				
+				if (!(aud[r][p])) {
+					funnet = true;
+				}
+				
+				p++;
+			}
+			
+			r++;
+		}
 
+		System.out.println(funnet);
 	}
 
 }
