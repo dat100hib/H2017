@@ -107,6 +107,7 @@ public class Auditorium {
 		
 		int r = 0;
 		boolean funnet = false;
+		
 		while (r < aud.length && !funnet) {
 			
 			int p = 0;
