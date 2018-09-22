@@ -3,7 +3,7 @@ package no.hvl.dat100.eksempler;
 public class Auditorium {
 
 	public static int ANTALL = 8;
-	public static int RADDER = 6;
+	public static int RADER = 6;
 
 	public static void main(String[] args) {
 
@@ -12,7 +12,7 @@ public class Auditorium {
 		int ANTALL = 8;
 		int RADDER = 6;
 
-		boolean[][] d111 = new boolean[RADDER][ANTALL];
+		boolean[][] d111 = new boolean[RADER][ANTALL];
 
 		boolean[][] aud = 
 			{ 
@@ -35,12 +35,13 @@ public class Auditorium {
 		System.out.println(aud[0][1]);
 
 		// ta ut en rad
-		boolean[] rad0 = aud[0];
+		boolean[] rad0 = aud[2];
 
 		// skrive ut en rad
 		for (int p = 0; p < rad0.length; p++) {
 
 			boolean plass = rad0[p];
+			
 			if (plass) {
 				System.out.print("X");
 			} else {
