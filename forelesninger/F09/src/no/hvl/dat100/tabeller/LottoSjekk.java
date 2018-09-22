@@ -1,8 +1,6 @@
 package no.hvl.dat100.tabeller;
 
 public class LottoSjekk {
-
-	public static int ANTALL = 7;
 	
 	static int[] lottoTall = {34,2,7,16,21,29,1};
 	
@@ -26,9 +24,9 @@ public class LottoSjekk {
 	
 	public static boolean sjekkkupong(int[] kupong, int[] lottotall) {
 		
-		for (int tall : kupong) {
+		for (int tall : lottotall) {
 			
-			boolean hartall = finnesTall(tall,lottotall);
+			boolean hartall = finnesTall(tall,kupong);
 			
 			if (!hartall) {
 				return false;

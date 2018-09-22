@@ -1,6 +1,6 @@
 package no.hvl.dat100.tabeller;
 
-public class Tabeller1 {
+public class Tabeller {
 
 	public static void main(String[] args) {
 

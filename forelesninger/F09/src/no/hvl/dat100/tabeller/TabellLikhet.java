@@ -1,7 +1,17 @@
 package no.hvl.dat100.tabeller;
 
-public class TabellPekere {
+public class TabellLikhet {
 
+	public static void skrivUt(int[] tabell) {
+		System.out.print("[ ");
+		
+		for (int tall : tabell) {
+			System.out.print(tall + " ");
+		}
+		
+		System.out.println("]");
+	}
+	
 	public static int[] kopier(int[] tabell) {
 		
 		int[] nytabell = new int[tabell.length];
@@ -13,16 +23,6 @@ public class TabellPekere {
 		return nytabell;
 	}
 	
-	public static void skrivUt(int[] tabell) {
-		System.out.print("[ ");
-		
-		for (int tall : tabell) {
-			System.out.print(tall + " ");
-		}
-		
-		System.out.println("]");
-	}
-	
 	public static void oppdater(int[] tabell, int verdi, int pos) {
 		tabell[pos] = verdi;
 	}
@@ -31,13 +31,13 @@ public class TabellPekere {
  
 		int[] itab = {7,17,20,4,8,12};
 				
-		System.out.println(itab);
 		skrivUt(itab);
+		System.out.println(itab);
 		
 		oppdater(itab,19,2);
 		
-		System.out.println(itab);
 		skrivUt(itab);
+		System.out.println(itab);
 		
 		System.out.println(itab == itab);
 		System.out.println(itab.equals(itab));
