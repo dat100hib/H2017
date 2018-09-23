@@ -2,15 +2,12 @@ package no.hvl.dat100.eksempler;
 
 public class Auditorium {
 
-	public static int ANTALL = 8;
-	public static int RADER = 6;
-
 	public static void main(String[] args) {
 
 		boolean[][] audp;
 
 		int ANTALL = 8;
-		int RADDER = 6;
+		int RADER = 6;
 
 		boolean[][] d111 = new boolean[RADER][ANTALL];
 
