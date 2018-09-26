@@ -46,11 +46,11 @@ public class MiniExcel {
 		}
 		
 		int sisteradpos = data.length-1;
-		int sistekolonnepos = data[0].length;
+		int radlengde = data[0].length;
 		
 		int[] sisterad = data[sisteradpos];
 		
-		for (int k = 0; k<sistekolonnepos; k++) {
+		for (int k = 0; k<radlengde; k++) {
 			
 			int sum = 0;
 			for (int r = 0; r<sisteradpos; r++) {	
