@@ -9,16 +9,14 @@ public class Student {
 
 	// Konstruktøer
 
-	public Student() {
-		this(0, "", "");
-	}
-
 	public Student(int studNr, String fornavn, String etternavn) {
 		this.studNr = studNr;
 		this.fornavn = fornavn;
 		this.etternavn = etternavn;
 	}
-
+	public Student() {
+		this(0, "", "");
+	}
 	// Objektmetoder
 
 	public boolean erLik(Student denAndre) { // Beøver ikke get-metode her!
