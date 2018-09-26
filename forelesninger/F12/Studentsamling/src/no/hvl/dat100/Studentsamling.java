@@ -11,32 +11,33 @@ public class Studentsamling {
 	/*
 	 * Konstruktører
 	 */
-	
+
 	public Studentsamling() {
 		this(STDK);
 	}
+
 	public Studentsamling(int startKapasitet) {
 		samling = new Student[startKapasitet];
 		antall = 0;
 	}
 
 	/*
-	 * Objektmetdoer
+	 * Objektmetoder
 	 */
-	
+
 	/*
 	 * Legger student bak i tabellen
 	 */
-	public void leggTil(Student student) {//TODO
-		
+	public void leggTil(Student student) {// TODO
+
 	}
 
 	/*
 	 * Fjerner og returnerer student hvis fins ellers null
 	 */
-	public Student fjern(int nr) {//TODO
+	public Student fjern(int nr) {// TODO
 		Student stud = null;
-		
+
 		return stud;
 	}
 
@@ -45,18 +46,18 @@ public class Studentsamling {
 	 */
 
 	public Student sok(int nr) {
-		return null;//TODO
-		
+		return null;// TODO
+
 	}
 
 	/*
 	 * Finner indeksen til en student med gitt nr hvis den fins
 	 */
 
-	private int finn(int nr) {//TODO
+	private int finn(int nr) {// TODO
 		int i = 0;
 		int resultat = -1;
-		
+
 		return resultat;
 
 	}
@@ -69,7 +70,6 @@ public class Studentsamling {
 		return (antall == 0);
 	}
 
-	
 	public Student[] getSamling() {
 		return samling;
 	}
@@ -77,6 +77,5 @@ public class Studentsamling {
 	public int getAntall() {
 		return antall;
 	}
-	
 
 }// class
