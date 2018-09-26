@@ -47,7 +47,7 @@ public static int[][] speile(int [][] matrise)
 
 som kan speile en kvadratisk matrise som beskrevet i oppgave 5.17. Test metoden.
 
-###### f)	Valgfri/vanskelig
+##### f)	(Valgfri/vanskelig)
 
 Implementer en metode
 
@@ -89,6 +89,24 @@ public static erLik(int[][] matrise1, int[][] matrise2)
 
 som returnerer `true` hvis og kun hvis de to matriser `matrise1` og `matrise2` gitt som parameter er identiske dvs. har samme dimensjon og like innhold på de samme plassene. Test metoden – eksempelvis ved å bruke matriser fra oppgave 1.
 
+### Oppgave 3 - Oversvømmelse
+
+Høyde i et terreng kan representeres som en 2-dimensjonal tabell (eks. 3x10 felter)
+
+```java
+int[][] terreng = { { 0, 0, 0, 3, 3, 3, 6, 7, 8, 10 },
+                    { 0, 0, 0, 3, 3, 3, 6, 7, 8, 10 },
+                    { 0, 0, 0, 3, 3, 3, 6, 7, 8, 10 } };
+```
+
+Prosjektet F10FlerDimTabeller https://github.com/dat100hib/H2017/tree/master/forelesninger/F10/src/no/hvl/dat100 i oppbevaringsplassen med eksempler fra forelesninger inneholder en pakke `eksempler`.
+
+I pakken finnes en klasse [Flooding.java](https://github.com/dat100hib/H2017/blob/master/forelesninger/F10/src/no/hvl/dat100/eksempler/Flooding.java) som inneholder starten på et program som kan visualisere konsekvens av en øking av hav-høyden. Hav-høyde leses inn via dialog-boks. Dette blev vist på forelesning.
+
+![](assets/markdown-img-paste-20180926181141274.png)
+
+Implementer ferdig metoden `visualiser()` slik at felter i området/tabellen `terreng` som kommer under havets overflate tegnes med en blå sirkel, felter som er mindre en 1 meter over havet tegnes med en oransje sirkel og de felter som er mer en 1 meter over havets overflate tegnes med en lysebrun sirkel. Sirkler tegnes ved å bruke easygraphics.
+
 ### Oppgave 4 - Bondesjakk
 
 Prosjektet F10FlerDimTabeller https://github.com/dat100hib/H2017/tree/master/forelesninger/F10/src/no/hvl/dat100/tictactoe i oppbevaringsplassen med eksempler fra forelesninger inneholder en pakke `no.hvl.dat100.tictactoe` som implementerer det meste av koden for et bondesjakk spill. Dette ble demonstrert på forelesning.
@@ -125,7 +143,7 @@ Implementer de tre metoder ovenfor og test spillet. Det går fint an å implemen
 
 Prøv å endre på verdien av `SIZE` i klassen [TicTacToe.java](https://github.com/dat100hib/H2017/blob/master/forelesninger/F10/src/no/hvl/dat100/tictactoe/TicTacToe.java). Virker spillet fortsatt korrekt?
 
-### Oppgave 5: Arrays og kjøretid for Java-programmer
+### Oppgave 5 - Arrays og kjøretid for Java-programmer
 
 Oppgaven fokuserer på bruk Java API dokumentasjon   http://docs.oracle.com/javase/8/docs/api/ og måling av utføringstid for programmer.
 
