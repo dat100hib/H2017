@@ -1,4 +1,4 @@
-# DAT100: Java Programmering 3 - Uke 7 / 39
+# DAT100: Java Programmering 6 - Uke 7 / 40
 
 ### Oppgave 1 - Matriser
 
