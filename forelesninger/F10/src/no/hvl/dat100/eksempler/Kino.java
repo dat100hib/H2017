@@ -9,14 +9,14 @@ public class Kino extends EasyGraphics {
 	final int ANT_REKKER = 15;
 	final int ANT_SETER = 20;
 	
-	// 2-dimensjoner
-	boolean[][] forestilling = new boolean[ANT_REKKER][ANT_SETER]; // 15 rader med 20 seter;
+	// 2-dimensjoner - 15 rader med 20 seter;
+	boolean[][] forestilling = new boolean[ANT_REKKER][ANT_SETER]; // 
 			
-	// 3-dimensjoner
-	boolean[][][] filmer = new boolean[ANT_FILMER][ANT_REKKER][ANT_SETER]; // 3 filmer 
+	// 3-dimensjoner - 3 forestillinger 
+	boolean[][][] forestillinger = new boolean[ANT_FILMER][ANT_REKKER][ANT_SETER]; 
 			
-	// 4-dimensjoner
-	boolean[][][][] saler = new boolean[ANT_SALER][ANT_FILMER][ANT_REKKER][ANT_SETER]; // 2 saler
+	// 4-dimensjoner - 2 saler
+	boolean[][][][] saler = new boolean[ANT_SALER][ANT_FILMER][ANT_REKKER][ANT_SETER]; 
 
 	public static void main(String[] args) {
 		launch(args);
@@ -42,6 +42,7 @@ public class Kino extends EasyGraphics {
 		for (int rekkenr = 0; rekkenr<ANT_REKKER; rekkenr++) {
 			
 			for (int setenr = 0; setenr<ANT_SETER; setenr++) {
+				
 				if (forestilling[rekkenr][setenr]) {
 					setColor(255,0,0); // rød
 				} else {
