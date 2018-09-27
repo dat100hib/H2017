@@ -63,11 +63,6 @@ public class Konto {
 		return nummer;
 	}
 	
-    /* Bør utgå i denne problemstillingen
-	public static void setNummer(int nummer) {
-		Konto.nummer = nummer;
-	}
-     */
 	
 	public String getEier() {
 		return eier;
@@ -89,7 +84,7 @@ public class Konto {
 		return kontonummer;
 	}
 	
-	// setKontonummer() bør utgå i denne problemmestillingen
+	// setKontonummer() bør utgå i denne problemmstillingen
 	
 	public int getSaldo() {
 		return saldo;
