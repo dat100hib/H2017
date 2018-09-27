@@ -3,20 +3,21 @@ package no.hvl.dat100;
 import static java.lang.String.format;
 
 public class Student {
-	private int studNr;
+	private int studenrNr;
 	private String fornavn;
 	private String etternavn;
+	private int studentNr;
 
-	// Konstruktøer
+	// Konstruktører
 
-	public Student() {
-		this(0, "", "");
-	}
-
-	public Student(int studNr, String fornavn, String etternavn) {
-		this.studNr = studNr;
+	public Student(int studentNr, String fornavn, String etternavn) {
+		this.studentNr = studentNr;
 		this.fornavn = fornavn;
 		this.etternavn = etternavn;
+	}
+	
+	public Student() {
+		this(0, "", "");
 	}
 
 	// Objektmetoder
@@ -25,19 +26,19 @@ public class Student {
 		if (denAndre == null) {
 			return false;
 		}
-		return (this.studNr == denAndre.studNr);
+		return (this.studentNr == denAndre.studentNr);
 	}
 
-	public String skrivNr() {
-		return studNr + ": " + etternavn + ", " + fornavn;
+	public String studentNrOgnavn() {
+		return studentNr + ": " + etternavn + ", " + fornavn;
 	}
 
-	public int getStudNr() {
-		return studNr;
+	public int getStudentNr() {
+		return studentNr;
 	}
 
-	public void setStudNr(int studNr) {
-		this.studNr = studNr;
+	public void setStudentNr(int studentNr) {
+		this.studentNr = studentNr;
 	}
 
 	public String getFornavn() {
@@ -57,8 +58,8 @@ public class Student {
 	}
 
 	@Override
-	public String toString() {
-		String streng = format("%-10d", studNr) + format("%-15s", etternavn) + format("%-15s", fornavn);
+	public String toString() { // Vil senere sortere 
+		String streng = format("%-10d", getStudentNr()) + format("%-15s", etternavn) + format("%-15s", fornavn);
 		return streng;
 	}
 

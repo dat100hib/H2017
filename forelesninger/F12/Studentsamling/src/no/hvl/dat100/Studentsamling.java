@@ -21,32 +21,22 @@ public class Studentsamling {
 	}
 
 	/*
-	 * Objektmetdoer
+	 * Objektmetoder
 	 */
 	
 	/*
 	 * Legger student bak i tabellen
 	 */
 	public void leggTil(Student student) {
-		if (antall == samling.length) {
-			utvid();
-		}
-		samling[antall] = student;
-		antall++;
+		//TODO
 	}
 
 	/*
-	 * Fjerner og returnerer student hvis fins ellers null
+	 * Fjerner og returnerer student hvis den fins ellers null
 	 */
 	public Student fjern(int nr) {
-		Student stud = null;
-		int indeks = finn(nr);
-		if (indeks != -1) {
-			stud = samling[indeks];
-			samling[indeks] = samling[antall - 1];
-			antall--;
-		} // if
-		return stud;
+		//TODO
+		return null;
 	}
 
 	/*
@@ -54,12 +44,9 @@ public class Studentsamling {
 	 */
 
 	public Student sok(int nr) {
-		int indeks = finn(nr);
-		if (indeks == -1) {
-			return null;
-		}else{
-			return samling[indeks];
-		}
+		Student resultat = null;
+		//TODO
+		return resultat;
 	}
 
 	/*
@@ -69,19 +56,7 @@ public class Studentsamling {
 	private int finn(int nr) {
 		int i = 0;
 		int resultat = -1;
-		boolean funnet = false;
-		if (!erTom()) {
-			while (!funnet && i < antall) {
-				if (nr == (samling[i].getStudNr())) {
-					funnet = true;
-				} else {
-					i++;
-				}
-			}
-			if (funnet) {
-				resultat = i;
-			}
-		}
+		//TODO
 		return resultat;
 
 	}
@@ -94,17 +69,6 @@ public class Studentsamling {
 		return (antall == 0);
 	}
 
-	/*
-	 * Utvider tabellen ved behov
-	 * 
-	 */
-	private void utvid() {
-		Student[] hjelpeTabell = new Student[samling.length * 2];
-		for (int i = 0; i < samling.length; i++) {
-			hjelpeTabell[i] = samling[i];
-		}
-		samling = hjelpeTabell;
-	}
 	
 
 	public Student[] getSamling() {

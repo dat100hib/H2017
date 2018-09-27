@@ -7,11 +7,11 @@ import static javax.swing.JOptionPane.showMessageDialog;
 import java.util.Arrays;
 
 public class Grensesnitt {
-	
-	//Tomme konstruktør
-   public Grensesnitt(){};
-    
- // Objektmetoder for lesing og skriving
+
+	// Tom konstruktør
+	public Grensesnitt() {
+	}
+
 	public void lesFlereStudenter(Studentsamling reg) {
 		String ledetekst = "Programmmet leser inn studentopplsysninger";
 		System.out.println(ledetekst);
@@ -25,7 +25,7 @@ public class Grensesnitt {
 		}
 	}
 
-	public  void visAlle(Studentsamling reg) {
+	public void visAlle(Studentsamling reg) {
 		System.out.println("\nAlle studenter");
 		Student stud = null;
 		for (int i = 0; i < reg.getAntall(); i++) {
@@ -33,26 +33,26 @@ public class Grensesnitt {
 			skrivStudent(stud);
 		}
 	}
-	
-	public void visAlleSortert(Studentsamling reg){
+
+	public void visAlleSortert(Studentsamling reg) {
 		System.out.println("\nSkriver ut studentopplysningene sortert");
-        //Sorterer en tabell som er strengobjekter av studentoppl..
+		// Sorterer en tabell som er strengobjekter av studentoppl..
 		int stor = reg.getAntall();
 		String[] nrTab = new String[stor];
-		for (int i=0; i<nrTab.length; i++){
-			  nrTab[i] = reg.getSamling()[i].skrivNr();
+		for (int i = 0; i < nrTab.length; i++) {
+			nrTab[i] = reg.getSamling()[i].studentNrOgnavn();
 		}
-		
+
 		Arrays.sort(nrTab); // Kall til metode i klassen Arrays
-		
+
 		// Sortert utskrift etter studentnr
 		for (int i = 0; i < nrTab.length; i++) {
 			System.out.println(nrTab[i]);
 		}
-		
+
 	}
 
-	public  Student lesStudent() {
+	public Student lesStudent() {
 		String tallTxt = showInputDialog("Oppgi studentnr: ");
 		int nr = parseInt(tallTxt);
 		String fornavn = showInputDialog("oppgi fornavn: ");
@@ -61,11 +61,10 @@ public class Grensesnitt {
 
 		return student;
 	}
-	
-	
-	public  void skrivStudent(Student student) {
-		System.out.println(student);	
+
+	void skrivStudent(Student student) {
+		System.out.println(student);
 
 	}
-	
+
 }
