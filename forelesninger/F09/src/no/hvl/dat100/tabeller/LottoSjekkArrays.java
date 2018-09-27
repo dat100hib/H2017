@@ -4,22 +4,35 @@ import java.util.Arrays;
 
 public class LottoSjekkArrays {
 
-	static int[] lottoTall = {34,2,7,16,21,29,1};
 	
-	static int[] minKupong1 = {12,1,34,16,2,25,26};
-	static int[] minKupong2 = {2,7,34,16,21,1,29};
-
+	public static boolean sjekkkupong_v1 (int[] kupong, int[] lottotall){
+	
+		return Arrays.equals(kupong,lottotall);
+		
+	}
+	
+	public static boolean sjekkkupong_v2 (int[] kupong, int[] lottotall){
+		
+		Arrays.sort(kupong);
+		Arrays.sort(lottotall);
+		
+		return Arrays.equals(kupong,lottotall);
+		
+	}
+	
 	public static void main(String[] args) {
 
-		Arrays.sort(lottoTall);
-		Arrays.sort(minKupong1);
-		Arrays.sort(minKupong2);
+		int[] lottoTall = {34,2,7,16,21,29,1};
 		
-		boolean syvrett1 = Arrays.equals(lottoTall,minKupong1);
-		boolean syvrett2 = Arrays.equals(lottoTall,minKupong2);
+		int[] minKupong1 = {12,1,34,16,2,25,26};
+		int[] minKupong2 = {2,7,34,16,21,1,29};
+
+		System.out.println(sjekkkupong_v1(minKupong1,lottoTall));
+		System.out.println(sjekkkupong_v1(minKupong2,lottoTall));
 		
-		System.out.println(syvrett1);
-		System.out.println(syvrett2);
+		System.out.println(sjekkkupong_v2(minKupong1,lottoTall));
+		System.out.println(sjekkkupong_v2(minKupong2,lottoTall));
+
 		
 	}
 
