@@ -1,4 +1,4 @@
-package no.hvl.dat100.unntak.eksempler;
+package no.hvl.dat100.feileksempler;
 
 public class IterasjonFor {
 
