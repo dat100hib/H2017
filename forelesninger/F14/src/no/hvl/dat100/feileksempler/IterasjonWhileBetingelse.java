@@ -6,20 +6,20 @@ public class IterasjonWhileBetingelse {
 		
 		boolean[] tab = { false,false,true,false,false,false};
 		
-		// sjekk om alle elementer i tabellen er true
-		boolean alletrue = true;
+		// telle antall false
+		int count = 0;
 		
 		int i = 0;
-		while (alletrue && i<tab.length) {
+		while (i<tab.length) {
 			
-			if (tab[i] == false) {
-				alletrue = true;
+			if (tab[i]) {
+				count++;
 			}
 			
 			i++;
 		}
 		
-	    System.out.println(alletrue);
+	    System.out.println(count);
 	}
 
 }
