@@ -1,6 +1,6 @@
 package no.hvl.dat100.kontakter;
 
-public class KontaktListeSimpel {
+public class KontaktListeEnkel {
 
 	private static Kontakt[] kontakter;
 
@@ -29,10 +29,6 @@ public class KontaktListeSimpel {
 		Kontakt k1 = new Kontakt("Lars",55943623);
 		Kontakt k2 = new Kontakt("Sven-Olai",55323223);
 		
-		System.out.println(k1.toString());
-		System.out.println(k2.toString());
-		
-		System.out.println("------------------");
 		kontakter = new Kontakt[2];
 		
 		kontakter[0] = k1;

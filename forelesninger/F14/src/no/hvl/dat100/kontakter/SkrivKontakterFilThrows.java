@@ -13,21 +13,19 @@ public class SkrivKontakterFilThrows {
 
 	static String mappe = System.getProperty("user.dir") +"/src/no/hvl/dat100/kontakter/";
 	
-	private static Kontakt[] kontakter;
+	private static final String FILNAVN = "kontakter.txt";
 	
 	public static void main(String[] args) throws FileNotFoundException {
-		
+			
 		Kontakt k1 = new Kontakt("Lars",55943623);
 		Kontakt k2 = new Kontakt("Sven-Olai",55323223);
-				
-		kontakter = new Kontakt[2];
+	
+		Kontakt[] kontakter = new Kontakt[2];
 		
 		kontakter[0] = k1;
 		kontakter[1] = k2;
 		
-		String filstr = JOptionPane.showInputDialog("Angi sti og filnavn: ");
-			
-		PrintWriter writer = new PrintWriter(mappe + filstr);
+		PrintWriter writer = new PrintWriter(mappe + FILNAVN);
 			
 		writer.println(kontakter.length);
 		

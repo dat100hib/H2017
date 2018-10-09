@@ -4,14 +4,13 @@ import javax.swing.JOptionPane;
 
 public class HastighetCheck {
 
-	private static boolean ok = true;
-
 	private static boolean erTall(String str) {
 		return str.matches("\\d+");
 	}
 	
 	public static void main(String[] args) {
 
+		boolean ok = true;
 		int km = 0, tm = 0;
 	
 		String kmstr = JOptionPane.showInputDialog("Avstand i kilometer");
