@@ -2,7 +2,7 @@
 
 ### Oppgave 1 - Klasser
 
-Opgave 6.2 i java-boken
+Oppgave 6.2 i java-boken
 
 ### Oppgave 2 - Klasser
 
@@ -39,11 +39,11 @@ Lag to konstruktører for klassen. en standardkonstruktør og en med parameter.
 
 ##### b)
 
-Lag metoden `leggTil(Vare v)`. Denne metoden skal legge en ny vare (gitt som parameter) til på neste ledige plass i tabellen. Husk å oppdatere objektvariabelen `antall`
+Lag metoden `leggTil(Vare v)`. Denne metoden skal legge en ny vare (gitt som parameter) til på neste ledige plass i tabellen. Husk å oppdatere objektvariabelen `antall`.
 
 ##### c)
 
-Lag en metode `sokVare(int nr)` som søker om en bestemt vare fins i varelageret.
+Lag en metode `soekVare(int vareNr)` som finner ut ved å søke igjennom tabellen om en bestemt vare gitt ved `vareNr` finnes i varelageret.
 
 ##### d)
 
@@ -59,7 +59,7 @@ Lag en klientklasse som inneholder en main-metode for å teste klassen `Varelage
 
 ##### g)
 
-Lag så en klasse `Grensesnitt` som leser inn og som skriver ut info om varene. https://github.com/dat100hib/H2017/tree/master/forelesninger/F12/Studentsamling/src/no/hvl/dat100
+Lag så en klasse `Grensesnitt` som leser inn og som skriver ut info om varene. Se eksempel i https://github.com/dat100hib/H2017/tree/master/forelesninger/F12/Studentsamling/src/no/hvl/dat100
 
 Lag også en metode som viser alle varene sortert etter varenr. Husk, at i `StudentSamling` måtte vi ha at alle studentnr må registres med like mange sifre fordi vi sorterte etter en streng for eksempel: `"8" > "40"`
 
@@ -69,7 +69,7 @@ Lag en klasse `Meny` som kaller på metodene. Se eksempel i https://github.com/d
 
 ### Oppgave 5 - Random-klassen og Simulering
 
-I denne oppgaven skal vi simulere terningkast. Et alternativ til å bruke `Math.random()` som i forrige oppgave er å bruke Random-klassen. Denne klassen inneholder en metode `nextInt(int grense)` som returnerer et tilfeldig heltall fra og med 0 til (men ikke med) grense. Dette er en objekt-metode, så det må lages et Random-objekt før metoden kan brukes. Samme objektet kan brukes for å generere flere tilfeldige tall.
+I denne oppgaven skal vi simulere terningkast. Et alternativ til å bruke `Math.random()` er å bruke Random-klassen. Denne klassen inneholder en metode `nextInt(int grense)` som returnerer et tilfeldig heltall fra og med 0 til (men ikke med) grense. Dette er en objekt-metode, så det må lages et Random-objekt før metoden kan brukes. Samme objektet kan brukes for å generere flere tilfeldige tall.
 
 Få å løse denne oppgaven anbefales det å se på Eksempel 5.2, side 176 i java-boken. Skisse:
 
