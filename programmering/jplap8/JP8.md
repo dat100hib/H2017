@@ -1,6 +1,6 @@
 # DAT100: Java Programmering 7 - Uke 10 / 43
 
-Oppgavene 3 og 4 på denne programmeringslab vil inngå i siste obligatoriske programmeringsinnlevering.
+Oppgavene 3 og 4 på denne programmeringslab vil inngå i siste obligatoriske programmeringsinnlevering som er neste uke.
 
 Startkode til oppgave 1 og 2 finnes også i prosjektet JPL8 på github: https://github.com/dat100hib/H2017/tree/master/programmering/jplap8
 
@@ -144,7 +144,7 @@ De to metodene i a) og b) skal fungere generelt – dvs. ikke kun for en tabell 
 
 ##### a)
 
-Lag in superklasse `Person` og to subklasser `Student` og `Laerer` med følgende egenskaper:
+Implementer en klasse `Person` og to subklasser `Student` og `Laerer` med følgende egenskaper:
 
 - Person
 
@@ -152,7 +152,7 @@ Lag in superklasse `Person` og to subklasser `Student` og `Laerer` med følgende
 
   * Konstruktører: standard konstruktør og konstruktør med 4 parametre som kan gi verdi til alle objektvariablene
 
-  * Metoder: `toString()`` som returnerer data i objektet som en streng
+  * Metoder: `toString()` som returnerer data i objektet som en streng
 
 -	Student
 
@@ -160,7 +160,7 @@ Lag in superklasse `Person` og to subklasser `Student` og `Laerer` med følgende
 
   * Konstruktør med 6 parametre
 
-  * Metoder: `toString()`` som returnerer data i objektet som en streng
+  * Metoder: `toString()` som returnerer data i objektet som en streng
 
 - Lærer
 
@@ -168,7 +168,7 @@ Lag in superklasse `Person` og to subklasser `Student` og `Laerer` med følgende
 
   * Konstruktør med 6 parametre
 
-  * Metoder: `toString()`` som returnerer data i objektet som en streng
+  * Metoder: `toString()` som returnerer data i objektet som en streng
 
 Bruk private/protected på alle objektvariabler og lag public get-metoder / set-metoder.
 
@@ -182,14 +182,14 @@ Lag en klasse med en enkel main()–metode for å teste klassene over.
 
 ### Oppgave 4 - Objektsamlinger
 
-Ta utgangpunkt i programmet fra oppgave 3. I stedet for å ha objektene direkte i en tabell i main som i 3b, skal vi definere en samling av Personobjekter. Personobjektene skal lagres sammenhengene fra starten av tabellen.
+Ta utgangpunkt i programmet fra oppgave 3. I stedet for å ha objektene direkte i en tabell i main som i 3b, skal vi definere en samling av person-objekter via en klasse `PersonSamling` som inneholder en tabell. Personobjektene skal lagres sammenhengene fra starten av tabellen.
 
 Samlingen skal inneholde
 
 1.	Objektvariabler: nesteLedige/antall
 en referanse til tabell med personreferanser
 
-2.	En konstruktør der man kan angi startstørrelsen på tabellen (kan utvides ved behov).
+2.	En konstruktør der en kan angi startstørrelsen på tabellen (kan utvides ved behov).
 
 3.	En metode `leggTil(Person p)`. Metoden skal legge personen på neste ledige plass i tabellen. Dersom tabellen er full, skal du lage en ny tabell som er dobbelt så stor og flytte elementene over i denne. Deretter setter du inn personen i den nye tabellen.
 
@@ -219,7 +219,7 @@ Personer totalt: 20
 
 ##### a)
 
-Udvid klassene fra Oppgave 3 og 4 så de får en metode `tilHTML()`` som returnerer en streng inneholdende en (simpel) HTML representasjonen av verdier for objekt variable i objektet.
+Udvid klassene fra Oppgave 3 og 4 så de får en metode `tilHTML()` som returnerer en streng inneholdende en (simpel) HTML representasjonen av verdier for objekt variable i objektet.
 
 **Eksempel:** En mannlig lærer født 1954 med kontor på 503 og månedslønn på 20000:
 
