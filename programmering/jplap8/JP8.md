@@ -233,7 +233,7 @@ Udvid klassene fra Oppgave 3 og 4 så de får en metode `tilHTML()` som returner
 
 ##### b)
 
-Implementer en metode `tilHTMLfil()`` i programmet som kan skrive ut HTML representasjonen for en Person (Student eller Lærer) i en navngiven fil. Navn på filen skal bestemmes utefra etternamn på personen. I eksemplet ovenfor blir det da `mortensen.html`.
+Implementer en metode `tilHTMLfil()` i programmet som kan skrive ut HTML representasjonen for en Person (Student eller Lærer) i en navngiven fil. Navn på filen skal bestemmes utefra etternamn på personen. I eksemplet ovenfor blir det da `mortensen.html`.
 
 ##### c)
 

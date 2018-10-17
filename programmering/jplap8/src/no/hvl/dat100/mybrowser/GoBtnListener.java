@@ -50,7 +50,7 @@ public class GoBtnListener implements ActionListener {
 		in.close();
 
 		// håndter unntak MalformedURLException (Feil format på URL) og
-		// IOException (eb siden kunne ikke åpnes) ved å skive ut feilmelding
+		// IOException (web siden kunne ikke åpnes) ved å skive ut feilmelding
 		// bruk setText metoden på webpagetextarea objektet til å sette teksten
 		// bruk finally til altid å sette address-linjen til den tomme teksten
 */
