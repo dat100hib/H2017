@@ -4,11 +4,13 @@ Oppgavene 3 og 4 på denne programmeringslab vil inngå i siste obligatoriske pr
 
 Startkode til oppgave 1 og 2 finnes også i prosjektet JPL8 på github: https://github.com/dat100hib/H2017/tree/master/programmering/jplap8
 
+For oppgave 1 og 2 kan det være lurt å se på forelesningsnotater fra forelesningene om unntak (oppgave 1) og flerdimensjonaletabeller (oppgave 2).
+
 ### Oppgave 1 - Filer og unntak
 
 Koden nedenfor finnes i klassen `LeseFrafil.java`, pakken `no.hvl.dat100.lesinnfil` i JPL8 Eclipse-prosjektet.
 
-Main-metoden leser inn navn på fil og etterpå skrives hver linjen i filen ut.
+Main-metoden leser inn navn på fil og etterpå skrives hver linje i filen ut med et linjenummer foran.
 
 ```java
 public class LeseFraFil {
@@ -45,7 +47,7 @@ public class LeseFraFil {
 
 ##### a)
 
-Unntaket `FileNotFoundException` kan kastes/signaleres om filen vi forsøker å åpne ikke kan finnes. Siden det er et sjekket-unntak må vi bruke en throws-klausul for å angi at koden potensielt kan signalere et slik unntak. Kjør programmet – hva skjer om filen ikke finnes?
+Unntaket `FileNotFoundException` kan kastes/signaleres om filen vi forsøker å åpne ikke finnes. Siden det er et sjekket-unntak må vi bruke en throws-klausul for å angi at koden potensielt kan signalere et slik unntak. Kjør programmet – hva skjer om filen ikke finnes?
 
 ##### b)
 
@@ -57,9 +59,7 @@ Utvid programmet slik bruken får et antall forsøk til å angi en fil som finne
 
 ### Oppgave 2 - Flerdimensjonaletabeller
 
-For denne oppgaven kan det vært lurt å se på forelesningsnotater fra Forelesning 10.
-
-Koden nedenfor finnes i klassen `miniExcel.java`, pakken `no.hvl.dat100.miniexcel`.
+Koden nedenfor finnes i klassen `miniExcel.java`, pakken `no.hvl.dat100.miniexcel` i Eclipse-prosjektet JPL8.
 
 Programmet inneholder en to-dimensjonal tabell svarende til et Excel-ark med 4 rekker og 3 søyler med heltall.
 
@@ -182,16 +182,16 @@ Lag en klasse med en enkel main()–metode for å teste klassene over.
 
 ### Oppgave 4 - Objektsamlinger
 
-Ta utgangpunkt i programmet fra oppgave 3. I stedet for å ha objektene direkte i en tabell i main som i 3b, skal vi definere en samling av person-objekter via en klasse `PersonSamling` som inneholder en tabell. Personobjektene skal lagres sammenhengene fra starten av tabellen.
+Ta utgangpunkt i programmet fra oppgave 3. I stedet for å ha objektene direkte i en tabell i main som i 3b, skal vi definere en samling av person-objekter via en klasse `PersonSamling` som inneholder en tabell av pekere til person-objekt. Personobjektene skal lagres sammenhengene fra starten av tabellen.
 
 Samlingen skal inneholde
 
 1.	Objektvariabler: nesteLedige/antall
-en referanse til tabell med personreferanser
+og en referanse til tabell med personreferanser
 
-2.	En konstruktør der en kan angi startstørrelsen på tabellen (kan utvides ved behov).
+2.	En konstruktør der en kan angi startstørrelsen på tabellen (utvides ved behov, se nedenfor).
 
-3.	En metode `leggTil(Person p)`. Metoden skal legge personen på neste ledige plass i tabellen. Dersom tabellen er full, skal du lage en ny tabell som er dobbelt så stor og flytte elementene over i denne. Deretter setter du inn personen i den nye tabellen.
+3.	En metode `leggTil(Person p)`. Metoden skal legge personen på neste ledige plass i tabellen. Dersom tabellen er full, skal du lage en ny tabell som er dobbelt så stor som den opprindelige og flytte elementene over i den nye tabellen. Deretter setter du inn personen i den nye tabellen.
 
 4. En metode `skrivut()`. Metoden skal skrive ut samlingen ved hjelp av `toString()`-metoden for Lærer/Student.
 
