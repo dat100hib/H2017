@@ -1,4 +1,4 @@
-# DAT100: Java Programmering 8 - Uke 11 / 44
+# DAT100: Java Programmering 9 - Uke 11 / 44
 
 De tre oppgavene på denne programmeringslab er **obligatoriske** og kan løses i grupper med opptil tre studenter.  
 
