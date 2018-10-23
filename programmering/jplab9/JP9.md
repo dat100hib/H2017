@@ -1,6 +1,6 @@
 # DAT100: Java Programmering 9 - Uke 11 / 44
 
-De tre oppgavene på denne programmeringslab er **obligatoriske** og kan løses i grupper med opptil tre studenter.  
+De tre oppgavene på denne programmeringslab er **obligatoriske** og kan løses i grupper med maksimum tre studenter.  
 
 Oppgavene bruker deler av oppgave 3 og 4 fra [Java Programmering 8](TODO).
 
@@ -8,21 +8,25 @@ Oppgavene bruker deler av oppgave 3 og 4 fra [Java Programmering 8](TODO).
 
 Startkoden finnes i et Eclipse-prosjekt som dere skal ta utgangspunkt i. Prosjektet legger på github og dere får tilgang via lenken:
 
-https://classroom.github.com/a/FPdt7I9x
+UPDATE
 
-etterfulgt av å importere prosjektet inn i Eclipse på tilsvarende måte som i programmeringsprosjektet (se avsnitt i prosjektbeskrivelsen fra programmeringsprosjektet). TODO: LINK
+etterfulgt av å importere prosjektet inn i Eclipse på tilsvarende måte som på første programmeringslab og i programmeringsprosjektet:
+
+https://github.com/dat100hib/H2017/blob/master/programmering/jplab0/JP0.md#oppgave-3-github-classroom-og-junit-enhetstesting
 
 ### Innlevering
 
-Besvarelsen leveres inn ved å pushe java-koden opp på oppbevaringsplassen på github (se avsnitt 4 i prosjektbeskrivelsen for programmeringsprosjektet) TODO legge inn lenke til oppbevaringsplassen som besvarelse på Canvas.
+Besvarelsen leveres inn ved å pushe java-koden opp på oppbevaringsplassen på github (se https://github.com/dat100hib/H2017/blob/master/programmering/jplab0/JP0.md#oppgave-3-github-classroom-og-junit-enhetstesting) og legge inn lenke til oppbevaringsplassen som besvarelse på Canvas.
 
 **Frist for innleverings er tirsdag i uke 45**.
 
 ### enhetstester
 
-Som del av startkoden finnes en rekke enhetstester i pakken `no.hvl.dat100.jpl9.tests` som kan brukes på tilsvarende måte som i programmeringsprosjektet til å teste metoder etter hvert som dere får de implementert.
+Som del av startkoden finnes en rekke enhetstester i pakken `no.hvl.dat100.jpl9.tests` som kan brukes på tilsvarende måte som i programmeringsprosjektet til å teste metoder etterhvert som dere får de implementert.
 
-Tester for en klasse `X.java` finnes testklassen TestX.java. Avsnitt 5 fra programmeringsprosjekt beskrivelsen viser hvordan enhetstester kjøres i Eclipse.LINK: TODO
+Tester for en klasse `X.java` finnes testklassen TestX.java. Kjørsel av enhetstester er tilsvarende som i programmeringsprosjektet:
+
+https://github.com/dat100hib/H2017/blob/master/programmering/jplab0/JP0.md#oppgave-3-github-classroom-og-junit-enhetstesting
 
 ### Oppgave 1: Implementere klasser
 
@@ -73,15 +77,15 @@ En standard konstruktør som der startstørrelsen på tabellen er 20.
 
 ##### c)
 
-En konstruktør der man kan angi startstørrelsen på tabellen.
+En metode `getAntall()` som returnerer antall person- objekt som aktuelt er lagret i tabellen.
 
 ##### d)
 
-En metode `getAntall()` som returnerer antall person- objekt som aktuelt er lagret i tabellen.
-
-###### e)
-
 En metode `getSamling()` som returnerer en peker til tabellen av person-objekt.
+
+##### e)
+
+En konstruktør der man kan angi startstørrelsen på tabellen.
 
 ##### f)
 
@@ -93,6 +97,14 @@ En metode `finnes(Person p)` som returnerer `true` om der finnes en person i sam
 
 ##### h)
 
+En metode `ledigPlass()` som returnerer `true` om der er ledig plass i samlingen og `false` ellers.
+
+##### i)
+
+En metode `leggTil(Person p)` som legger `p` inn i tabellen. Dersom der ikke finnes en person i tabellen med samme fødselsnummer som `p` skal metoden legge til personen på neste ledige plass i tabellen. Ellers skal ikke metoden legge inn `p` i tabellen. Metoden skal returnere `true` om personen blev lagt til og `false` ellers.
+
+##### j)
+
 En metode `toString()` som returnerer data i tabellen som en streng der første linje i strengen angir antall Person-objekt i tabellen, eks., tabell med to personer ( en student og en lærer):
 
 ```java
@@ -100,19 +112,15 @@ En metode `toString()` som returnerer data i tabellen som en streng der første 
 LAERER\n10200110702\nOlsen\nOle\n1000\n7676\n";
 ```
 
-##### i)
+##### k) - valgfri
 
 En metode `utvid()` som oppretter en ny tabell av person-objekt som er dobbelt så stor og flytter elementene over i denne.
 
-##### j)
+##### l) - valgfri
 
-En metode `ledigPlass()` som returnerer true om der er ledig plass i samlingen.
+En metode `leggTilUtvid(Person p)` som legger `p` inn i tabellen. Dersom der ikke finnes en person i tabellen med samme fødselsnummer som `p` skal metoden legge til personen på neste ledige plass i tabellen. Ellers skal ikke metoden legge inn `p` i tabellen. Dersom tabellen er full, skal metoden opprettet en utvidet tabell og deretter sette inn personen i den nye tabellen. Metoden skal returnere `true` om `p` ble lagt inn i tabellen.
 
-##### k)
-
-En metode `leggTil(Person p)` som legger `p` inn i tabellen. Dersom der ikke finnes en person i tabellen med samme fødselsnummer som `p` skal metoden legge til personen på neste ledige plass i tabellen. Ellers skal ikke metoden legge inn `p` i tabellen. Dersom tabellen er full, skal metoden opprettet en utvidet tabell og deretter sette inn personen i den nye tabellen. Metoden skal returnere `true` om `p` ble lagt inn i tabellen.
-
-##### l)
+##### m) - valgfri
 
 En metode `slett(Person p)` som sletter personen `p` fra samlingen. Vi antar at personer med samme fødselsnummer er den samme personen. Metoden skal returnere `true` om personen ble slettet.
 
@@ -146,7 +154,7 @@ Ole
 
 Metoden skal returnere `true` om filen ble skrevet og skal håndtere eventuelle unntak ifm. fil-håndtering ved å bruke try-catch. Hint: bruk `toString()`-metoden på person-samling.
 
-##### b)
+##### b) - valgfri
 
 `PersonSamling les(String filnavn)` som leser inn samlingen fra en fil på formatet som i a) og returnerer en samling med de person-objekt som er lest inn.
 
