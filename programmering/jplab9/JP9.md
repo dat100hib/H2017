@@ -2,7 +2,7 @@
 
 De tre oppgavene på denne programmeringslab er **obligatoriske** og kan løses i grupper med maksimum tre studenter.  
 
-Oppgavene bruker deler av oppgave 3 og 4 fra [Java Programmering 8](TODO).
+Oppgavene bruker deler av oppgave 3 og 4 fra [Java Programmering 8](https://github.com/dat100hib/H2017/blob/master/programmering/jplap8/JP8.md).
 
 ### Start Java-kode
 
@@ -126,7 +126,7 @@ En metode `slett(Person p)` som sletter personen `p` fra samlingen. Vi antar at 
 
 ### Oppgave 3: Skrive og lese filer
 
-For å løse denne oppgaven anbefales det å lese avsnitt 9.1 i java-boken. + se forelesningsnotater fra TODO
+For å løse denne oppgaven anbefales det å lese avsnitt 9.1 i java-boken og se på notater fra forelesninger om filer og om unntak. 
 
 Implementer følgende to metoder i klassen `Filer.java`:
 
