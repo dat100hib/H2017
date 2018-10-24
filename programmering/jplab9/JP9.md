@@ -8,7 +8,7 @@ Oppgavene bruker deler av oppgave 3 og 4 fra [Java Programmering 8](https://gith
 
 Startkoden finnes i et Eclipse-prosjekt som dere skal ta utgangspunkt i. Prosjektet legger på github og dere får tilgang via lenken:
 
-UPDATE
+https://classroom.github.com/a/eL4LFT73 
 
 etterfulgt av å importere prosjektet inn i Eclipse på tilsvarende måte som på første programmeringslab og i programmeringsprosjektet:
 
